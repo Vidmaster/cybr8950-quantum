@@ -1,5 +1,10 @@
 ## CYBR4580/8950 Project Milestone 1: Requirements analysis and planning (Project Proposal Stage)
 
+### Temporary orientation
+What does quantum internet or quantum networking look like?
+How can quantum networking be used to improve communications throughput for (classical/quantum) applications?
+How do existing networking concepts need to be modified to work around fundamental quantum principles such as the No Cloning Theorem?
+
 ### Due Date
 February 13 by class time
 
