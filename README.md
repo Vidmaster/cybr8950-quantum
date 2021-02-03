@@ -1,5 +1,11 @@
 ## CYBR4580/8950 Project Milestone 1: Requirements analysis and planning (Project Proposal Stage)
 
+### Client thoughts
+Broken of RSA, we want to secure the communication.  
+NC3 system, two property – can’t inject system, can’t tamper – quantum teleportation.   
+How can we assure the message is not tampered with? Is there a way to verify the message is correct or not?    
+
+
 ### Temporary orientation
 * What does quantum internet or quantum networking look like?  
 * How can quantum networking be used to improve communications throughput for (classical/quantum) applications?  
