@@ -6,7 +6,7 @@ NC3 system, two property – can’t inject system, can’t tamper – quantum t
 How can we assure the message is not tampered with? Is there a way to verify the message is correct or not?    
 
 
-### Temporary orientation
+### Temporary orientation - QDK and related area
 * What does quantum internet or quantum networking look like?  
 * How can quantum networking be used to improve communications throughput for (classical/quantum) applications?  
 * How do existing networking concepts need to be modified to work around fundamental quantum principles such as the No Cloning Theorem?  
