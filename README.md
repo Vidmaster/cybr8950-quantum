@@ -80,7 +80,7 @@ Your summaries will be graded as follows following:
 
 ### Task Card of GitHub Project Board
 
-.[The Project Board link!!!](https://github.com/Vidmaster/cybr8950-quantum/projects/1)
+[The Project Board link!!!](https://github.com/Vidmaster/cybr8950-quantum/projects/1)
 
 ### Submission materials
 You should create a project (Kanban) board on GitHub and the create task cards that identify *major* tasks that span the rest of the semester. You can read more about the GitHub Project feature here: https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards
