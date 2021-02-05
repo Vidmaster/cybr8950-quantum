@@ -66,6 +66,8 @@ Your summaries will be graded as follows following:
 
 **60 points**
 
+## Proposed project timeline
+
 ### Gantt Chart view
 ![Gantt Chart of Quantum Computation Key Distrubution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/main/image/Gantt%20view%20of%20Milestone%201.PNG)
 
