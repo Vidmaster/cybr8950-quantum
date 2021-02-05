@@ -66,8 +66,13 @@ Your summaries will be graded as follows following:
 
 **60 points**
 
-## Proposed project timeline
-An important part of project planning is identifying tasks to be completed to address project goals and arranging those tasks in such a way that they can be completed within a (typically) fixed interval of time. In this class, that interval is the length of the semester. For milestone one, prepare an overall project timeline that identifies large tasks to be completed, estimates time of completion, and arranges those tasks chronologically over the project lifespan.
+### Gantt Chart view
+![Gantt Chart of Quantum Computation Key Distrubution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/main/image/Gantt%20view%20of%20Milestone%201.PNG)
+
+
+### Timeline View
+![Overview of Quantum Computation Key Distrubution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/main/image/Milestone%201%20timeline.PNG)
+
 
 ### Submission materials
 You should create a project (Kanban) board on GitHub and the create task cards that identify *major* tasks that span the rest of the semester. You can read more about the GitHub Project feature here: https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards
