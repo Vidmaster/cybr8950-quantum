@@ -40,7 +40,9 @@ Our team has identified the following risks to the successful completion of this
 
 # Methodology
 ## Literature Review
-Briefly discuss methodology and keywords used, then link to literature review document
+Briefly discuss methodology and keywords used once complete
+
+The [full literature review is available here](LiteratureReview.md)
 
 ## Technical Implementation Plan
 Details of technical implementation plan or a link if it's too long
