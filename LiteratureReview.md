@@ -33,7 +33,7 @@ Template:
 \
 **Problem Statement:** Digital signatures are an important aspect for verifying the integrity and authenticity of a message, and this study investigates the usage of quantum dots to provide digital signatures.
 \
-**Research Question(s):** Not explicitly stated, but the authors are attempting to provide an improved way of implementing digital signatures with security against repudiation and forgery, and with a high degree of entropy.
+**Research Question(s):** Not explicitly stated, but the authors are attempting to provide an improved way of implementing digital signatures with security against repudiation and forgery, and with a high degree of entropy. This method provides a longer signature with fewer steps and more security than previous implementations.
 \
 **Contribution:** The authors develop a scheme which uses a dynamic map based on quantum dots, a permutation and substitution scheme similar to AES, and DNA coding to create a quantum digital signature with a high degree of security as long as the signature is of sufficient length. By sending a dynamic quantum system's control parameter and critical points as well as some initial point in phase space, two parties could implement these digital signatures using a quantum computer, but without requiring a quantum channel for transmission.
 \
@@ -47,12 +47,22 @@ Template:
 \
 **Implications for Research:** It would be worth investigating if there are other encryption systems that can transmit classical values using a non-quantum channel but still obtain the same high level of security given by a quantum system.
 
-2. **Citation:** M.-S. Kang, C.-H. Hong, J. Heo, J.-I. Lim, and H.-J. Yang, “Quantum Signature Scheme Using a Single Qubit Rotation Operator,” Int J Theor Phys, vol. 54, no. 2, pp. 614–629, Feb. 2015, doi: 10.1007/s10773-014-2254-y. \
-**Problem Statement:** \
-**Research Question(s):** \
-**Contribution:** \
-**Rationale:** \
-**Investigative Approach:** \
-**Lessons Learned:** \
-**Implications for Practice:** \
-**Implications for Research:**
+2. **Citation:** M.-S. Kang, C.-H. Hong, J. Heo, J.-I. Lim, and H.-J. Yang, “Quantum Signature Scheme Using a Single Qubit Rotation Operator,” Int J Theor Phys, vol. 54, no. 2, pp. 614–629, Feb. 2015, doi: 10.1007/s10773-014-2254-y.
+\
+**Problem Statement:** Digital signatures are an important aspect for verifying the integrity and authenticity of a message, and this study investigates the signing of quantum messages using a single qubit and rotation operators.
+\
+**Research Question(s):** This paper investigates the usage of arbitrated quantum signatures (AQS) and attempts to improve on the security of previously used methods by introducing decoy photons to secure the communications channel.
+\
+**Contribution:** This source was surprising in that it showed that quantum signatures can be used for both classical and quantum messages. The ability to sign a message using only a single qubit and a trusted third party is valuable. They show that forgery is impossible with this technique, but perfect non-repudiation is not. However, they rebut several possible cases in which the signature could be repudiated.
+\
+**Rationale:** The paper uses extensive calculations to demonstrate the security of their method and also provide a comparison to a quantum public key technique.
+\
+**Investigative Approach:** This paper presents a theoretical implementation of a new AQS method as well as rigorous mathematical defense of its validity and security, which is appropriate in this case.
+\
+**Lessons Learned:** The signature scheme proposed by the authors works with only a single qubit and does not require the sharing of an entangled Bell state between two parties. They also show that the trusted third party in the signature scheme provides superior security to other similar schemes as it provides real time non-repudiation.
+\
+**Implications for Practice:** This signature scheme could be used for signing quantum messages, but it is not useful for signing classical messages. One interesting circuit introduced (to me at least) in this paper was the quantum swap test, which checks the equality of two qubits without measuring either of them.
+\
+**Implications for Research:** A major takeaway is that unconditionally secure quantum signatures for quantum messages are impossible. Another is that quantum one-way functions like those used in RSA are difficult to establish, though rotation operators are promising candidates and function in this manner under certain constraints.
+
+3. 
