@@ -90,4 +90,21 @@ Consumer Application of Quantum Computing is a good source for see where Quantum
 5. **Abstract:** In Ying’s paper it talks about what Quantum Computing can do compared to standard Computing. A Quantum Algorithm was found that could find a single search query in a unsorted database in square root time of common computers. This Quantum algorithm could also do prime factorization. Querying a database and prime factorization is very lucrative to company’s and this generated an interest in Quantum Computing. As interest grew for Quantum computing so did interest grow for a Quantum Turing Machine, the first viable options was created by Deutsch in 1985. To make a A.I. Quantum Computer Quantum algorithms need to be written and Quantum Computer Architecture has to be created. Quantum programming to make changes and interact with the machine. All this infrastructure has to be created and most of it has. The issues is that Quantum Computingprocessing power is not capable yet to run these program to thoroughly test them. This paper expands on the potential applications of Quantum in AI \
 **Citation:** Ying, M. (2010). Quantum computation, quantum theory and AI. Artificial Intelligence, 174(2), 162-176.
 
-## Another Topic
+## Integrity and Post-Quantum Security
+1. **Citation:** A. Chailloux, M. Naya-Plasencia, and A. Schrottenloher, “An Efficient Quantum Collision Search Algorithm and Implications on Symmetric Cryptography,” in Advances in Cryptology – ASIACRYPT 2017, Cham, 2017, pp. 211–240, doi: 10.1007/978-3-319-70697-9_8.
+\
+**Problem Statement:** Using an amplitude amplification technique, quantum collision and multi-target preimage search algorithms can be improved to attack symmetric cryptography.
+\
+**Research Question(s):** Can existing collision and preimage search algorithms (quantum and classical) that require prohibitive amounts of resources be improved to realize the true capabilities of quantum adversaries?
+\
+**Contribution:** The new quantum algorithm for collision and multi-target preimage search improves attacks against hash functions, key recovery in multi-user settings, and collision attacks on block cipher operation modes. This algorithm may also be used as building blocks for more complex cryptanalysis.
+\
+**Rationale:** The presented algorithm improve the on the time complexity of existing algorithms while requiring less quantum memory. Comparisons between new and existing algorithms are made under several conditions concerning the availability of quantum memory, ultimately suggesting that the new algorithm is superior unless quantum memory becomes as cheap as classical memory and parallelization is hard.
+\
+**Investigative Approach:** The presented algorithm extends previous work and was aimed at achieving improvements in time complexity with small quantum memory. Comparison of complexity is made against existing classical and quantum algorithms under various conditions to assert the improved performance of the new algorithm.
+\
+**Lessons Learned:** The new algorithm achieved, at the time, what was thought to be the fastest solution over classic algorithms with linear quantum space. The ability to parallelize the algorithm further improves its performance over existing algorithms.
+\
+**Implications for Practice:** The findings make clear that even quantum adversaries with limited resources pose a threat to cryptosystems in several classical settings. Further, promises of post-quantum security should be made carefully.
+\
+**Implications for Research:** The findings contradict conjecture on the complexity of such algorithms and raise new questions about the design of quantum algorithms for collisions and preimage searching when availability of quantum memory is limited. A particular feature of the new collision algorithm (a chosen image prefix) limits its complexity improvements - could a further optimized algorithm not relying on this feature be developed?
