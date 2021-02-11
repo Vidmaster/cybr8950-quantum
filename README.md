@@ -5,11 +5,10 @@ Quantum computers have the world on the brink of a second computing revolution. 
 In highly critical communications systems, such as those used to initiate a military action, messages must have guaranteed delivery, must not be tampered with, and must be authenticated and correct. These systems must not allow for false messages, as these could lead to widespread loss of life in the worst case, so non-repudiation is a primary concern. Our goal in this project is to identify the best ways for a critical system to send confidential messages with a guarantee of integrity and non-repudiation in a world where quantum computers are prevalent and capable. These cryptographic mechanisms may include quantum key distribution, quantum digital signatures, and quantum-resistant encryption algorithms performed on a classical computer.
 
 ## Project Goals
-1. Evaluate the current state of quantum cryptography, including key distribution, encryption, and digital signatures
-2. Evaluate the impacts of quantum computing on existing cryptographic protocols
-3. Identify quantum and/or post-quantum protocols which provide confidentiality, integrity, and non-repudiation of messages
-4. Provide a set of recommendations regarding secure communications in a post-quantum world
-5. Implement a proof of concept quantum key distribution protocol suitable for use with current encryption algorithms
+1. Research the impacts of quantum computing on the security of today's commonly used cryptographic protocols, such as AES, RSA, and SHA-256, to determine which are still capable of serving their intended purpose and which must be replaced by quantum or post-quantum solutions.
+2. Evaluate the current state of quantum cryptography, including key distribution, encryption, hashing, and digital signatures, to identify the most promising protocols with regards to confidentiality, integrity, and non-repudiation.
+3. Assess the viability of the most promising protocols for use in a real world scenario against sophisticated adversaries in which authenticated and correct messaging is of the utmost importance, implementing proof of concept versions of protocols where feasible.
+4. Provide a set of recommendations regarding secure communications in a post-quantum world.
 
 ## Project Merit
 Encryption is omnipresent in modern life, with uses ranging from internet browsing to medical devices, wireless car keys to nuclear control systems. Quantum computing threatens almost all current encryption protocols in one way or another, whether by effectively weakening key strength, or breaking the algorithm entirely. As such, an understanding of the significance of quantum computing and new cryptographic protocols is critical, with impacts in areas ranging from personal privacy to national security.
@@ -39,14 +38,15 @@ Our team has identified the following risks to the successful completion of this
 
 
 # Methodology
-## Literature Review
-Briefly discuss methodology and keywords used once complete
+## Initial Literature Review
+Briefly discuss research question, methodology, and keywords used once complete.
 
-The [full literature review is available here](LiteratureReview.md)
+Our [initial literature review is available here](LiteratureReview.md)
 
-## Technical Implementation Plan
-Details of technical implementation plan or a link if it's too long
+## Initial Technical Plan
+Details of technical plan or a link if it's too long.
 
+Our [initial technical plan is available here](TechnicalPlan.md)
 
 # Resources Needed
 We have identified the following resources as necessary for the successful completion of this project:
