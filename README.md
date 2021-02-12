@@ -53,9 +53,10 @@ We have identified the following resources as necessary for the successful compl
 
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
-|Some resource| No | Bob | Some description  |
-|e.g. PLC unit | Yes | Gary | A programmable logic controller from Siemens for investigation.|
-
+|Qiskit| No | Bryan | A quantum computing open source framework that uses a python interface  |
+|e.g. PLC unit | Yes | Casey | A programmable logic controller from Siemens for investigation.|
+|e.g. PLC unit | Yes | Henry | A programmable logic controller from Siemens for investigation.|
+|e.g. PLC unit | Yes | Zexi | A programmable logic controller from Siemens for investigation.|
 
 # Presentation
 Link to slides and video here when available
