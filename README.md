@@ -56,7 +56,7 @@ We have identified the following resources as necessary for the successful compl
 |Qiskit| No | Bryan | A quantum computing open source framework that uses a python interface.  |
 |e.g. PLC unit | Yes | Casey | A programmable logic controller from Siemens for investigation.|
 |Qiskit | No | Henry | A quantum computing open source framework that uses a python interface.|
-|Qnatt | No | Zexi | A project planning chart. |
+|Gantt | No | Zexi | A project planning chart. |
 
 # Presentation
 Link to slides and video here when available
