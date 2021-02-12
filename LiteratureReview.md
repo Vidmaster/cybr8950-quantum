@@ -163,9 +163,9 @@ Template:
 \
 **Lessons Learned:** More specially, the Quasi-real-time QKD could keep the absolutely secure of the quantum key after it has been generated in a dedicated time period, so they proposed the Virtual QKP to store quantum keys in different virtual space which is corresponding to separate secret key path
 \
-**Implications for Practice:** Multi-Path Based Quasi-real-time QKD can have the absolute secure QKD.
+**Implications for Practice:** Multi-Path Based Quasi-Real-Time QKD to enhance the security of QKD.
 \
-**Implications for Research:** QKD can keep the quantum key absolutely secure for a predetermined time period.
+**Implications for Research:** Quasi-Real-Time QKD can keep the quantum key absolutely secure for a predetermined time period.
 
 3.  **Citation:** W. Yu, Y. Zhou, X. Zhou, L. Wang and S. Chen, "Study on StatisticalAnalysis Method of Decoy-state Quantum Key Distribution with Finite-length Data," 2020 IEEE 4th Information Technology, Networking, Electronic and Automation Control Conference (ITNEC), Chongqing, China, 2020, pp. 2435-2440, doi: 10.1109/ITNEC48623.2020.9084715.
 \
