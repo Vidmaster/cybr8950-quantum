@@ -163,7 +163,7 @@ Template:
 \
 **Lessons Learned:** More specially, the Quasi-real-time QKD could keep the absolutely secure of the quantum key after it has been generated in a dedicated time period, so they proposed the Virtual QKP to store quantum keys in different virtual space which is corresponding to separate secret key path
 \
-**Implications for Practice:** Multi-Path Based Quasi-Real-Time QKD to enhance the security of QKD.
+**Implications for Practice:** Multi-Path Based Quasi-real-time QKD can have the absolute secure QKD.
 \
 **Implications for Research:** QKD can keep the quantum key absolutely secure for a predetermined time period.
 
