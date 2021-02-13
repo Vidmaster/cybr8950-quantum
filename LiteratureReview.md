@@ -234,11 +234,11 @@
 \
 **Problem Statement:** Classical cryptography achieves information-theorhetically secure message authentication via universal hash functions and requires secure key distribution where keys are at least twice as long as the tag. It may be possible that integrity, data origin authentication, and non-repudiation can be better achieved with quantum cryptographic methods.
 \
-**Research Question(s):** Do QMACs offer an advantage over classical methods for message authentication?
+**Research Question(s):** Do Quantum Message Authentication Codes (QMACs) offer an advantage over classical methods for message authentication?
 \
 **Contribution:** The findings of this study may serve as a benchmark for future research in this area. It asserts that certain known QMAC schemes are inferior to their classical counterparts and, thus, further research should be focused on other sets of schemes.
 \
-**Rationale:** Simple comparisons between various characteristics of QMAC and MAC schemes, constrained by frameworks presented by the authors, form the conclusion for this study.
+**Rationale:** Simple comparisons between various characteristics of QMAC and Message Authentication Code (MAC) schemes, constrained by frameworks presented by the authors, form the conclusion for this study.
 \
 **Investigative Approach:** Researchers devise a general theoretical framework for unconditionally secure prepare-and-measure QMACs that follows closely with that by which they analyzed classical MACs.
 \
@@ -255,7 +255,7 @@
 \
 **Research Question(s):** How can binary classical messages be authenticated using quantum authentication mechanisms?
 \
-**Contribution:** The presented QMAC protocols were, at the time, the first to promise data origin authentication and integrity and may still be the only, under the provided constraints, to claim an advantage over classical Wegman-Carter authentication.
+**Contribution:** The presented Quantum Message Authentication Code (QMAC) protocols were, at the time, the first to promise data origin authentication and integrity and may still be the only, under the provided constraints, to claim an advantage over classical Wegman-Carter authentication.
 \
 **Rationale:** The researchers performed security analysis of the presented protocols for attacks that they felt were most dire at the time: the no-message attack, and the message attack, which are akin to the impersonation and substitution attacks, respectively.
 \
