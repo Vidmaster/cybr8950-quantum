@@ -1,6 +1,5 @@
 # Quantum Communications and Cryptography Literature Review
 
-
 ## Quantum Intro
 1. **Citation:** Rieffel, E., & Polak, W. (2000). An introduction to quantum computing for non-physicists. ACM Computing Surveys (CSUR), 32(3), 300-335.
 \
@@ -115,7 +114,7 @@
 \
 **Problem Statement:** This is a paper published at 2018 that mainly describes the several QKD protocols structure like BB84, B92, and BBM92 and its usages
 \
-**Research Question(s):** At the beginning, this article defines background of each protocol along with visual elaboration. 
+**Research Question(s):** At the beginning, this article defines background of each protocol along with visual elaboration.
 \
 **Contribution:** Then, they have done a simulation to examine which protocolabove has the most reliable photon exchanging rate. In their simulation, theyhave compared three results while these three QKD protocols have been eavesdropped by a third party to check how many keys can be received and how many errors can occur during the transmission.
 \
@@ -219,5 +218,3 @@
 **Implications for Practice:** This signature scheme could be used for signing quantum messages, but it is not useful for signing classical messages. One interesting circuit introduced (to me at least) in this paper was the quantum swap test, which checks the equality of two qubits without measuring either of them.
 \
 **Implications for Research:** A major takeaway is that unconditionally secure quantum signatures for quantum messages are impossible. Another is that quantum one-way functions like those used in RSA are difficult to establish, though rotation operators are promising candidates and function in this manner under certain constraints.
-
-## Another Topic
