@@ -76,19 +76,20 @@ Template:
 \
 **Problem Statement:** Classical cryptography achieves information-theorhetically secure message authentication via universal hash functions and requires secure key distribution where keys are at least twice as long as the tag. It may be possible that integrity, data origin authentication, and non-repudiation can be better achieved with quantum cryptographic methods.
 \
-**Research Question(s):** Do quantum resources offer an advantage over classical methods for message authentication?
+**Research Question(s):** Do QMACs offer an advantage over classical methods for message authentication?
 \
-**Contribution:**
+**Contribution:** The findings of this study may serve as a benchmark for future research in this area. It asserts that certain known QMAC schemes are inferior to their classical counterparts and, thus, further research should be focused on other sets of schemes.
 \
-**Rationale:**
+**Rationale:** Simple comparisons between various characteristics of QMAC and MAC schemes, constrained by frameworks presented by the authors, form the conclusion for this study.
 \
-**Investigative Approach:**
+**Investigative Approach:** Researchers devise a general theorhetical framework for unconditionally secure prepare-and-measure QMACs that follows closely with that by which they analyzed classical MACs.
 \
-**Lessons Learned:**
+**Lessons Learned:** The authors found that a broad class of symmetric prepare-and-measure QMACs, even under ideal conditions, do not perform better than their classical counterparts, which contradicts conjecture in previous work. Key length increases linearly, rather than logarithmically as in classical schemes with similar capabilities.
 \
-**Implications for Practice:**
+**Implications for Practice:** Practically, the results of this study suggest that classical MACs are still superior to QMACs for ensuring integrity, data origin authentication, and non-repudiation. To date, only highly-constrained models have found similar performance of QMACs compared to their classical counterparts.
 \
-**Implications for Research:**
+**Implications for Research:** Research regarding whether QMACs offer advantages over classical MACs now has a base under this study's constraints. The authors acknowledge that further research may involve the use of physical unclonable functions with quantum readout.
+
 
 4. **Citation:** M. Curty and D. J. Santos, “Quantum authentication of classical messages,” Phys. Rev. A, vol. 64, no. 6, p. 062309, Nov. 2001, doi: 10.1103/PhysRevA.64.062309.
 \
@@ -96,17 +97,17 @@ Template:
 \
 **Research Question(s):** How can binary classical messages be authenticated using quantum authentication mechanisms?
 \
-**Contribution:**
+**Contribution:** The presented QMAC protocols were, at the time, the first to promise data origin authentication and integrity and may still be the only, under the provided contraints, to claim an advantage over classical Wegman-Carter authentication.
 \
-**Rationale:**
+**Rationale:** The researchers performed security analysis of the presented protocols for attacks that they felt were most dire at the time: the no-message attack, and the message attack, which are akin to the impersonation and substitution attacks, respectively.
 \
-**Investigative Approach:**
+**Investigative Approach:** This study proposes a simple QMAC protocol, including necessary conditions for avoiding forgery, and analyzes its security against common attacks. The researchers acknowledge the "perfect" conditions under which this protocol is analyzed, and suggest that further analysis under non-perfect conditions is necessary.
 \
-**Lessons Learned:**
+**Lessons Learned:** The researchers identify a set of quantum authentication protocols that, using a single qubit as the authentication key, allow for the successful authentication of classical messages with probability of forgery less than one. This protocol also provides the possibility of key reuse, though not with guaranteed security.
 \
-**Implications for Practice:**
+**Implications for Practice:** The conditions under which these protocols were developed and analyzed do not translate well to real-world applications.
 \
-**Implications for Research:**
+**Implications for Research:** As acknowledged by the authors, additional research into the security of these protocols under real-world conditions is needed. With further research, the constraints imposed on these protocols should be extended to allow for longer messages and optimal selection of the publicly-known unitary operation (UE).
 
 ## Quantum Intro
 1. **Abstract:** This paper explains how Quantum mechanics was adapted to be used in Quantum Computing by Peter Shor in 1994. Shor’s Quantum algorithm is a polynomial time algorithm, used in factoring integers. After Shor’s Algorithm showed that Quantum algorithms derived from Quantum mechanics could be used in Quantum Computers. A race to see if more Quantum mechanics could be used to create an algorithm for Quantum Computer.Quantum Computing potential to far exceed current computational powers by Quantum parallelism. This paper shows the increase of space is needed to increase computational power, with Quantum Computing the increase of space is exponential increased because of parallelism. Quantum Mechanics such as photon Polarization, Bra/Ket Notation and State Spaces are discussed in this paper. The most common Quantum Algorithms and Quantum environments are discussed in this paper. If you need a Quantum Computing term or algorithm explained in a way that makes sense for Non-Physicists this is a good reference paper. \
