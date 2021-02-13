@@ -126,6 +126,25 @@ Consumer Application of Quantum Computing is a good source for see where Quantum
 5. **Abstract:** In Ying’s paper it talks about what Quantum Computing can do compared to standard Computing. A Quantum Algorithm was found that could find a single search query in a unsorted database in square root time of common computers. This Quantum algorithm could also do prime factorization. Querying a database and prime factorization is very lucrative to company’s and this generated an interest in Quantum Computing. As interest grew for Quantum computing so did interest grow for a Quantum Turing Machine, the first viable options was created by Deutsch in 1985. To make a A.I. Quantum Computer Quantum algorithms need to be written and Quantum Computer Architecture has to be created. Quantum programming to make changes and interact with the machine. All this infrastructure has to be created and most of it has. The issues is that Quantum Computingprocessing power is not capable yet to run these program to thoroughly test them. This paper expands on the potential applications of Quantum in AI \
 **Citation:** Ying, M. (2010). Quantum computation, quantum theory and AI. Artificial Intelligence, 174(2), 162-176.
 
+6. **Citation:** Ablayev, Farid et al. “Quantum Fingerprinting and Quantum Hashing. Computational and Cryptographical Aspects.” Baltic Journal of Modern Computing 4.4 (2016): 860–. Web.
+\
+**Problem Statement:** Quantum fingerprinting and hashing methods have a short research history relative to their classical counterparts. The state of the art is continuially evolving with respest to these protocols.
+\
+**Research Question(s):** What is the state of the art for quantum fingerprinting and hashing?
+\
+**Contribution:** The authors present a summary of today's most relevant advances in quantum fingerprinting and hashing.
+\
+**Rationale:** This study addresses its primary goal by reviewing historical and recent advances in quantum cryptography as it applies to fingerprinting and hashing. The authors frequently identify iterations of and improvements to previous work that have formed the current state of the art.
+\
+**Investigative Approach:** The authors review literature that describes recent efforts for the development of quantum fingerprinting and hashing schemes.
+\
+**Lessons Learned:** Improvements to quantum fingerprinting, the mapping of classical data to a quantum state that identifies the original data, have largely been based on (Buhrman et al., 2001) and can be efficiently applied in read-once quantum branching programs. Quantum hashing extends quantum fingerprinting and must satisfy the one-way and collision resistance properties.
+\
+**Implications for Practice:** This study doesn't directly make any practical implications, but shows that the development of quantum cryptographic protocols for fingerprinting, and particularly hashing, have applications in mechanisms to ensure integrity and message authentication of classical messages.
+\
+**Implications for Research:** This study is a synthesis of current efforts to develop and improve quantum fingerprinting and hashing schemes. It may serve as a base for further research in these areas.
+
+
 ## Integrity and Post-Quantum Security
 1. **Citation:** A. Chailloux, M. Naya-Plasencia, and A. Schrottenloher, “An Efficient Quantum Collision Search Algorithm and Implications on Symmetric Cryptography,” in Advances in Cryptology – ASIACRYPT 2017, Cham, 2017, pp. 211–240, doi: 10.1007/978-3-319-70697-9_8.
 \
