@@ -5,11 +5,10 @@ Quantum computers have the world on the brink of a second computing revolution. 
 In highly critical communications systems, such as those used to initiate a military action, messages must have guaranteed delivery, must not be tampered with, and must be authenticated and correct. These systems must not allow for false messages, as these could lead to widespread loss of life in the worst case, so non-repudiation is a primary concern. Our goal in this project is to identify the best ways for a critical system to send confidential messages with a guarantee of integrity and non-repudiation in a world where quantum computers are prevalent and capable. These cryptographic mechanisms may include quantum key distribution, quantum digital signatures, and quantum-resistant encryption algorithms performed on a classical computer.
 
 ## Project Goals
-1. Evaluate the current state of quantum cryptography, including key distribution, encryption, and digital signatures
-2. Evaluate the impacts of quantum computing on existing cryptographic protocols
-3. Identify quantum and/or post-quantum protocols which provide confidentiality, integrity, and non-repudiation of messages
-4. Provide a set of recommendations regarding secure communications in a post-quantum world
-5. Implement a proof of concept quantum key distribution protocol suitable for use with current encryption algorithms
+1. Research the impacts of quantum computing on the security of today's commonly used cryptographic protocols, such as AES, RSA, and SHA-256, to determine which are still capable of serving their intended purpose and which must be replaced by quantum or post-quantum solutions.
+2. Evaluate the current state of quantum cryptography, including key distribution, encryption, hashing, and digital signatures, to identify the most promising protocols with regards to confidentiality, integrity, and non-repudiation.
+3. Assess the viability of the most promising protocols for use in a real world scenario against sophisticated adversaries in which authenticated and correct messaging is of the utmost importance, implementing proof of concept versions of protocols where feasible.
+4. Provide a set of recommendations regarding secure communications in a post-quantum world.
 
 ## Project Merit
 Encryption is omnipresent in modern life, with uses ranging from internet browsing to medical devices, wireless car keys to nuclear control systems. Quantum computing threatens almost all current encryption protocols in one way or another, whether by effectively weakening key strength, or breaking the algorithm entirely. As such, an understanding of the significance of quantum computing and new cryptographic protocols is critical, with impacts in areas ranging from personal privacy to national security.
@@ -19,11 +18,11 @@ Encryption is omnipresent in modern life, with uses ranging from internet browsi
 **For a more complete Timeline view, please check [Quantum Communications Timeline](https://unomaha675546.monday.com/boards/1010619675/).**
 
 ### Gantt Chart view
-![Gantt Chart of Quantum Computation Key Distribution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/main/image/Gantt%20view%20of%20Milestone%201.PNG)
+![Gantt Chart of Quantum Computation Key Distribution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/ZexiXin-patch-2/image/Genral%20view%20of%20Gantt%20chart.PNG)
 
 
 ### Timeline View
-![Overview of Quantum Computation Key Distribution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/main/image/Milestone%201%20timeline.PNG)
+![Overview of Quantum Computation Key Distribution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/ZexiXin-patch-2/image/General%20timeline.PNG)
 
 ### Task Card of GitHub Project Board
 
@@ -35,27 +34,31 @@ Our team has identified the following risks to the successful completion of this
 
 |Risk name (value)  | Impact     | Likelihood | Description | Mitigation |
 |-------------------|------------|------------|-------------|------------|
-|Some risk (40) | 8 | 5 | Some description  | How to mitigate |
+| Team Availability (73) | 8 | 9 | Members of the joint UNO and sponsor team are highly likely to become unavailable for planned and unplanned reasons during the course of this project. | Type of impact will vary but, due to small team size, the magnitude of impact could be significant and will require increased coordination to mitigate. |
+| Topic Domain (50) | 5 | 10 | As the team has already seen, the domain of this problem naturally presents issues in its density and breadth. | Focused project scope and research discipline are necessary to avoid cycles wasted on work that does not contribute to the project goals. |
+| Infrastructure and Technology (30) | 5 | 6 | The availability and capabilities of the infrastructure and technologies employed for our prototype deliverable could limit our ability to realize an ideal solution. Due in part to time contraints and available resources, the team may not identify the tools and technologies that are most likely to deliver optimal results. | Enumerating available technologies, including their application and capabilites, will ensure that the team can pivot to appropriate alternates as necessary. |
 
 
 # Methodology
-## Literature Review
-Briefly discuss methodology and keywords used once complete
+## Initial Literature Review
+Briefly discuss research question, methodology, and keywords used once complete.
 
-The [full literature review is available here](LiteratureReview.md)
+Our [initial literature review is available here](LiteratureReview.md)
 
-## Technical Implementation Plan
-Details of technical implementation plan or a link if it's too long
+## Initial Technical Plan
+Details of technical plan or a link if it's too long.
 
+Our [initial technical plan is available here](TechnicalPlan.md)
 
 # Resources Needed
 We have identified the following resources as necessary for the successful completion of this project:
 
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
-|Some resource| No | Bob | Some description  |
-|e.g. PLC unit | Yes | Gary | A programmable logic controller from Siemens for investigation.|
-
+|Qiskit| No | Bryan | A quantum computing open source framework that uses a python interface.  |
+|e.g. PLC unit | Yes | Casey | A programmable logic controller from Siemens for investigation.|
+|Qiskit | No | Henry | A quantum computing open source framework that uses a python interface.|
+|Gantt | No | Zexi | A project planning chart. |
 
 # Presentation
 Link to slides and video here when available
