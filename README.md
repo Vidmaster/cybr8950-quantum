@@ -18,7 +18,7 @@ Encryption is omnipresent in modern life, with uses ranging from internet browsi
 **For a more complete Timeline view, please check [Quantum Communications Timeline](https://unomaha675546.monday.com/boards/1010619675/).**
 
 ### Gantt Chart view
-![Gantt Chart of Quantum Computation Key Distribution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/main/image/Gantt%20view%20of%20Milestone%201.PNG)
+![Gantt Chart of Quantum Computation Key Distribution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/ZexiXin-patch-2/image/Genral%20view%20of%20Gantt%20chart.PNG)
 
 
 ### Timeline View
