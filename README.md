@@ -56,7 +56,7 @@ We have identified the following resources as necessary for the successful compl
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
 |Qiskit| No | Bryan | A quantum computing open source framework that uses a python interface.  |
-|e.g. PLC unit | Yes | Casey | A programmable logic controller from Siemens for investigation.|
+|Additional Research Needed| At this time No | Casey | Because of the nature of Quantum Computing, tools are still being researched. |
 |Qiskit | No | Henry | A quantum computing open source framework that uses a python interface.|
 |Gantt | No | Zexi | A project planning chart. |
 
