@@ -109,6 +109,23 @@
 \
 **Implications for Research:** Even though Quantum cryptography, by the nature of quantum, is more secure than current standards quantum communication is still vulnerable to Trojan horse attacks.
 
+7. **Citation:** Ablayev, Farid et al. “Quantum Fingerprinting and Quantum Hashing. Computational and Cryptographical Aspects.” Baltic Journal of Modern Computing 4.4 (2016): 860–. Web.
+\
+**Problem Statement:** Quantum fingerprinting and hashing methods have a short research history relative to their classical counterparts. The state of the art is continually evolving with respect to these protocols.
+\
+**Research Question(s):** What is the state of the art for quantum fingerprinting and hashing?
+\
+**Contribution:** The authors present a summary of today's most relevant advances in quantum fingerprinting and hashing.
+\
+**Rationale:** This study addresses its primary goal by reviewing historical and recent advances in quantum cryptography as it applies to fingerprinting and hashing. The authors frequently identify iterations of and improvements to previous work that have formed the current state of the art.
+\
+**Investigative Approach:** The authors review literature that describes recent efforts for the development of quantum fingerprinting and hashing schemes.
+\
+**Lessons Learned:** Improvements to quantum fingerprinting, the mapping of classical data to a quantum state that identifies the original data, have largely been based on (Buhrman et al., 2001) and can be efficiently applied in read-once quantum branching programs. Quantum hashing extends quantum fingerprinting and must satisfy the one-way and collision resistance properties.
+\
+**Implications for Practice:** This study doesn't directly make any practical implications, but shows that the development of quantum cryptographic protocols for fingerprinting, and particularly hashing, have applications in mechanisms to ensure integrity and message authentication of classical messages.
+\
+**Implications for Research:** This study is a synthesis of current efforts to develop and improve quantum fingerprinting and hashing schemes. It may serve as a base for further research in these areas.
 
 
 ## Quantum Encryption
