@@ -22,7 +22,7 @@ Encryption is omnipresent in modern life, with uses ranging from internet browsi
 
 
 ### Timeline View
-![Overview of Quantum Computation Key Distribution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/main/image/Milestone%201%20timeline.PNG)
+![Overview of Quantum Computation Key Distribution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/ZexiXin-patch-2/image/General%20timeline.PNG)
 
 ### Task Card of GitHub Project Board
 
