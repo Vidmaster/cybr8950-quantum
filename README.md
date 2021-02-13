@@ -34,19 +34,18 @@ Our team has identified the following risks to the successful completion of this
 
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
-| Team Availability (73) | 8 | 9 | Members of the joint UNO and sponsor team are highly likely to become unavailable for planned and unplanned reasons during the course of this project. Type of impact will vary but, due to small team size, the magnitude of impact could be significant and will require increased coordination to mitigate. |
+| Team Availability (72) | 8 | 9 | Members of the joint UNO and sponsor team are highly likely to become unavailable for planned and unplanned reasons during the course of this project. Type of impact will vary but, due to small team size, the magnitude of impact could be significant and will require increased coordination to mitigate. |
 | Topic Domain (50) | 5 | 10 | As the team has already seen, the domain of this problem naturally presents issues in its density and breadth. Focused project scope and research discipline are necessary to avoid cycles wasted on work that does not contribute to the project goals. |
 | Infrastructure and Technology (30) | 5 | 6 | The availability and capabilities of the infrastructure and technologies employed for our prototype deliverable could limit our ability to realize an ideal solution. Due in part to time contraints and available resources, the team may not identify the tools and technologies that are most likely to deliver optimal results. Enumerating available technologies, including their application and capabilites, will ensure that the team can pivot to appropriate alternates as necessary. |
 | State of the Art Limitations (25) | 5 | 5 | Because the goal to deliver a proof-of-concept that demonstrates real-world application of quantum schemes that ensure integrity, message authentication, and non-repudiation is highly dependent on the state of the art, any shortcomings of existing protocols will hinder the team's ability to realize a "complete" solution. As the team members are not experts in this field, and therefore unlikely to contribute truly novel solutions through research, it may need to consider re-scoping the requirements of its POC. |
 
 # Methodology
 ## Initial Literature Review
-Briefly discuss research question, methodology, and keywords used once complete.
+The initial literature review conducted by our team was broad in scope and contains a significant amount of important background material, as well as works relating to the topics of key distribution, confidentiality, integrity, and non-repudiation. Several valuable papers concerning studies similar to ours were also included, as we believe they will provide valuable guidance as we continue this project.
 
 Our [initial literature review is available here](LiteratureReview.md)
 
 ## Initial Technical Plan
-Details of technical plan or a link if it's too long.
 
 Our [initial technical plan is available here](TechnicalPlan.md)
 
@@ -55,10 +54,11 @@ We have identified the following resources as necessary for the successful compl
 
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
-|Qiskit| No | Bryan | A quantum computing open source framework that uses a python interface.  |
-|Additional Research Needed| At this time No | Casey | Because of the nature of Quantum Computing, tools are still being researched. |
-|Qiskit | No | Henry | A quantum computing open source framework that uses a python interface.|
-|Gantt | No | Zexi | A project planning chart. |
+| Qiskit | No | Bryan | A quantum computing open source framework that uses a python interface. |
+| Additional quantum simulation tools | At this time No | Casey | Because of the nature of Quantum Computing, tools are still being researched. |
+| Strawberry Fields | No | Henry | A photonic quantum computing open source framework that uses a python interface. |
+| AWS Braket | No | Henry | The AWS cloud SDK for quantum computing. Supports circuit and annealing quantum computers. |
+| Monday.com Gantt tool | No | Zexi | A project planning chart. |
 
 # Presentation
-Link to slides and video here when available
+UNO students and faculty can [view our initial project presentation here](https://use.vg/DffurR)
