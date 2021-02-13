@@ -72,6 +72,41 @@ Template:
 \
 **Implications for Research:** A major takeaway is that unconditionally secure quantum signatures for quantum messages are impossible. Another is that quantum one-way functions like those used in RSA are difficult to establish, though rotation operators are promising candidates and function in this manner under certain constraints.
 
+3. **Citation:** Georgios M. Nikolopoulos, and Marc Fischlin. “Information-Theoretically Secure Data Origin Authentication with Quantum and Classical Resources.” Cryptography 4.4 (2020): 31–. Web.
+\
+**Problem Statement:** Classical cryptography achieves information-theorhetically secure message authentication via universal hash functions and requires secure key distribution where keys are at least twice as long as the tag. It may be possible that integrity, data origin authentication, and non-repudiation can be better achieved with quantum cryptographic methods.
+\
+**Research Question(s):** Do quantum resources offer an advantage over classical methods for message authentication?
+\
+**Contribution:**
+\
+**Rationale:**
+\
+**Investigative Approach:**
+\
+**Lessons Learned:**
+\
+**Implications for Practice:**
+\
+**Implications for Research:**
+
+4. **Citation:** M. Curty and D. J. Santos, “Quantum authentication of classical messages,” Phys. Rev. A, vol. 64, no. 6, p. 062309, Nov. 2001, doi: 10.1103/PhysRevA.64.062309.
+\
+**Problem Statement:** While key distribution is a well-studied context on which to apply quantum cryptography, message authentication, the certification of message originator, and message integrity can also benefit from the use of quantum resources.
+\
+**Research Question(s):** How can binary classical messages be authenticated using quantum authentication mechanisms?
+\
+**Contribution:**
+\
+**Rationale:**
+\
+**Investigative Approach:**
+\
+**Lessons Learned:**
+\
+**Implications for Practice:**
+\
+**Implications for Research:**
 
 ## Quantum Intro
 1. **Abstract:** This paper explains how Quantum mechanics was adapted to be used in Quantum Computing by Peter Shor in 1994. Shor’s Quantum algorithm is a polynomial time algorithm, used in factoring integers. After Shor’s Algorithm showed that Quantum algorithms derived from Quantum mechanics could be used in Quantum Computers. A race to see if more Quantum mechanics could be used to create an algorithm for Quantum Computer.Quantum Computing potential to far exceed current computational powers by Quantum parallelism. This paper shows the increase of space is needed to increase computational power, with Quantum Computing the increase of space is exponential increased because of parallelism. Quantum Mechanics such as photon Polarization, Bra/Ket Notation and State Spaces are discussed in this paper. The most common Quantum Algorithms and Quantum environments are discussed in this paper. If you need a Quantum Computing term or algorithm explained in a way that makes sense for Non-Physicists this is a good reference paper. \
