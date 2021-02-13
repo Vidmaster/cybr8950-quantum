@@ -34,7 +34,9 @@ Our team has identified the following risks to the successful completion of this
 
 |Risk name (value)  | Impact     | Likelihood | Description | Mitigation |
 |-------------------|------------|------------|-------------|------------|
-|Some risk (40) | 8 | 5 | Some description  | How to mitigate |
+| Team Availability (73) | 8 | 9 | Members of the joint UNO and sponsor team are highly likely to become unavailable for planned and unplanned reasons during the course of this project. | Type of impact will vary but, due to small team size, the magnitude of impact could be significant and will require increased coordination to mitigate. |
+| Topic Domain (50) | 5 | 10 | As the team has already seen, the domain of this problem naturally presents issues in its density and breadth. | Focused project scope and research discipline are necessary to avoid cycles wasted on work that does not contribute to the project goals. |
+| Infrastructure and Technology (30) | 5 | 6 | The availability and capabilities of the infrastructure and technologies employed for our prototype deliverable could limit our ability to realize an ideal solution. Due in part to time contraints and available resources, the team may not identify the tools and technologies that are most likely to deliver optimal results. | Enumerating available technologies, including their application and capabilites, will ensure that the team can pivot to appropriate alternates as necessary. |
 
 
 # Methodology
