@@ -1,6 +1,6 @@
 # Initial Technical Plan
 The field of quantum cryptography is very broad, with numerous theoretical and practical concerns that will influence the nature and scope of our work on this project. As alluded to by our project goals, we have set out to answer the following research questions:
-* **RQ1:** What are the impacts of quantum computing on today's commonly used cryptographic protocols for hashing, symmetric, and asymmetric encryption? Which of these protocols or classes of protocols need to be replaced by quantum or post-quantum solutions?
+* **Research Question 1:** What are the impacts of quantum computing on today's commonly used cryptographic protocols for hashing, symmetric, and asymmetric encryption? Which of these protocols or classes of protocols need to be replaced by quantum or post-quantum solutions?
 * **RQ2:** What are the most promising techniques, either quantum or a hybrid of classical and quantum techniques, for maintaining the confidentiality of data at rest and in motion?
 * **RQ3:** What are ..., for verifying the integrity of data received?
 * **RQ4:** What are ..., for ensuring the authenticity and non-repudiation of messages?
