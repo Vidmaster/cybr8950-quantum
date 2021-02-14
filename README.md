@@ -18,11 +18,11 @@ Encryption is omnipresent in modern life, with uses ranging from internet browsi
 **For a more complete Timeline view, please check [Quantum Communications Timeline](https://unomaha675546.monday.com/boards/1010619675/).**
 
 ### Gantt Chart view
-![Gantt Chart of Quantum Computation Key Distribution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/main/image/Gantt%20view%20of%20Milestone%201.PNG)
+![Gantt Chart of Quantum Computation Key Distribution Project](image/Genral%20view%20of%20Gantt%20chart.PNG)
 
 
 ### Timeline View
-![Overview of Quantum Computation Key Distribution Project](https://github.com/Vidmaster/cybr8950-quantum/blob/main/image/Milestone%201%20timeline.PNG)
+![Overview of Quantum Computation Key Distribution Project](image/General%20timeline.PNG)
 
 ### Task Card of GitHub Project Board
 
@@ -40,14 +40,14 @@ Our team has identified the following risks to the successful completion of this
 | State of the Art Immaturity (25) | 5 | 5 | Because the goal to deliver a proof-of-concept that demonstrates real-world application of quantum schemes that ensure integrity, message authentication, and non-repudiation is highly dependent on the state of the art, any shortcomings of existing protocols will hinder the team's ability to realize a "complete" solution. As the team members are not experts in this field, and therefore unlikely to contribute truly novel solutions through research, it may need to consider re-scoping the requirements of its POC. |
 | Ineffective Assessment (15) | 3 | 5 | Criteria by which the team's POC is assessed must be carefully selected and defined to ensure effective measurement of its performance and real-world viability. Criteria derived from existing studies may prove to be ineffective due to the scope or domain in which they were originally applied. The team should carefully consider criteria from a variety of existing studies - both quantum and classical - to ensure the capabilities of the POC are properly measured and accurately reported. |
 
+
 # Methodology
 ## Initial Literature Review
-Briefly discuss research question, methodology, and keywords used once complete.
+The initial literature review conducted by our team was broad in scope and contains a significant amount of important background material, as well as works relating to the topics of key distribution, confidentiality, integrity, and non-repudiation. Several valuable papers concerning studies similar to ours were also included, as we believe they will provide valuable guidance as we continue this project.
 
 Our [initial literature review is available here](LiteratureReview.md)
 
 ## Initial Technical Plan
-Details of technical plan or a link if it's too long.
 
 Our [initial technical plan is available here](TechnicalPlan.md)
 
@@ -56,10 +56,11 @@ We have identified the following resources as necessary for the successful compl
 
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
-|Qiskit| No | Bryan | A quantum computing open source framework that uses a python interface.  |
-|e.g. PLC unit | Yes | Casey | A programmable logic controller from Siemens for investigation.|
-|Qiskit | No | Henry | A quantum computing open source framework that uses a python interface.|
-|Gantt | No | Zexi | A project planning chart. |
+| Qiskit | No | Bryan | A quantum computing open source framework that uses a python interface. |
+| Additional quantum simulation tools | At this time No | Casey | Because of the nature of Quantum Computing, tools are still being researched. |
+| Strawberry Fields | No | Henry | A photonic quantum computing open source framework that uses a python interface. |
+| AWS Braket | No | Henry | The AWS cloud SDK for quantum computing. Supports circuit and annealing quantum computers. |
+| Monday.com Gantt tool | No | Zexi | A project planning chart. |
 
 # Presentation
-Link to slides and video here when available
+UNO students and faculty can [view our initial project presentation here](https://use.vg/DffurR)

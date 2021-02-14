@@ -1,4 +1,4 @@
-# Quantum Communications and Cryptography Literature Review
+# Quantum Communications and Cryptography Initial Literature Review
 
 ## Quantum Intro
 1. **Citation:** Rieffel, E., & Polak, W. (2000). An introduction to quantum computing for non-physicists. ACM Computing Surveys (CSUR), 32(3), 300-335.
@@ -17,7 +17,7 @@
 \
 **Implications for Practice:** This paper is more for understanding concepts.
 \
-**Implications for Research:** To help give ideas on what would work and the properimplementations.
+**Implications for Research:** To help give ideas on what would work and the proper implementations.
 
 2. **Citation:** Humble, T. (2018). Consumer applications of quantum computing: A promising approach for secure computation, trusted data storage, and efficient applications. IEEE Consumer Electronics Magazine, 7(6), 8-14. 54, no. 2, pp. 614–629, Feb. 2015, doi: 10.1007/s10773-014-2254-y.
 \
@@ -59,7 +59,7 @@
 \
 **Problem Statement:** In this paper by Bauckhage et al, Adiabatic Quantum Computers are using in binary optimization problems.
 \
-**Research Question(s):** In this paper they use Lloyd’s procedure to create k-meansclustering and using Adiabatic Quantum Computer using Ising model to solve the same clustering problem.
+**Research Question(s):** In this paper they use Lloyd’s procedure to create k-means clustering and using Adiabatic Quantum Computer using Ising model to solve the same clustering problem.
 \
 **Contribution:** Lloyd’s procedure is the most commonly used to solve clustering. In this paper Adiabatic Quantum Computing is shown to be a better at solving the binary clustering using the Ising model.
 \
@@ -79,7 +79,7 @@
 \
 **Research Question(s):** A Quantum Algorithm was found that could find a single search query in a unsorted database in square root time of common computers. This Quantum algorithm could also do prime factorization. How can quantum automata be used to automate this?
 \
-**Contribution:** This paper research’s the interplay with quantum theory and AI. As quantum computing grows the ability to create an intrinsic connection with sematic analysis and quantum mechanics will change but right now Adiabatic Quantum Computing is the best algorithm with the best change to create a semantic analysis.
+**Contribution:** This paper research’s the interplay with quantum theory and AI. As quantum computing grows the ability to create an intrinsic connection with semantic analysis and quantum mechanics will change but right now Adiabatic Quantum Computing is the best algorithm with the best change to create a semantic analysis.
 \
 **Rationale:** The paper uses current quantum algorithms to show which method of Quantum computing could be used to create an AI.
 \
@@ -109,6 +109,36 @@
 \
 **Implications for Research:** Even though Quantum cryptography, by the nature of quantum, is more secure than current standards quantum communication is still vulnerable to Trojan horse attacks.
 
+7. **Citation:** Ablayev, Farid et al. “Quantum Fingerprinting and Quantum Hashing. Computational and Cryptographical Aspects.” Baltic Journal of Modern Computing 4.4 (2016): 860–. Web.
+\
+**Problem Statement:** Quantum fingerprinting and hashing methods have a short research history relative to their classical counterparts. The state of the art is continually evolving with respect to these protocols.
+\
+**Research Question(s):** What is the state of the art for quantum fingerprinting and hashing?
+\
+**Contribution:** The authors present a summary of today's most relevant advances in quantum fingerprinting and hashing.
+\
+**Rationale:** This study addresses its primary goal by reviewing historical and recent advances in quantum cryptography as it applies to fingerprinting and hashing. The authors frequently identify iterations of and improvements to previous work that have formed the current state of the art.
+\
+**Investigative Approach:** The authors review literature that describes recent efforts for the development of quantum fingerprinting and hashing schemes.
+\
+**Lessons Learned:** Improvements to quantum fingerprinting, the mapping of classical data to a quantum state that identifies the original data, have largely been based on (Buhrman et al., 2001) and can be efficiently applied in read-once quantum branching programs. Quantum hashing extends quantum fingerprinting and must satisfy the one-way and collision resistance properties.
+\
+**Implications for Practice:** This study doesn't directly make any practical implications, but shows that the development of quantum cryptographic protocols for fingerprinting, and particularly hashing, have applications in mechanisms to ensure integrity and message authentication of classical messages.
+\
+**Implications for Research:** This study is a synthesis of current efforts to develop and improve quantum fingerprinting and hashing schemes. It may serve as a base for further research in these areas.
+
+
+## Quantum Encryption
+1. **Citation:** A. Amerimehr and M. H. Dehkordi, “Quantum Symmetric Cryptosystem Based on Algebraic Codes,” IEEE Communications Letters, vol. 22, no. 9, pp. 1746–1749, Sep. 2018, doi: 10.1109/LCOMM.2018.2844245. \
+**Problem Statement:** A good encryption scheme must provide confidentiality, integrity, authenticity, and non-repudiation. Many existing quantum secure direct communication (QSDC) schemes do not provide all of these attributes, or are subject to various attacks due to the public announcement of measurement bases. \
+**Research Question(s):** Can a quantum encryption scheme be created which meets the goals of confidentiality, integrity, and authentication without the existing problems of public basis announcement, back and forth transmission of qubits, and susceptibility to photon splitting attacks? \
+**Contribution:** The authors propose a quantum scheme for performing symmetric encryption without the use of a public channel, which provides confidentiality, authentication, integrity, and non-repudiation. The scheme also allows for key reuse and does not require quantum error correction. The scheme does require the pre-sharing of an encryption key, though this could be accomplished with other QKD methods. \
+**Rationale:** The paper uses a mathematical justification for its claims, as well as providing an analysis of the probability of successfully faking a message or eavesdropping. \
+**Investigative Approach:** The authors present a theoretical approach to their encryption system along with a simple example of it being used. They do not provide an experimental implementation, but the scheme appears simple enough that it could be implemented without much difficulty. \
+**Lessons Learned:** This study is one of a few that were located pertaining to quantum encryption. It appears to be a very important proposal, as the single protocol can provide all the attributes of a good encryption system without the need for multiple keys or separate protocols to provide integrity and authentication. \
+**Implications for Practice:** Based on the paper it seems as though this scheme could be practical to implement and provide major benefits for its users. The major downside is that it requires the use of a key with length equal to the length of the message, though it is possible that this could be generated with a quantum-resistant stream cipher seeded by a shorter key exchanged through QKD. \
+**Implications for Research:** This paper references a few other quantum encryption schemes which could guide further research, as well as showing that it is possible to combine confidentiality, integrity, authenticity, and non-repudiation into one protocol, which is a significant finding for our purposes.
+
 ## Quantum Key Distribution
 1. **Citation:** A. I. Nurhadi and N. R. Syambas, "Quantum Key Distribution (QKD) Protocols: A Survey," 2018 4th International Conference on Wireless and Telematics (ICWT), Nusa Dua, 2018, pp. 1-5, doi: 10.1109/ICWT.2018.8527822.
 \
@@ -116,9 +146,9 @@
 \
 **Research Question(s):** At the beginning, this article defines background of each protocol along with visual elaboration.
 \
-**Contribution:** Then, they have done a simulation to examine which protocolabove has the most reliable photon exchanging rate. In their simulation, theyhave compared three results while these three QKD protocols have been eavesdropped by a third party to check how many keys can be received and how many errors can occur during the transmission.
+**Contribution:** Then, they have done a simulation to examine which protocol above has the most reliable photon exchanging rate. In their simulation, they have compared three results while these three QKD protocols have been eavesdropped by a third party to check how many keys can be received and how many errors can occur during the transmission.
 \
-**Rationale:** The authors state that Shor’s algorithm poses a threat to current conventional cryptography and that QKD protocols have been provento provide unconditional communication security.
+**Rationale:** The authors state that Shor’s algorithm poses a threat to current conventional cryptography and that QKD protocols have been proven to provide unconditional communication security.
 \
 **Investigative Approach:** The authors use quantum mechanical laws and quantum algorithms to generate Quantum Key Distribution Protocols.
 \
@@ -218,3 +248,79 @@
 **Implications for Practice:** This signature scheme could be used for signing quantum messages, but it is not useful for signing classical messages. One interesting circuit introduced (to me at least) in this paper was the quantum swap test, which checks the equality of two qubits without measuring either of them.
 \
 **Implications for Research:** A major takeaway is that unconditionally secure quantum signatures for quantum messages are impossible. Another is that quantum one-way functions like those used in RSA are difficult to establish, though rotation operators are promising candidates and function in this manner under certain constraints.
+
+3. **Citation:** Georgios M. Nikolopoulos, and Marc Fischlin. “Information-Theoretically Secure Data Origin Authentication with Quantum and Classical Resources.” Cryptography 4.4 (2020): 31–. Web.
+\
+**Problem Statement:** Classical cryptography achieves information-theorhetically secure message authentication via universal hash functions and requires secure key distribution where keys are at least twice as long as the tag. It may be possible that integrity, data origin authentication, and non-repudiation can be better achieved with quantum cryptographic methods.
+\
+**Research Question(s):** Do Quantum Message Authentication Codes (QMACs) offer an advantage over classical methods for message authentication?
+\
+**Contribution:** The findings of this study may serve as a benchmark for future research in this area. It asserts that certain known QMAC schemes are inferior to their classical counterparts and, thus, further research should be focused on other sets of schemes.
+\
+**Rationale:** Simple comparisons between various characteristics of QMAC and Message Authentication Code (MAC) schemes, constrained by frameworks presented by the authors, form the conclusion for this study.
+\
+**Investigative Approach:** Researchers devise a general theoretical framework for unconditionally secure prepare-and-measure QMACs that follows closely with that by which they analyzed classical MACs.
+\
+**Lessons Learned:** The authors found that a broad class of symmetric prepare-and-measure QMACs, even under ideal conditions, do not perform better than their classical counterparts, which contradicts conjecture in previous work. Key length increases linearly, rather than logarithmically as in classical schemes with similar capabilities.
+\
+**Implications for Practice:** Practically, the results of this study suggest that classical MACs are still superior to QMACs for ensuring integrity, data origin authentication, and non-repudiation. To date, only highly-constrained models have found similar performance of QMACs compared to their classical counterparts.
+\
+**Implications for Research:** Research regarding whether QMACs offer advantages over classical MACs now has a base under this study's constraints. The authors acknowledge that further research may involve the use of physical uncloneable functions with quantum readout.
+
+
+4. **Citation:** M. Curty and D. J. Santos, “Quantum authentication of classical messages,” Phys. Rev. A, vol. 64, no. 6, p. 062309, Nov. 2001, doi: 10.1103/PhysRevA.64.062309.
+\
+**Problem Statement:** While key distribution is a well-studied context on which to apply quantum cryptography, message authentication, the certification of message originator, and message integrity can also benefit from the use of quantum resources.
+\
+**Research Question(s):** How can binary classical messages be authenticated using quantum authentication mechanisms?
+\
+**Contribution:** The presented Quantum Message Authentication Code (QMAC) protocols were, at the time, the first to promise data origin authentication and integrity and may still be the only, under the provided constraints, to claim an advantage over classical Wegman-Carter authentication.
+\
+**Rationale:** The researchers performed security analysis of the presented protocols for attacks that they felt were most dire at the time: the no-message attack, and the message attack, which are akin to the impersonation and substitution attacks, respectively.
+\
+**Investigative Approach:** This study proposes a simple QMAC protocol, including necessary conditions for avoiding forgery, and analyzes its security against common attacks. The researchers acknowledge the "perfect" conditions under which this protocol is analyzed, and suggest that further analysis under non-perfect conditions is necessary.
+\
+**Lessons Learned:** The researchers identify a set of quantum authentication protocols that, using a single qubit as the authentication key, allow for the successful authentication of classical messages with probability of forgery less than one. This protocol also provides the possibility of key reuse, though not with guaranteed security.
+\
+**Implications for Practice:** The conditions under which these protocols were developed and analyzed do not translate well to real-world applications.
+\
+**Implications for Research:** As acknowledged by the authors, additional research into the security of these protocols under real-world conditions is needed. With further research, the constraints imposed on these protocols should be extended to allow for longer messages and optimal selection of the publicly-known unitary operation (UE).
+
+## Integrity and Post-Quantum Security
+1. **Citation:** A. Chailloux, M. Naya-Plasencia, and A. Schrottenloher, “An Efficient Quantum Collision Search Algorithm and Implications on Symmetric Cryptography,” in Advances in Cryptology – ASIACRYPT 2017, Cham, 2017, pp. 211–240, doi: 10.1007/978-3-319-70697-9_8.
+\
+**Problem Statement:** Using an amplitude amplification technique, quantum collision and multi-target preimage search algorithms can be improved to attack symmetric cryptography.
+\
+**Research Question(s):** Can existing collision and preimage search algorithms (quantum and classical) that require prohibitive amounts of resources be improved to realize the true capabilities of quantum adversaries?
+\
+**Contribution:** The new quantum algorithm for collision and multi-target preimage search improves attacks against hash functions, key recovery in multi-user settings, and collision attacks on block cipher operation modes. This algorithm may also be used as building blocks for more complex cryptanalysis.
+\
+**Rationale:** The presented algorithm improve the on the time complexity of existing algorithms while requiring less quantum memory. Comparisons between new and existing algorithms are made under several conditions concerning the availability of quantum memory, ultimately suggesting that the new algorithm is superior unless quantum memory becomes as cheap as classical memory and parallelization is hard.
+\
+**Investigative Approach:** The presented algorithm extends previous work and was aimed at achieving improvements in time complexity with small quantum memory. Comparison of complexity is made against existing classical and quantum algorithms under various conditions to assert the improved performance of the new algorithm.
+\
+**Lessons Learned:** The new algorithm achieved, at the time, what was thought to be the fastest solution over classic algorithms with linear quantum space. The ability to parallelize the algorithm further improves its performance over existing algorithms.
+\
+**Implications for Practice:** The findings make clear that even quantum adversaries with limited resources pose a threat to cryptosystems in several classical settings. Further, promises of post-quantum security should be made carefully.
+\
+**Implications for Research:** The findings contradict conjecture on the complexity of such algorithms and raise new questions about the design of quantum algorithms for collisions and preimage searching when availability of quantum memory is limited. A particular feature of the new collision algorithm (a chosen image prefix) limits its complexity improvements - could a further optimized algorithm not relying on this feature be developed?
+
+## Research Methodology
+1. **Citation:** N. Jorstad and L. T. Smith, “Cryptographic Algorithm Metrics,” in Proceedings of the 20th National Information Systems Security Conference, Baltimore, Maryland, United States, 1997 [Online]. Available: https://csrc.nist.gov/csrc/media/publications/conference-paper/1997/10/10/proceedings-of-the-20th-nissc-1997/documents/128.pdf \
+**Problem Statement:** At the time of this paper's publication, no currently accepted metrics for the measurement and specification of cryptographic strength existed. \
+**Research Question(s):** Can a standard objective framework for the measurement and specification of cryptographic algorithm strength be created? \
+**Contribution:** While the authors did not produce a numeric and objective framework for the classification of cryptographic algorithms, they propose a subjective and qualitative scale which can still provide value, as well as providing insight into their classification and analysis process. \
+**Rationale:** While the work is somewhat dated due to the selection of algorithms only including those that existed in 1997, the classification scheme is useful. The authors cite several problems with the study, including a limited numer of algorithms, limited depth of investigation, lack of exposure to comment and criticism, and a limited technical literature review. \
+**Investigative Approach:** The work relies heavily on known characteristics of existing algorithms and the ways in which they might be compared. The paper focuses on civilian encryption algorithms meant for use in commercial products and operating in Electronic Code Book (ECB) mode only. It covers symmetric and asymmetric algorithms. \
+**Lessons Learned:** Classifying a diverse set of algorithms quantitatively is very difficult, as they can have very different attributes, and a small difference can have massive security implications for one protocol and no impact on another. \
+**Implications for Practice:** The proposed standard from this paper does not appear to have been widely adopted, though it may have inspired work done in other standards, such as the Federal Information Protection Standard (FIPS). \
+**Implications for Research:** Despite the problems mentioned in the Rationale section, the approach presented in this paper serves as a useful starting point in the evaluation of quantum cryptographic protocols and provides a number of factors to consider.
+
+2. **Citation:** E. Khan, S. Meraj, and M. M. Khan, “Security Analysis of QKD Protocols: Simulation Comparison,” in 2020 17th International Bhurban Conference on Applied Sciences and Technology (IBCAST), 2020, pp. 383–388, doi: 10.1109/IBCAST47879.2020.9044522. \
+**Problem Statement:** Since the discovery of quantum key distribution, many protocols have been developed. These protocols have not been compared in depth, however, especially with regards to simulation and implementation. \
+**Research Question(s):** How do the various quantum key distribution protocols compare in theoretical aspects and when simulated? \
+**Contribution:** This paper provides a simple quantitative comparison of 11 different QKD schemes across six different factors, as well as a simulated analysis of the BB84 and 2-dimensional KBM09 protocols. \
+**Investigative Approach:** This paper takes more of a survey approach, as all of the properties of the various protocols are apparent from the original sources in which they are proposed. The experimental comparison is limited to only evaluating the Quantum Bit Error Rate (QBER) reliability of two protocols. \
+**Lessons Learned:** The authors provide a simulated verification of the predicted error rates for the two reviewed protocols. \
+**Implications for Practice:** None are obvious from the paper beyond the verification of predicted error rates of the simulated protocols. \
+**Implications for Research:** This paper provides useful guidance on the ways protocols can be compared both theoretically and experimentally, and will serve us well as we work on the classification of the quantum cryptography schemes that we are reviewing.
