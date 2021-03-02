@@ -30,7 +30,7 @@ jupyter-lab
 ```
 This should bring up a browser window pointed at http://localhost:8888/lab with shortcuts to create a Python 3 Notebook, a terminal, and several other choices.
 
-![Empty Jupyter Lab](images/emptylab.png)
+![Empty Jupyter Lab](image/emptylab.png)
 
 Select the Python 3 Notebook, and enter the following in the first box:
 ```python
@@ -43,7 +43,7 @@ print(cirq.google.Foxtail)
 ```
 Press the play button and you should receive output like the below:
 
-![Success](images/success.png)
+![Success](image/success.png)
 
 You're all set and ready to start developing quantum applications!
 
