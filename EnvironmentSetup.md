@@ -119,7 +119,7 @@ circuit.draw()
 ```
 
 This will create a simple circuit that produces an entangled Bell pair, run it 1000 times in a local quantum simulator, and then print the counts and draw the circuit. On completion, you should receive output similar to the following: \
-`Total count for 00 and 11 are: {'00': 495, '11': 505}`
+`Total count for 00 and 11 are: {'00': 495, '11': 505}` \
 ![Circuit output](image/bell-pair-circuit.png)
 
 Next, we can execute the same circuit on a real quantum computer. In a new cell in the notebook, enter the following to load your IBM Quantum account, and list the available backends:
@@ -151,7 +151,7 @@ retrieved_job = backend.retrieve_job(job.job_id())
 job_monitor(retrieved_job, 30)
 ```
 
-The job monitor will update periodically, and after a minute or so will provide an ETA: `Job Status: job is queued (42) [Est. wait time: 57 min 44 sec]`. Once the job monitor reports `Job Status: job has successfully run`, enter the following to retrieve and visualize the results:
+The job monitor will update periodically, and after a minute or so will provide an ETA: `Job Status: job is queued (42) [Est. wait time: 57 min 44 sec]`. Note that jobs submitted to the IBMQ backend can also be [monitored on the jobs page online](https://quantum-computing.ibm.com/jobs). Once the job monitor reports `Job Status: job has successfully run`, enter the following to retrieve and visualize the results:
 ```python
 result = retrieved_job.result()
 counts = result.get_counts(circuit)
