@@ -80,6 +80,8 @@ IBMQ.load_account()
 in a script. At this point you are ready to run a sample circuit in a local simulator and on a quantum computer.
 
 ### Sample Circuit Execution
+For reference, the code from the following section is also available in a Jupyter notebook which can be found at [Qiskit-Demo.ipynb](Qiskit-Demo.ipynb).
+
 Create a new Python 3 notebook in Jupyter Lab, and enter the following code from Qiskit's [getting started](https://qiskit.org/documentation/getting_started.html) document in the first cell and execute it with the play button:
 ```python
 iimport numpy as np
