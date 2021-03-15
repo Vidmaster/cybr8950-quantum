@@ -46,7 +46,7 @@ using real quantum related devices.
     4.	After the measures, Alice and Bob uncover their bases (keep obtained results secretly).
     5.	They will have the common key except the case while same bases they have used.
 *	**Visual Illustration:**   
-    ![E91](/image/e91(1).png)
+    ![E91](/image/e91(2).png)
 
 
 ## MDI-QKD:  Transmission distance: 404 km (Best choice in current protocol)
@@ -64,7 +64,7 @@ using real quantum related devices.
     1.	Both Alice and Bob prepare phase randomized weak coherent pulses (WCPs) in the four possible BB84 polarization states and send them to an untrusted relay Charlie (or Eve) located in the middle. 
     2.	Once the quantum communication phase is completed, Charles uses a public channel to announce the events where he has obtained a successful outcome in the relay, including his measurement result as well. 
 *	**Visual Illustration:**   
-    ![MDI-QKD](/image/mdiqkd(1).png)
+    ![MDI-QKD](/image/mdiqkd(2).png)
 
 
 ## B92 
