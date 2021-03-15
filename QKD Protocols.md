@@ -25,7 +25,7 @@ using real quantum related devices.
     5.	They both select a part of result to compare to see if the error rate is above or under the requirement. 
     6.	By using the bits of two match identical bases, they both have defined a random succession of bits that will do as OTP for transmission. 
 *	**Visual Illustration:**
-![BB84](/images/bb84.png)
+    ![BB84](/image/bb84.png)
 
 ## Protocol E91: Same with BB84
 *	**Definition:**   
@@ -46,7 +46,7 @@ using real quantum related devices.
     4.	After the measures, Alice and Bob uncover their bases (keep obtained results secretly).
     5.	They will have the common key except the case while same bases they have used.
 *	**Visual Illustration:** 
-![E91](/images/e91.png)
+    ![E91](/image/e91.png)
 
 
 ## MDI-QKD:  Transmission distance: 404 km (Best choice in current protocol)
@@ -64,7 +64,7 @@ using real quantum related devices.
     1.	Both Alice and Bob prepare phase randomized weak coherent pulses (WCPs) in the four possible BB84 polarization states and send them to an untrusted relay Charlie (or Eve) located in the middle. 
     2.	Once the quantum communication phase is completed, Charles uses a public channel to announce the events where he has obtained a successful outcome in the relay, including his measurement result as well. 
 *	**Visual Illustration:** 
-![MDI-QKD](/images/mdiqkd.png)
+    ![MDI-QKD](/image/mdiqkd.png)
 
 
 ## B92 
