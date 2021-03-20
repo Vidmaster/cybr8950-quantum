@@ -207,6 +207,6 @@ Additional installation and setup instructions can be found [here](https://githu
 
 ### Jupyter Lab
 Install Jupyter Lab by running the command `pip install jupyterlab`, then verify that the install was successful by running `jupyter-lab`. A blank document should appear like this:
-![Empty Jupyter Lab](images/emptylab.png)
+![Empty Jupyter Lab](image/emptylab.png)
 
 Additional installation and setup instructions can be found [here](https://jupyter.org/install) if needed.
