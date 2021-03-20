@@ -1,0 +1,12 @@
+name: quantum_fun
+channels:
+  - defaults
+dependencies:
+  - python=3
+  - pip=21
+  - pip:
+    - jupyterlab
+    - qiskit
+    - qiskit[visualization]
+    - cirq
+    - cirq[contrib]
