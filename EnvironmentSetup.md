@@ -2,7 +2,9 @@
 This guide assumes a basic familiarity with the command line or terminal and the ability to understand and execute simple Python scripts. Following the recommended installation path should take approximately 15 minutes before being able to use Qiskit to build and submit a simple "hello world" example circuit for execution on a real quantum computer.
 
 ## Recommended Setup Process With Anaconda
-The easiest way to install everything needed for quantum simulation is to use Anaconda or Miniconda. The [Anaconda installation guide](https://docs.anaconda.com/anaconda/install/) should be followed for your particular operating system first.
+The easiest way to install everything needed for quantum simulation is to use Anaconda or Miniconda. The [Anaconda installation guide](https://docs.anaconda.com/anaconda/install/) should be followed for your particular operating system first. If using Windows, we recommend selecting the top checkbox to add Anaconda to your PATH.
+
+**WINDOWS NOTES:** When installing on Windows, you will need to download and install the [Visual C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) in order for the environment to build successfully. Once this installation has completed and Anaconda has been installed, you will then need to run the command `conda install pywin32`. After these steps have been completed, the remaining steps should work correctly. If the steps below still do not work, we recommend following the manual installation steps at the end of this document.
 
 Once Anaconda has been successfully installed, download this [environment.yml](Resources/environment.yml) file and run the command
 ```
