@@ -86,7 +86,7 @@ For reference, the code from the following section is also available in a Jupyte
 
 Create a new Python 3 notebook in Jupyter Lab, and enter the following code from Qiskit's [getting started](https://qiskit.org/documentation/getting_started.html) document in the first cell and execute it with the play button:
 ```python
-iimport numpy as np
+import numpy as np
 from qiskit import(QuantumCircuit, execute, Aer, IBMQ, assemble, transpile)
 from qiskit.visualization import plot_histogram
 from qiskit.providers.ibmq.job import job_monitor
