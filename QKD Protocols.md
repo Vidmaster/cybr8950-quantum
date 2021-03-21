@@ -88,7 +88,7 @@ using real quantum related devices.
     3.	 Alice contact with Bob in a public channel to tell what bases he has used to measure qubits.
     4.	 Bob need to expose some uncentain measurement to Alice, so Alice can ignore those.
 *	**Visual Illustration:**   
-    ![b92](/image/)
+    ![b92](/image/ )
 
 
 
