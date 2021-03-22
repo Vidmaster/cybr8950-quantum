@@ -27,7 +27,7 @@ using real quantum related devices.
 *	**Visual Illustration:**  
     ![BB84](/image/bb84(1).png)
 
-## Protocol E91: Same with BB84
+## Protocol E91: 200 km with multiplexing and 240km without it
 *	**Definition:**   
     Developed by Arthur Ekert in 1991. This protocol is based on quantum entanglement. To start, entangled photons are produced, so if Alice and Bob measure the photon’s 
     orientation (whether is vertical or horizontal) they will always obtain opposite responses, the same way as if they measure diagonal bases. The individual results are
@@ -67,28 +67,29 @@ using real quantum related devices.
     ![MDI-QKD](/image/mdiqkd(2).png)
 
 
-## B92 
+## B92 Protocol:  200 km with multiplexing and 240km without it
 *	**Definition:**   
     B92 protocol is simplified version of BB84 protocol that proposed by Bennett in 1992. B92 protocol only use one of two polarization non-orthogonal states while in BB84 use     one of four photon polarization states. The B92 protocol utilizes most of the BB84 scheme steps that are based upon the polarization of the states, but it takes a critical     action when Bob measures Alice’s qubits in two bases to produce two states. 
 *	**Advantages:**  
-    1. A single non-orthogonal basis can be used for encoding and decoding QKD protocol without affecting the ability to detecting the presence of eavesdropper
+    1. A single non-orthogonal basis can be used for encoding and decoding QKD protocol without affecting the ability to detecting the presence of eavesdropper. In other              words, it can be considered as an "unconditional secure" over either lossy channel or noisy channel. 
     2. While the receiver selected the wrong bases, he/she will not measure anything, and this mechanism is known as erasure. 
 *	**Disadvantages:**  
-    
+     The B92 is using strong reference pulse, so the attacker can obtain more detail about the encryption key in B92 than BB84 protocol based on the dedicated error level. As
+     a result, the security level of B92 is explicitly lower than BB84.
 *	**Basic Process:** 
     1.	Alice initiates N random qubits through two bases (×, +) and two non-orthogonal states |0> and |1>.
-    2.	Bob measures the received qubits in random basis follow with some patterns shown below. (? represent to 🡒/🡕)
+    2.	Bob measures the received qubits in random basis follow with some patterns shown below. (? represent whatever Alice sent)
         |  Alice Bases | + | + | × | × |
         | ------------ | - | - | - | - | 
-        | Alice Corner | 0 | 0 | 45 | 45 |
-        |  Alice Sent  | 🡒 | 🡒 | 🡕 | 🡕 |
+        | Alice Qubit  | 0 | 0 | 1 | 1 |
+        |  Alice Sent  | 🡒 | ? | ? | 🡕 |
         |   Bob Bases  | + | × | + | × |
-        |  Bob Corner  | 90 | -45 | 90 | -45 |
-        | Bob Received | 🡒 |  ? | ? | 🡕 | 
-    3.	 Alice contact with Bob in a public channel to tell what bases he has used to measure qubits.
+        | Bob Received | 🡔 | 🡒 | 🡕 | 🡑 | 
+   
+    3.	 Alice contact with Bob in a public channel to tell what qubit result that.
     4.	 Bob need to expose some uncentain measurement to Alice, so Alice can ignore those.
 *	**Visual Illustration:**   
-    ![b92](/image/ )
+    ![B92](/image/b92.svg)
 
 
 
