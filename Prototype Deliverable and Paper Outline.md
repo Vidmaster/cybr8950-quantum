@@ -1,7 +1,7 @@
 # Milestone 2: The Outline of Quantum Communication Network along with Optimzed Cryptographic Algorithm
 
 ## Due Date
-March 19th by class time
+Apr 2nd 
 
 **Submit a GitHub repo link to canvas**
 **Add Dr. Hale as a collaborator on your GitHub Repo**
@@ -16,13 +16,9 @@ March 19th by class time
 - [Presentation](#presentation)
 
 ## Environment setup -  Establish needed tooling and work environments
-Regardless of the type of project you are working on, you will need some work environments. You should determine tooling needs, document their usage/installation/configuration and include that information in your project repostiory.
-
-### Submission materials
-Include your setup instructions in your main repository-level README.md file. The instructions should provide a clear pathway to setting up and configuring needed tools to begin working on your project. For maker-based projects this might be software dependencies and coding libraries or establishing some build files (in something like Docker). For breaker-based projects it might be creating VMs or docker containers to containerize the target of investigations.
+The Environment setup instruction will be available [here](https://github.com/Vidmaster/cybr8950-quantum/blob/main/EnvironmentSetup.md).
 
 #### Grading Criteria
-Your team will be graded as follows:
 
 | | Meets expectations (27-30) | Some Issues (16-26) | Does not meet expectations (0-15)|
 |---|---|---|---|
@@ -31,55 +27,56 @@ Your team will be graded as follows:
 
 **Total 60 points.**
 
-## Project realization - Clearly document your efforts towards achieving the project methodology.
+## Project realization - Clearly document your efforts towards achieving the project methodology. Progress Report (04/02/2021)
  1. Identify tasks achieved from your backlog
  2. Document the product increments (an agile term for the things you produce) generated in this milestone
  3. Bind tasks, code artifacts, and documentation together
 
-
-The bulk of the project work is centered on realizing the methodology you defined in Milestone 1. Here, you should identify the tasks you have achieved, document the product or other intellectual/applied outcomes that have resulted from your efforts, and bind your tasks to the outcomes and documentation you have produced so far.
-Be productive, work towards completing your process, and document what you do. Documentation towards project realization will come in the form an intermediate project report. Your project report should be placed on GitHub in the same repository you used for Milestone 1. Create a new markdown file that contains the following.
-
-```markdown
-# Progress Report (03/19/2021)
 ## Overview
 (insert brief overview of efforts made)
 
-(Duplicated from Henry's writting) As implementation of quantum cryptography protocols is a major goal of our project, we also need to consider which quantum programming languages or frameworks should be used. 
+As implementation of quantum cryptography protocols is a major goal of our project, we also need to consider which quantum programming languages or frameworks should be used. 
 To a large extent this selection may be guided by the protocols themselves, as the different languages we have examined are suited for some uses over others. D-Wave provides
 annealing quantum computers, while IBM provides gate-based quantum computers, and Xanadu provides photonic quantum computers. Each of these has its own strengths and 
 weaknesses, and requires a different programming language to operate. As we consider the implementation of protocols further, we are likely to discover that some are simply 
 not possible for us to implement currently, and others require implementation on a specific type of quantum hardware.
 
 ## Outcomes
-(brief overview of outcomes - what did you achieve?)
-
- (Duplicated from Henry's writting) We anticipate that we will be able to make a set of recommendations toward confidentiality, integrity, and non-repudiation based on the state of the art in quantum 
+ We anticipate that we will be able to make a set of recommendations toward confidentiality, integrity, and non-repudiation based on the state of the art in quantum 
  cryptography, as well as demonstrating their usability where implementations are feasible. We believe this research will be valuable, as there are many possible approaches 
  being proposed for quantum cryptography, but very few broad surveys of all these diverse techniques. Through the enumeration, classification, and evaluation of various 
  protocols, we hope to guide both researchers looking to iterate on past work and practitioners looking for ways to begin implementing quantum cryptography.
 
 also list them out like this:
-* outcome 1: e.g. Twin-field Quasi-real-time Quantum Key Distribution system can be used to enhance both security and efficiency during the transmission. (tentative)
-* outcome 2: e.g. Optimized Decoy-state Quantum Key Distribution can be used for long distance comminication with lower latency. (tentative)
+* outcome 1: Twin-field Quasi-real-time Quantum Key Distribution system can be used to enhance both security and efficiency during the transmission. (tentative)
+* outcome 2: Optimized Decoy-state Quantum Key Distribution can be used for long distance comminication with lower latency. (tentative)
+* outcome 3: BB84 QKD protocol is a most achieveable and reliable scheme to use in a short distance communication (around 200 ~ 240 km) with valid transmission rate. 
+* outcome 4: Measurement device independent QKD (MDI-QKD) is the most secure QKD protocl in current stage becuase it remove all (existing and yet to be discovered) detector side channels.
+* outcome 5:   
+
+We have analyzed several QKD protocols to seek out which one is best use or appropriate to our client. More comparison information can be visited at [here](https://github.com/Vidmaster/cybr8950-quantum/blob/main/QKD%20Protocols.md). 
 
 ## Hinderances
-(insert brief discussion of challenges encountered)
+(insert brief discussion of challenges encountered)  
 
-(Duplicated from Henry's writting) As implementation of quantum cryptography protocols is a major goal of our project, we also need to consider which quantum programming languages or frameworks should be used. 
+As implementation of quantum cryptography protocols is a major goal of our project, we also need to consider which quantum programming languages or frameworks should be used. 
 To a large extent this selection may be guided by the protocols themselves, as the different languages we have examined are suited for some uses over others. D-Wave provides 
-annealing quantum computers, while IBM provides gate-based quantum computers, and Xanadu provides photonic quantum computers. Each of these has its own strengths and weaknesses,
-and requires a different programming language to operate. As we consider the implementation of protocols further, we are likely to discover that some are simply not possible for 
-us to implement currently, and others require implementation on a specific type of quantum hardware.
+annealing quantum computers, while IBM provides gate-based quantum computers, and Xanadu provides photonic quantum computers. Each of these has its own strengths and weaknesses,and requires a different programming language to operate. As we consider the implementation of protocols further, we are likely to discover that some are simply not possible for us to implement currently, and others require implementation on a specific type of quantum hardware.
 
 ## Ongoing Risks
-(address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)
+(address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)  
 
+In the second milestone, the risks we have encountered are mostly remaining the same as we have in the milestone one. In general, our team has identified the following risks to the successful completion of this project:
 
-```
+|Risk name (value)  | Impact     | Likelihood | Description |
+|-------------------|------------|------------|-------------|
+| Team Unavailability (73) | 8 | 9 | Members of the joint UNO and sponsor team are highly likely to become unavailable for planned and unplanned reasons during the course of this project. Type of impact will vary but, due to small team size, the magnitude of impact could be significant and will require increased coordination to mitigate. |
+| Inexperience with Topic Domain (50) | 5 | 10 | As the team has already seen, the domain of this problem naturally presents issues in its density and breadth. Focused project scope and research discipline are necessary to avoid cycles wasted on work that does not contribute to the project goals. |
+| Infrastructure and Technology Incompatibility (30) | 5 | 6 | The availability and capabilities of the infrastructure and technologies employed for our prototype deliverable could limit our ability to realize an ideal solution. Due in part to time contraints and available resources, the team may not identify the tools and technologies that are most likely to deliver optimal results. Enumerating available technologies, including their application and capabilites, will ensure that the team can pivot to appropriate alternates as necessary. |
+| State of the Art Immaturity (25) | 5 | 5 | Because the goal to deliver a proof-of-concept that demonstrates real-world application of quantum schemes that ensure integrity, message authentication, and non-repudiation is highly dependent on the state of the art, any shortcomings of existing protocols will hinder the team's ability to realize a "complete" solution. As the team members are not experts in this field, and therefore unlikely to contribute truly novel solutions through research, it may need to consider re-scoping the requirements of its POC. |
+| Ineffective Assessment (15) | 3 | 5 | Criteria by which the team's POC is assessed must be carefully selected and defined to ensure effective measurement of its performance and real-world viability. Criteria derived from existing studies may prove to be ineffective due to the scope or domain in which they were originally applied. The team should carefully consider criteria from a variety of existing studies - both quantum and classical - to ensure the capabilities of the POC are properly measured and accurately reported. |
+| Lack of Experiment Tool (30) | 5 | 6 | Our team is needed to experiment multiple different QKD protocols, and all the QKD protocols have its own required equipments and processing environment, so it is impossible to measure the accurate result without using concrete tools in the lab examination. As a result, the team needs to pay attention on doing tests on virtual quantum simulation tool that has been developed by mature company like IBM Quantum Experience. |
 
-### Submission materials
-For this submission, you should submit your progress report as a `.md` file in your project GitHub repository
 
 #### Grading Criteria
 Your team will be graded as follows:

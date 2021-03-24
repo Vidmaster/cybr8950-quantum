@@ -18,16 +18,16 @@ using real quantum related devices.
     1.	If there is an Eavesdropper, the measurement result will be affected.   
     2.	Hard to be 100% achieved because the real QKD tools are not fully developed, so there exist security loopholes on both sender and receiver.   
 *	**Basic Process:** 
-    1.	Alice transmits a random sequence of 0s and 1s qubit, alternating the bases  and  randomly. 
-    2.	Bob receives the qubit sequence from Alice and randomly alternates the measures between bases  and . 
+    1.	Alice transmits a random sequence of 0s and 1s qubit, alternating the bases × and + randomly. 
+    2.	Bob receives the qubit sequence from Alice and randomly alternates the measures between bases × and +. 
     3.	Alice broadcasts the succession of bases used in a public channel. 
-    4.	Bob reports to Alice in what cases he was able to guess the origin scheme. 
+    4.	Bob reports to Alice in what cases he was able to guess the origin bases. 
     5.	They both select a part of result to compare to see if the error rate is above or under the requirement. 
     6.	By using the bits of two match identical bases, they both have defined a random succession of bits that will do as OTP for transmission. 
 *	**Visual Illustration:**  
     ![BB84](/image/bb84(1).png)
 
-## Protocol E91: Same with BB84
+## Protocol E91: 200 km with multiplexing and 240km without it
 *	**Definition:**   
     Developed by Arthur Ekert in 1991. This protocol is based on quantum entanglement. To start, entangled photons are produced, so if Alice and Bob measure the photon’s 
     orientation (whether is vertical or horizontal) they will always obtain opposite responses, the same way as if they measure diagonal bases. The individual results are
@@ -67,6 +67,30 @@ using real quantum related devices.
     ![MDI-QKD](/image/mdiqkd(2).png)
 
 
-## B92 
+## B92 Protocol:  200 km with multiplexing and 240km without it
+*	**Definition:**   
+    B92 protocol is simplified version of BB84 protocol that proposed by Bennett in 1992. B92 protocol only use one of two polarization non-orthogonal states while in BB84 use     one of four photon polarization states. The B92 protocol utilizes most of the BB84 scheme steps that are based upon the polarization of the states, but it takes a critical     action when Bob measures Alice’s qubits in two bases to produce two states. 
+*	**Advantages:**  
+    1. A single non-orthogonal basis can be used for encoding and decoding QKD protocol without affecting the ability to detecting the presence of eavesdropper. In other              words, it can be considered as an "unconditional secure" over either lossy channel or noisy channel. 
+    2. While the receiver selected the wrong bases, he/she will not measure anything, and this mechanism is known as erasure. 
+*	**Disadvantages:**  
+     The B92 is using strong reference pulse, so the attacker can obtain more detail about the encryption key in B92 than BB84 protocol based on the dedicated error level. As
+     a result, the security level of B92 is explicitly lower than BB84.
+*	**Basic Process:** 
+    1.	Alice initiates N random qubits through two bases (×, +) and two non-orthogonal states |0> and |1>.
+    2.	Bob measures the received qubits in random basis follow with some patterns shown below. (? represent whatever Alice sent)
+        |  Alice Bases | + | + | × | × |
+        | ------------ | - | - | - | - | 
+        | Alice Qubit  | 0 | 0 | 1 | 1 |
+        |  Alice Sent  | 🡒 | ? | ? | 🡕 |
+        |   Bob Bases  | + | × | + | × |
+        | Bob Received | 🡔 | 🡒 | 🡕 | 🡑 | 
+   
+    3.	 Alice contact with Bob in a public channel to tell what qubit result that.
+    4.	 Bob need to expose some uncentain measurement to Alice, so Alice can ignore those.
+*	**Visual Illustration:**   
+    ![B92](/image/b92.svg)
+
+
 
 ## Twin-field quantum key distribution，TF-QKD: transmission distance: 509 km
