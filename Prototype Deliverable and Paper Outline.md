@@ -52,11 +52,13 @@ also list them out like this:
 * outcome 2: Optimized Decoy-state Quantum Key Distribution can be used for long distance comminication with lower latency. (tentative)
 * outcome 3: BB84 QKD protocol is a most achieveable and reliable scheme to use in a short distance communication (around 200 ~ 240 km) with valid transmission rate. 
 * outcome 4: Measurement device independent QKD (MDI-QKD) is the most secure QKD protocl in current stage becuase it remove all (existing and yet to be discovered) detector side channels.
-* outcome 5: 
+* outcome 5:   
+
 We have analyzed several QKD protocols to seek out which one is best use or appropriate to our client. More comparison information can be visited at [here](https://github.com/Vidmaster/cybr8950-quantum/blob/main/QKD%20Protocols.md). 
 
 ## Hinderances
-(insert brief discussion of challenges encountered)
+(insert brief discussion of challenges encountered)  
+
 As implementation of quantum cryptography protocols is a major goal of our project, we also need to consider which quantum programming languages or frameworks should be used. 
 To a large extent this selection may be guided by the protocols themselves, as the different languages we have examined are suited for some uses over others. D-Wave provides 
 annealing quantum computers, while IBM provides gate-based quantum computers, and Xanadu provides photonic quantum computers. Each of these has its own strengths and weaknesses,and requires a different programming language to operate. As we consider the implementation of protocols further, we are likely to discover that some are simply not possible for us to implement currently, and others require implementation on a specific type of quantum hardware.
