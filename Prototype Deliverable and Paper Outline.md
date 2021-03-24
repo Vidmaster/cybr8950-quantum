@@ -64,7 +64,8 @@ To a large extent this selection may be guided by the protocols themselves, as t
 annealing quantum computers, while IBM provides gate-based quantum computers, and Xanadu provides photonic quantum computers. Each of these has its own strengths and weaknesses,and requires a different programming language to operate. As we consider the implementation of protocols further, we are likely to discover that some are simply not possible for us to implement currently, and others require implementation on a specific type of quantum hardware.
 
 ## Ongoing Risks
-(address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)
+(address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)  
+
 In the second milestone, the risks we have encountered are mostly remaining the same as we have in the milestone one. In general, our team has identified the following risks to the successful completion of this project:
 
 |Risk name (value)  | Impact     | Likelihood | Description |
@@ -74,6 +75,7 @@ In the second milestone, the risks we have encountered are mostly remaining the 
 | Infrastructure and Technology Incompatibility (30) | 5 | 6 | The availability and capabilities of the infrastructure and technologies employed for our prototype deliverable could limit our ability to realize an ideal solution. Due in part to time contraints and available resources, the team may not identify the tools and technologies that are most likely to deliver optimal results. Enumerating available technologies, including their application and capabilites, will ensure that the team can pivot to appropriate alternates as necessary. |
 | State of the Art Immaturity (25) | 5 | 5 | Because the goal to deliver a proof-of-concept that demonstrates real-world application of quantum schemes that ensure integrity, message authentication, and non-repudiation is highly dependent on the state of the art, any shortcomings of existing protocols will hinder the team's ability to realize a "complete" solution. As the team members are not experts in this field, and therefore unlikely to contribute truly novel solutions through research, it may need to consider re-scoping the requirements of its POC. |
 | Ineffective Assessment (15) | 3 | 5 | Criteria by which the team's POC is assessed must be carefully selected and defined to ensure effective measurement of its performance and real-world viability. Criteria derived from existing studies may prove to be ineffective due to the scope or domain in which they were originally applied. The team should carefully consider criteria from a variety of existing studies - both quantum and classical - to ensure the capabilities of the POC are properly measured and accurately reported. |
+| Lack of Experiment Tool (30) | 5 | 6 | Our team is needed to experiment multiple different QKD protocols, and all the QKD protocols have its own required equipments and processing environment, so it is impossible to measure the accurate result without using concrete tools in the lab examination. As a result, the team needs to pay attention on doing tests on virtual quantum simulation tool that has been developed by mature company like IBM Quantum Experience. |
 
 
 #### Grading Criteria
