@@ -48,11 +48,10 @@ not possible for us to implement currently, and others require implementation on
  protocols, we hope to guide both researchers looking to iterate on past work and practitioners looking for ways to begin implementing quantum cryptography.
 
 also list them out like this:
-* outcome 1: Twin-field Quasi-real-time Quantum Key Distribution system can be used to enhance both security and efficiency during the transmission. (tentative)
-* outcome 2: Optimized Decoy-state Quantum Key Distribution can be used for long distance comminication with lower latency. (tentative)
+* outcome 1: Twin-field Quasi-real-time Quantum Key Distribution system can be used to enhance both security and efficiency during the transmission. 
+* outcome 2: Optimized Decoy-state Quantum Key Distribution can be used for long distance comminication with lower latency. 
 * outcome 3: BB84 QKD protocol is a most achieveable and reliable scheme to use in a short distance communication (around 200 ~ 240 km) with valid transmission rate. 
 * outcome 4: Measurement device independent QKD (MDI-QKD) is the most secure QKD protocl in current stage becuase it remove all (existing and yet to be discovered) detector side channels.
-* outcome 5:   
 
 We have analyzed several QKD protocols to seek out which one is best use or appropriate to our client. More comparison information can be visited at [here](https://github.com/Vidmaster/cybr8950-quantum/blob/main/QKD%20Protocols.md). 
 
