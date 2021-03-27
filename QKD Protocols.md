@@ -94,3 +94,27 @@ using real quantum related devices.
 
 
 ## Twin-field quantum key distribution，TF-QKD: transmission distance: 509 km
+*	**Definition:**   
+    The twin-field (TF)-QKD protocol, proposed by Lucamarini and the other scietists. TF-QKD represents a novel QKD approach whose principal merit is to beat the point-to-         point private capacity of a lossy quantum channel, thanks to performing single-photon interference in an untrusted node. In other words, In TF-QKD the information is           encoded in the phase of the optical pulses prepared by the two users that want to establish the secure communication, and the secret key is retrieved via a single photon       interference measurement made by a user in the middle.   
+    
+*	**Advantages:**  
+    1. It can solve the PLOB bound, which focuses on finding the upper bound of security key rate. Such as, the secret key rate without quantum repeaters must satisfy R ≤              −log(1 − η).
+    2. Compare to measurement-device-independent (MDI) QKD woth using two-photon interference, TF-QKD makes use of single-photon interference to generate keys, and on average        only one photon passes through either Alice's or Bob's channel—which allows to key rate to scale with transmittance over only half the distance between Alice and Bob. 
+    3. It can ensure the security by switching probabilistically between a code mode and a test mode. Hence, the code mode is using for key generation, and the test mode is          for parameter estimation. 
+    4. This can break the distance limitation to make quantum repeater and quantum memory become practical. Such as, TF-QKD can use different phase of interference to amplify        the quantum signal, so it can be utilized at a long distance almost twice as long as traditional QKD protocols with enought security level.  
+  
+*	**Disadvantages:**  
+    1. The generation of twin optical fields mode-match system from two space-separated laser sources are difficult to construct.  
+    2. The stabilisation of the channel used during the communication has to be strictly dedicated and precise compare to original QKD protocols. 
+    3. The control systems (e.g.Weak-Coherent-Pulses(WCP) Phase-locking maintaining system; WCP Timing control system, Frequency-locking wavelengths matcher system, and              Polarization control system) are much difficult to operate between two lasers sources.   
+  
+*	**Basic Process:** 
+    1.	 Alice and Bob randomly choose code mode or test mode to make sure it satisfies the security requirement.
+    2.	 If a code mode is selected, Alice (Bob) randomly generates a key bit ka (kb) and a random number x (y) and then prepares the coherent state. 
+    3.	 Both parties send their optical pulses to the untrusted node Charlie via optical channels in a synchronized manner.
+    4.	 The central node Charlie applies a balanced beamsplitter to the incoming pulses and features two threshold detectors at its output ports 
+    5.	 The node Charlie announces the measurement outcome kc (kd) of detector Dc(Dd), corresponding to a no-click and a click event, respectively 
+    6.   Alice and Bob form their raw keys with the bits ka and kb collected when both parties chose the X-basis and node Charlie reported a click in only one detector (kc +            kd). Bob then flips his bits kb for which the click occurred in detector Dd.
+    7.   Alice and Bob perform information reconciliation and privacy amplification to extract the final secure keys. 
+*	**Visual Illustration:**   
+    ![tfqkd](/image/tfqkd.png)
