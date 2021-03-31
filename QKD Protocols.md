@@ -118,3 +118,13 @@ using real quantum related devices.
     7.   Alice and Bob perform information reconciliation and privacy amplification to extract the final secure keys. 
 *	**Visual Illustration:**   
     ![tfqkd](/image/tfqkd.png)
+    
+    
+ # Resources (Paper's Topic without links)
+ * Comparison and Analysis of BB84 and E91 Quantum Cryptography Protocols Security Strengths (Luis Cáceres Alvarez, Patricio Collao Caiconte).
+ * Research on Plug-and-Play Twin-Field Quantum Key Distribution (Chang Hoon Park, and others).
+ * Measurement device independent quantum key distribution (Hoi-Kwong Lo and others).
+ * Analysis of Secure Bit Rate for Quantum Key Distribution based on EDU-QCRY1 (Damayani Suyitno and others).
+ * Quantum Key Distribution (QKD) Protocols: A Survey (Ali Ibnun Nurhadi, Nana Rachmana Syambas).
+ * Optimized protocol for twin-field quantum key distribution (Rong Wang and the others). 
+ 
