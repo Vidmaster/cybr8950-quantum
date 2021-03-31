@@ -28,12 +28,8 @@ The Environment setup instruction will be available [here](https://github.com/Vi
 **Total 60 points.**
 
 ## Project realization - Clearly document your efforts towards achieving the project methodology. Progress Report (04/02/2021)
- 1. Identify tasks achieved from your backlog
- 2. Document the product increments (an agile term for the things you produce) generated in this milestone
- 3. Bind tasks, code artifacts, and documentation together
 
 ## Overview
-(insert brief overview of efforts made)
 
 As implementation of quantum cryptography protocols is a major goal of our project, we also need to consider which quantum programming languages or frameworks should be used. 
 To a large extent this selection may be guided by the protocols themselves, as the different languages we have examined are suited for some uses over others. D-Wave provides
@@ -41,30 +37,29 @@ annealing quantum computers, while IBM provides gate-based quantum computers, an
 weaknesses, and requires a different programming language to operate. As we consider the implementation of protocols further, we are likely to discover that some are simply 
 not possible for us to implement currently, and others require implementation on a specific type of quantum hardware.
 
+Additionally, we will put effort on concluding some concrete results with respect to Quantum Key Distribution Protocols (QKDP) that can help our client understands both advantages and disadvantages of currently existing QKDP and those basic procedures need to be executed during the communication. Hence, we did a widely research on quantum cryptographic algorithms, and we find most contemporary QKDPs are not possible to achieve because of the signal transmission channel losses, lack of ideal single photonic light source, and low detection efficiency of receiver etc. As a result, our goal is to seek out a QKDP that can be easy to implement with modern technological equipment and infrastructure, and it can also provide fairly sufficient security and transmission rate.
+
 ## Outcomes
  We anticipate that we will be able to make a set of recommendations toward confidentiality, integrity, and non-repudiation based on the state of the art in quantum 
  cryptography, as well as demonstrating their usability where implementations are feasible. We believe this research will be valuable, as there are many possible approaches 
  being proposed for quantum cryptography, but very few broad surveys of all these diverse techniques. Through the enumeration, classification, and evaluation of various 
  protocols, we hope to guide both researchers looking to iterate on past work and practitioners looking for ways to begin implementing quantum cryptography.
 
-also list them out like this:
-* outcome 1: Twin-field Quasi-real-time Quantum Key Distribution system can be used to enhance both security and efficiency during the transmission. (tentative)
-* outcome 2: Optimized Decoy-state Quantum Key Distribution can be used for long distance comminication with lower latency. (tentative)
+Current Outcome of QKD selection will be listed below:
+* outcome 1: Twin-field Quasi-real-time Quantum Key Distribution system can be used to enhance both security and efficiency during the transmission. 
+* outcome 2: Optimized Decoy-state Quantum Key Distribution can be used for long distance comminication with lower latency. 
 * outcome 3: BB84 QKD protocol is a most achieveable and reliable scheme to use in a short distance communication (around 200 ~ 240 km) with valid transmission rate. 
 * outcome 4: Measurement device independent QKD (MDI-QKD) is the most secure QKD protocl in current stage becuase it remove all (existing and yet to be discovered) detector side channels.
-* outcome 5:   
 
 We have analyzed several QKD protocols to seek out which one is best use or appropriate to our client. More comparison information can be visited at [here](https://github.com/Vidmaster/cybr8950-quantum/blob/main/QKD%20Protocols.md). 
 
 ## Hinderances
-(insert brief discussion of challenges encountered)  
 
 As implementation of quantum cryptography protocols is a major goal of our project, we also need to consider which quantum programming languages or frameworks should be used. 
 To a large extent this selection may be guided by the protocols themselves, as the different languages we have examined are suited for some uses over others. D-Wave provides 
 annealing quantum computers, while IBM provides gate-based quantum computers, and Xanadu provides photonic quantum computers. Each of these has its own strengths and weaknesses,and requires a different programming language to operate. As we consider the implementation of protocols further, we are likely to discover that some are simply not possible for us to implement currently, and others require implementation on a specific type of quantum hardware.
 
 ## Ongoing Risks
-(address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)  
 
 In the second milestone, the risks we have encountered are mostly remaining the same as we have in the milestone one. In general, our team has identified the following risks to the successful completion of this project:
 
@@ -138,7 +133,8 @@ You should produce diagrams relevant to your project. Diagrams will be graded as
 
 
 ## Issue Tracking and Planning  - Stay organized with approrpriate tracking of tasks
-You should continue to document tasking related to your project following milestone 1. Use the issue tracker and/or Kanban board features in your GitHub repo to track your progress. I hope to see a sufficient number, specificity, and allocation of tasks to each person. 
+The issue tracker can be accessed by using this [link](https://github.com/Vidmaster/cybr8950-quantum/projects) .
+
 
 ### Graditing criteria
 This category will be graded as follows:
