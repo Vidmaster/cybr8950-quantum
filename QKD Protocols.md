@@ -6,7 +6,7 @@ between two network nodes or even more users. Since the real implementation of Q
 QKD practical. In the below list, we have provided a general view of those different QKD protocols that either are under analyzing by other researchers or have been experimented 
 using real quantum related devices. 
 
-## BB84: Transmission distance: 200 km with multiplexing and 240km without it
+## BB84: Transmission distance: 200 km with multiplexing and 240km without it (More stable choice and can be implemented by current exising infrastructure)
 *	**Definition:**   
     It is proposed in 1984 by Bennett and Brassard – that’s where the name comes from. The idea is to encode every bit of the secret key into the polarization state of a single
     photon. Because the polarization state of a single photon cannot be measured without destroying this photon, this information will not be available to the eavesdropper 
@@ -49,14 +49,14 @@ using real quantum related devices.
     ![E91](/image/e91(2).png)
 
 
-## MDI-QKD:  Transmission distance: 404 km (Best choice in current protocol)
+## MDI-QKD:  Transmission distance: 404 km (Best choice but hard to achieve becuase it required extra configuration on transmission channel)
 *	**Definition:**   
     Measurement device independent QKD (MDI-QKD) as a simple solution to remove all (existing and yet to be discovered) detector side channels, arguably the most critical 
     art of the implementation, and show that it has both excellent security and performance.
 *	**Advantages:**  
     It offers an immense security advantage over standard security proofs such as Inamori-L¨utkenhaus-Mayers (ILM) and GottesmanLo-L¨utkenhaus-Preskill (GLLP). Furthermore,
     compared to standard security proofs, it has a key advantage of removing all detector side channels, and it can double the transmission distance covered with conventional
-    QKD schemes using WCPs. Moreover, it has a rather high key generation rate which is comparable to that of standard security proofs. 
+    QKD schemes using Weak-Coherent-Pulses (WCPs). Moreover, it has a rather high key generation rate which is comparable to that of standard security proofs. 
 *	**Disadvantages:**  
     Only a minor drawback because Alice’s and Bob’s signal sources can be attenuated laser pulses prepared by themselves. Their states can thus be experimentally verified in 
     a fully protected laboratory environment outside Eve’s interference through random sampling.
@@ -93,7 +93,7 @@ using real quantum related devices.
 
 
 
-## Twin-field quantum key distribution，TF-QKD: transmission distance: 509 km
+## Twin-field quantum key distribution，TF-QKD: transmission distance: 509 km (Fair choice but extremely difficult to achieve, since it requires too much control system during transmission)
 *	**Definition:**   
     The twin-field (TF)-QKD protocol, proposed by Lucamarini and the other scietists. TF-QKD represents a novel QKD approach whose principal merit is to beat the point-to-         point private capacity of a lossy quantum channel, thanks to performing single-photon interference in an untrusted node. In other words, In TF-QKD the information is           encoded in the phase of the optical pulses prepared by the two users that want to establish the secure communication, and the secret key is retrieved via a single photon       interference measurement made by a user in the middle.   
     
