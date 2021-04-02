@@ -42,9 +42,9 @@ Henry TODO
             3. Explanation of criteria and why each was selected - TODO for team: Fill these in
                 1. QKD criteria -
                 2. Confidentiality criteria -
-                3. Integrity criteria 
+                3. Integrity criteria
                     1. Verifiable
-                    2. Reliable 
+                    2. Reliable
                     3. One transmission or multiple
                     4. Security principle (Hashing, Encryption, Digital Signature, etc.)
                     5. Target (classical or quantum data)

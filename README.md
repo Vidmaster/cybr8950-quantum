@@ -1,4 +1,7 @@
 # Quantum Communications and Cryptography
+
+A progress report as of April 2nd [can be viewed here](prototype-progress-report.md)
+
 ## Executive Summary
 Quantum computers have the world on the brink of a second computing revolution. By using the unique properties of subatomic particles, they will be able to solve complex problems in minutes which would take a classical computer thousands of years. Foremost among these problems are many which are foundational to modern cryptography, such as the prime factorization problem at the core of internet security. While current quantum computers do not have the level of sophistication necessary to break today's encryption systems, it is only a matter of time before they gain that capability. We are undertaking this project to explore the implications of quantum computing on cryptography in order to stay ahead of this anticipated threat and preserve the security of sensitive communications as used for everything from internet browsing to military instructions.
 
@@ -17,12 +20,9 @@ Encryption is omnipresent in modern life, with uses ranging from internet browsi
 # Timeline
 **For a more complete Timeline view, please check [Quantum Communications Timeline](https://unomaha675546.monday.com/boards/1010619675/).**
 
-### Gantt Chart view
-![Gantt Chart of Quantum Computation Key Distribution Project](image/Genral%20view%20of%20Gantt%20chart.PNG)
+[Gantt Chart of Quantum Computation Key Distribution Project](image/Genral%20view%20of%20Gantt%20chart.PNG)
 
-
-### Timeline View
-![Overview of Quantum Computation Key Distribution Project](image/General%20timeline.PNG)
+[Overview of Quantum Computation Key Distribution Project](image/General%20timeline.PNG)
 
 ### Task Card of GitHub Project Board
 
@@ -62,5 +62,7 @@ We have identified the following resources as necessary for the successful compl
 | AWS Braket | No | Henry | The AWS cloud SDK for quantum computing. Supports circuit and annealing quantum computers. |
 | Monday.com Gantt tool | No | Zexi | A project planning chart. |
 
-# Presentation
-UNO students and faculty can [view our initial project presentation here](https://use.vg/DffurR)
+# Presentations
+Our team's [initial project presentation can be viewed here](https://use.vg/DffurR)
+
+Our [second project presentation can be viewed here]()
