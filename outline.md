@@ -42,8 +42,13 @@ Henry TODO
             3. Explanation of criteria and why each was selected - TODO for team: Fill these in
                 1. QKD criteria -
                 2. Confidentiality criteria -
-                3. Integrity criteria -
-                4. Non-Repudiation criteria
+                3. Integrity criteria 
+                    1. Verifiable
+                    2. Reliable 
+                    3. One transmission or multiple
+                    4. Security principle (Hashing, Encryption, Digital Signature, etc.)
+                    5. Target (classical or quantum data)
+                5. Non-Repudiation criteria
                     1. Blind or arbitrated
                     2. Reusable
                     3. One transmission or multiple
@@ -56,7 +61,7 @@ Henry TODO
     2. Selection of algorithms
         1. QKD - https://github.com/Vidmaster/cybr8950-quantum/blob/main/QKD%20Protocols.md
         2. Confidentiality
-        3. Integrity
+        3. Integrity - As Quantum computing grows the integrity of classical computing shrinks. RSA public-key asymmetric encryption algorithm is especial vulnerable to Quantum Computing. A strong contender for securing Integrity in Public and Private key sharing in Classical Computing is NTRUEncrypt. NTRUEncrypt is similar to RSA in that it can be used in both encryption and signature. NTRUEncrypt uses a lattice-based public-key and is very resilient against Quantum Computing, at this time. NTRUEncrypt is also less computational intensive as RSA when using 8-bit AVR Micro controllers. Quantum computing can ensure its Integrity by using QKD if transmitting data. To insure integrity on the Quantum Computer Zero Knowledge can be used. Zero Knowledge is Scalable verification of computational integrity over confidential data sets. Zero Knowledge uses a proof and argument system S=(P,V). S is the soundness or correctness if you will. P is prover of athe algorithm and V is verifier. This system allows the Quantum computer to generate its own check for integrity. Zero Knowledge is based of the PCP theorem, constraint stisfaction NP-hard for maximum fraction of constraints within some constant.
         4. Non-Repudiation
     3. Classification
         1. Envisioning this section as basically just being several tables accompanied by discussion
