@@ -42,7 +42,11 @@ Henry TODO
             3. Explanation of criteria and why each was selected - TODO for team: Fill these in
                 1. QKD criteria -
                 2. Confidentiality criteria -
-                3. Integrity criteria
+                    1. Application
+                    2. Target data
+                    3. Key agility
+                    4. Resource requirements/limitations
+                4. Integrity criteria
                     1. Verifiable
                     2. Reliable
                     3. One transmission or multiple
