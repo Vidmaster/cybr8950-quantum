@@ -1,11 +1,9 @@
 # Paper Outline
-- Contains a well-written 500 word or less abstract that previews the argument to be made in the paper.
-- Has defined section headings for each of the sections you expect to have in your paper
-- Has a bulleted list of talking points you expect to fall within each section
-- Section headings and bullets build a narrative flow that is compatible with your main research argument.
 
-0. Abstract
-    1. 500 word or less abstract here
+## Abstract
+Henry TODO
+
+## Outline
 1. Introduction
     1. General Introduction
     2. Background & Problem Context
@@ -19,7 +17,7 @@
         4. **RQ4:** What are ..., for ensuring the authenticity and non-repudiation of messages?
         5. **RQ5:** What standard process can be followed to translate a theoretical quantum algorithm into an implementation suitable for hands-on testing?
 2. Related Work
-    0. Basically recycling our literature review and chunking out into categories - port over, categorize, and refine
+    1. (Basically recycling our literature review and chunking out into categories - port over, categorize, and refine)
     1. Impacts of quantum computing on classical cryptography - Answers RQ1
         1. Shor's algorithm impact on RSA and digital signatures
         2. Grover's impact on AES and symmetric algorithms
@@ -45,7 +43,13 @@
                 1. QKD criteria -
                 2. Confidentiality criteria -
                 3. Integrity criteria -
-                4. Non-Repudiation criteria -
+                4. Non-Repudiation criteria
+                    1. Blind or arbitrated
+                    2. Reusable
+                    3. One transmission or multiple
+                    4. Security principle (rotation, hashing, etc.)
+                    5. Target (classical or quantum data)
+                    6. Signature length vs. message length
         3. How algorithms were evaluated as implementation candidates
             1. Level of overall complexity
             2. Practical applicability to research questions
@@ -73,11 +77,28 @@
         4. Here’s an example we did following these steps, here are the challenges we encountered, insight into how to translate other frameworks besides Qiskit
     3. Tie back to research questions - what's our answer, and how did we get there?
         1. RQ2 - Confidentiality
+            1. Have found a limited number of quantum algorithms which provide confidentiality. Quantum data can be "encrypted" using a one-time pad approach by applying a pre-shared set of random rotations to qubits before transmission, and removing them after.
+            2. Quantum encryption of data at rest is not a relevant concern. Due to the no-cloning theorem and the destructive nature of quantum measurements, as well as the current short-lived nature of quantum data, qubits can be treated as always being "in motion", and separate encryption schemes are not necessary.
+            3. Post-quantum cryptography will be useful in the future, as these algorithms can be applied today with classical computers to protect data.
         2. RQ3 - Integrity
+            1. Zero-Knowledge quantum integrity may be most promising
         3. RQ4 - Non-Repudiation
+            1. Challenging due to the impossibility of verification without a third party
+            2. Signatures are frequently not reusable
+            3. Can provide value in some cases, but most promising approach is to use post-quantum signature techniques
 5. Conclusion
     1. General conclusions
+        1. Revisit research questions and goals
+            1. RQ1 - replace vs. strengthen vs. quantum solution
+            2. RQ2-4 - most promising protocols if applicable
+            3. RQ5 - framework for implementing quantum algorithms
+        1. Recommendations for today
+            1. Gain an awareness of quantum computing, what it can and can't be used for, and how it threatens current systems
+            2. Be prepared to implement post-quantum encryption once it has been approved by NIST
+            3. Data transmitted today with insecure encryption could be intercepted and stored until quantum computers are viable, and then decrypted by an adversary.
+        2. Recommendations for 10+ years
+            1. Expect to see quantum computing become much more widespread, and start to be applied for simple cases like entropy generation, key distribution, and optimization problems
+            2. Be prepared to react to new algorithms being discovered which threaten previously-secure cryptosystems.
     2. Future research
-
-Think of structuring paper in terms of a chain of evidence/argument in support of our questions
-Add some bullet points of notes on what we plan to discuss in the section if it's not 100% obvious
+        1. Encryption of quantum data has not been well explored
+        2. Other gaps we uncover during final preparation
