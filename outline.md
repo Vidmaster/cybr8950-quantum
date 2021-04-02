@@ -43,12 +43,11 @@ Henry TODO
                 1. QKD criteria -
                 2. Confidentiality criteria -
                 3. Integrity criteria 
-                    1. Data is Accurate
-                    2. Data is Real
-                    3. Free from Tampering
-                    4. One transmission or multiple
-                    5. Security principle (Hashing, Encryption, Digital Signature, etc.)
-                    6. Target (classical or quantum data)
+                    1. Verifiable
+                    2. Reliable 
+                    3. One transmission or multiple
+                    4. Security principle (Hashing, Encryption, Digital Signature, etc.)
+                    5. Target (classical or quantum data)
                 5. Non-Repudiation criteria
                     1. Blind or arbitrated
                     2. Reusable
