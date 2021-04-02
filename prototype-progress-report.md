@@ -12,7 +12,7 @@ During this period, the team accomplished several fundamental steps toward the e
 * Initial [outline of final paper](Resources/outline.docx)
 * Refined literature review and identified new sources
 * Defined classification criteria for algorithms
-* Completed [QKD protocol comparison](QKD Protocols.md)
+* Completed [QKD protocol comparison](QKD%20Protocols.md)
 
 ## Hinderances
 Our team encountered several challenges during this period. We had several team members with significantly reduced availability due to professional obligations, which delayed our progress on the second milestone to some extent. We also encountered several major differences between operating systems when trying to configure our environments for prototyping, as Windows requires several undocumented dependencies to be installed in order for Anaconda and Jupyter Lab to work properly. We also found that while it was easy to follow a simple tutorial to implement BB84, it is significantly more challenging to translate a theoretical algorithm in a research paper into a practical implementation. As this is the core of our research project, however, this hinderance is to be expected and indicates that the problem is non-trivial. Surprisingly, the challenges which arose were not directly related to the quantum portion of the algorithm, but the surrounding portions of the process involving error correcting codes and their realization in Python.
