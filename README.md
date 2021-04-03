@@ -65,4 +65,4 @@ We have identified the following resources as necessary for the successful compl
 # Presentations
 Our team's [initial project presentation can be viewed here](https://use.vg/DffurR)
 
-Our [second project presentation can be viewed here]()
+Our [second project presentation can be viewed here](https://use.vg/xZB3Gb)

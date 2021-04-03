@@ -1,7 +1,7 @@
 # Paper Outline
 
 ## Abstract
-Henry TODO
+Quantum computers provide many new opportunities for cryptography, such as key distribution, confidentiality, integrity, and non-repudiation. Because of the destructive and probabilistic nature of quantum measurements and the no-cloning theorem which prevents the duplication of quantum states, quantum cryptographic protocols are dramatically different from classical cryptography. A large number of these protocols have been proposed, but little comparative work has been done. We perform a survey of existing protocols, with a focus on practical applications, in order to provide an overview of the current state of the field. We also present an implementation of a practical quantum cryptographic algorithm capable of providing confidentiality, integrity, and non-repudiation. In addition, we generalize our implementation process in order to provide a template for the translation of algorithms from a research paper into a quantum programming framework. 
 
 ## Outline
 1. Introduction
@@ -40,8 +40,8 @@ Henry TODO
             1. Different classification scheme was used for each intended function
             2. Algorithms may appear in multiple categories if they provide multiple attributes e.g. both confidentiality and integrity
             3. Explanation of criteria and why each was selected - TODO for team: Fill these in
-                1. QKD criteria -
-                2. Confidentiality criteria -
+                1. QKD criteria - https://github.com/Vidmaster/cybr8950-quantum/blob/main/QKD%20Protocols.md
+                2. Confidentiality criteria
                     1. Application
                     2. Target data
                     3. Key agility
@@ -67,6 +67,10 @@ Henry TODO
         2. Confidentiality
         3. Integrity - As Quantum computing grows the integrity of classical computing shrinks. RSA public-key asymmetric encryption algorithm is especial vulnerable to Quantum Computing. A strong contender for securing Integrity in Public and Private key sharing in Classical Computing is NTRUEncrypt. NTRUEncrypt is similar to RSA in that it can be used in both encryption and signature. NTRUEncrypt uses a lattice-based public-key and is very resilient against Quantum Computing, at this time. NTRUEncrypt is also less computational intensive as RSA when using 8-bit AVR Micro controllers. Quantum computing can ensure its Integrity by using QKD if transmitting data. To insure integrity on the Quantum Computer Zero Knowledge can be used. Zero Knowledge is Scalable verification of computational integrity over confidential data sets. Zero Knowledge uses a proof and argument system S=(P,V). S is the soundness or correctness if you will. P is prover of athe algorithm and V is verifier. This system allows the Quantum computer to generate its own check for integrity. Zero Knowledge is based of the PCP theorem, constraint satisfaction NP-hard for maximum fraction of constraints within some constant.
         4. Non-Repudiation
+            1. Curty 2001
+            2. Kang 2015
+            3. Nikolopoulos 2020
+            4. Hematpour 2020
     3. Classification
         1. Envisioning this section as basically just being several tables accompanied by discussion
     4. Evaluation
@@ -86,7 +90,7 @@ Henry TODO
         4. Here’s an example we did following these steps, here are the challenges we encountered, insight into how to translate other frameworks besides Qiskit
     3. Tie back to research questions - what's our answer, and how did we get there?
         1. RQ2 - Confidentiality
-            1. Have found a limited number of quantum algorithms which provide confidentiality. Quantum data can be "encrypted" using a one-time pad approach by applying a pre-shared set of random rotations to qubits before transmission, and removing them after.
+            1. Have found a limited number of quantum algorithms which provide confidentiality. Quantum data can be "encrypted" using a one-time pad approach by applying a pre-shared set of random rotations to qubits before transmission, and removing them after. Quantum encryption with a classical key is also possible through quantum teleportation, as entangled qubits can be shared and then an arbitrary state teleported by transmitting two classical bits.
             2. Quantum encryption of data at rest is not a relevant concern. Due to the no-cloning theorem and the destructive nature of quantum measurements, as well as the current short-lived nature of quantum data, qubits can be treated as always being "in motion", and separate encryption schemes are not necessary.
             3. Post-quantum cryptography will be useful in the future, as these algorithms can be applied today with classical computers to protect data.
         2. RQ3 - Integrity
