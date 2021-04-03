@@ -2,7 +2,7 @@
 
 ## Qiskit
 
-The following are circuit diagrams and post-measure analytics for an implementation of the BB84 QKD protocol.
+The following are circuit diagrams and post-measure analytics for an [implementation](https://github.com/Vidmaster/cybr8950-quantum/blob/main/Resources/BB84-demo.ipynb) of the BB84 QKD protocol.
 
 This icon symbolizes a measurement operation, where the value of a qubit is measured and saved to the output.
 
@@ -30,12 +30,12 @@ The results of Bob's measurement show approximately equal probability of receivi
 
 ## Eavesdropping
 
-The following diagram illustrates how an attacker, Eve, might compromise the photonic transmission of qubits from Alice to Bob.
+The following diagram illustrates how an attacker, Eve, might compromise the photonic transmission of qubits from Alice to Bob. *([Link](https://lucid.app/lucidchart/invitations/accept/8b2ddd33-ce11-4184-84df-14ea27d31d76) to diagram in Lucidchart)*
 
 ![Eavesdropping](https://github.com/Vidmaster/cybr8950-quantum/blob/main/image/eavesdropping_diagram.png)
 
 ## Amerimehr Encryption Scheme
 
-The following process diagram is an overview of the symmetric quantum cryptosystem proposed by Amerimehr and Dehkordi.
+The following process diagram is an overview of the symmetric quantum cryptosystem proposed by Amerimehr and Dehkordi. *([Link](https://lucid.app/lucidchart/invitations/accept/50b8bbf1-894a-420e-b940-4401e2995cc2) to diagram in Lucidchart)*
 
 ![Amerimehr Scheme](https://github.com/Vidmaster/cybr8950-quantum/blob/main/image/AD2018-qc.png)
