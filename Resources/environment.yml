@@ -10,3 +10,5 @@ dependencies:
     - qiskit[visualization]
     - cirq
     - cirq[contrib]
+    - pycryptodome
+    - scikit-commpy

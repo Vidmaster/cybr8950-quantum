@@ -1,0 +1,419 @@
+\documentclass[sigconf]{acmart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\usepackage{authblk}
+\usepackage{graphicx}
+\usepackage{courier}
+
+%\AtBeginDocument{%
+%  \providecommand\BibTeX{{%
+%    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\setcopyright{rightsretained}
+\copyrightyear{2021}
+\acmYear{2021}
+\acmDOI{}
+\acmConference[CYBR-8950 Cybersecurity Capstone]{Cybersecurity Capstone}{Spring 2021}{Omaha, NE}
+\acmBooktitle{CYBR-8950 Cybersecurity Capstone}
+\acmISBN{}
+
+% TODO: Better title if we're publishing
+\title{Quantum Communications and Cryptography}
+
+\author{Henry McNeil}
+\email{hcmcneil@unomaha.edu}
+\affiliation{%
+  \institution{University of Nebraska, Omaha}
+  \streetaddress{6001 Dodge St}
+  \city{Omaha}
+  \state{Nebraska}
+  \postcode{68182}
+}
+
+\author{Zexi Xing}
+\email{zxing@unomaha.edu}
+\affiliation{%
+  \institution{University of Nebraska, Omaha}
+  \streetaddress{6001 Dodge St}
+  \city{Omaha}
+  \state{Nebraska}
+  \postcode{68182}
+}
+
+\author{Casey Schmitz}
+\email{caseyschmitz@unomaha.edu}
+\affiliation{%
+  \institution{University of Nebraska, Omaha}
+  \streetaddress{6001 Dodge St}
+  \city{Omaha}
+  \state{Nebraska}
+  \postcode{68182}
+}
+
+\author{Bryan Tomey}
+\email{btomey@unomaha.edu}
+\affiliation{%
+  \institution{University of Nebraska, Omaha}
+  \streetaddress{6001 Dodge St}
+  \city{Omaha}
+  \state{Nebraska}
+  \postcode{68182}
+}
+
+\begin{abstract}
+Quantum computers provide many new opportunities for cryptography, such as key distribution, confidentiality, integrity, and non-repudiation. Because of the destructive and probabilistic nature of quantum measurements and the no-cloning theorem which prevents the duplication of quantum states, quantum cryptographic protocols are dramatically different from classical cryptography. A large number of these protocols have been proposed, but little comparative work has been done. We perform a survey of existing protocols, with a focus on practical applications, in order to provide an overview of the current state of the field. We also present an implementation of a practical quantum cryptographic algorithm capable of providing confidentiality, integrity, and non-repudiation. In addition, we generalize our implementation process in order to provide a template for the translation of algorithms from a research paper into a quantum programming framework.
+\end{abstract}
+
+\begin{document}
+\settopmatter{printfolios=true}
+\maketitle
+
+%1. Introduction
+%    1. General Introduction
+%    2. Background & Problem Context
+%    3. Motivation
+%        1. Gaps that currently exist, how the literature has evolved over time, what we're actually talking about in this paper
+%        2. Related topics which are out of scope of this paper
+%    4. Research Questions
+%        1. **Research Question 1:** What are the impacts of quantum computing on today's commonly used cryptographic protocols for hashing, symmetric, and asymmetric encryption? Which of these protocols or classes of protocols need to be replaced by quantum or post-quantum solutions?
+%        2. **RQ2:** What are the most promising techniques, either quantum or a hybrid of classical and quantum techniques, for maintaining the confidentiality of data at rest and in motion?
+%        3. **RQ3:** What are ..., for verifying the integrity of data received?
+%        4. **RQ4:** What are ..., for ensuring the authenticity and non-repudiation of messages?
+%        5. **RQ5:** What standard process can be followed to translate a theoretical quantum algorithm into an implementation suitable for hands-on testing?
+\section{Introduction}
+Quantum computers have the world on the brink of a second computing revolution. By using the unique properties of subatomic particles, quantum computers will be able to solve complex problems in minutes which would take a classical computer thousands of years. Foremost among these problems are many which are foundational to modern cryptography, such as the prime factorization problem at the core of internet security. While current quantum computers do not have the level of sophistication necessary to break today's encryption systems, it is only a matter of time before they gain that capability. This project aims to explore the implications of quantum computing on cryptography in order to stay ahead of this anticipated threat and preserve the security of sensitive communications as used for everything from internet browsing to military instructions. 
+
+In highly critical communications systems, such as those used to initiate a military action, messages must have guaranteed delivery, must not be tampered with, and must be authenticated and correct. These systems must not allow for false messages, which could lead to widespread loss of life in the worst case, so non-repudiation is a primary concern. One goal of this project is to identify the best ways for a critical system to send confidential messages with a guarantee of integrity and non-repudiation in a world where quantum computers are prevalent and capable. These cryptographic mechanisms may include quantum key distribution, quantum digital signatures, and quantum-resistant encryption algorithms performed on a classical computer.
+
+\subsection{Background and Problem Context}
+% Can edit this paragraph down a bit and make it not bad, or maybe remove entirely
+After the spread of personal computers, humans are gradually moving forward to the Information Age (or Digital Age). 
+Thus, people’s lives have been changed dramatically, since computers make long distance communication possible, especially in the era of 5G high-speed internet surfing, network traffic can be transmitted instantly from one side to another. 
+On the other hand, technological convenience also makes the secret information between both sides of communication easy to expose to the third party. 
+Fortunately, current cryptographic algorithms are sufficient to protect users’ privacy because most of them are difficult to break with the computation power of traditional computers. 
+However, while the quantum computer is available, almost every currently used encryption algorithm will be vulnerable, and the massive data leakage will be inevitable. 
+Hence, it is necessary to understand what the quantum computer is and why it can destroy current existing cryptography.
+%% End paragraph
+
+
+% Fix this paragraph a bit
+A quantum computer is a type of physical device that is designed for solving the computation limitation of traditional computers, and it follows the laws of quantum algorithms to perform  high-speed mathematical and logical operations to store and process qubit information. More straightforwardly, if a device is capable of processing and transmitting qubits and recognizes quantum cryptography, it is known as a quantum computer\cite{sciencedirect}. Just as traditional computers distinguish between zeros and ones by switching on and off circuits in an integrated circuit, quantum computers also have their own basic unit, the quantum bit. Also known as qubits, represent 0 or 1 by means of a quantum mechanical system of two states. Such as the two orthogonal polarization directions of a photon, the spin directions of an electron in a magnetic field, or the two directions of a nuclear spin, the two different energy levels of a quantum in an atom, or the spatial pattern of any quantum system.
+
+In traditional computers, the basic unit of information is the bit, which is a physical system with two states, represented by 0 and 1. Unlike the traditional computer, in a quantum computer, the basic unit of the classical bit states 0 and 1 are replaced by two quantum states, $\rvert 0\rangle$ and $\rvert 1\rangle$. Compared with two different bits, qubits have a unique existence characteristic. They exist in the form of superposition of two logical states, which represent the superposition of the corresponding quantum states with two states of 0 and 1. Hence, based on the attribute of qubit, the advantages of quantum computers are fast running speed, strong ability to deal with information, wide application range, etc.
+
+\subsection{Motivation}
+Encryption is omnipresent in modern life, with uses ranging from internet browsing to medical devices, wireless car keys to nuclear control systems. Quantum computing threatens almost all current encryption protocols in one way or another, whether by effectively weakening key strength, or breaking the algorithm entirely. As such, an understanding of the significance of quantum computing and new cryptographic protocols is critical, with impacts in areas ranging from personal privacy to national security.
+
+Unlike in the last century, the struggle between countries is no longer a simple matter of using advanced weapons or geographical advantage to suppress or defeat the enemy. 
+%In other words, the main force of modern warfare is information transmission, or we can call it information warfare. 
+In this case, it is extremely important to properly and securely transmit information between the agent and commander. 
+% This exact same sentence appears in the introduction
+For example, in highly critical communications systems, such as those used to initiate a military action, messages must have guaranteed delivery, must not be tampered with, and must be authenticated and correct. These systems must not allow for false messages, as these could lead to massive leakage of national confidentialities or even widespread loss of life in the worst case, so non-repudiation is a primary concern.
+ 
+\subsection{Goals and Research Questions}
+% Fix the tense here so we are clear on where we are in the overall process
+At the beginning of this project, our team has mainly focused on refining some contemporary quantum communication and cryptography methodologies from our research process. More specifically, we are heavily focusing on ensuring we have a comprehensive set of sources for use in our research, including representative samples of quantum cryptographic protocols that apply to confidentiality, integrity, and non-repudiation.
+
+Then with those knowledges in mind, we put effort on concluding some concrete results with respect to Quantum Key Distribution Protocols (QKDP) that can help our client understand both advantages and disadvantages of currently existing QKDP and those basic procedures need to be executed during the communication. Hence, we did a large research on quantum cryptographic algorithms, and we find most contemporary QKDPs are not possible to achieve because of the signal transmission channel losses, lack of ideal single photonic light source, and low detection efficiency of receiver etc. As a result, our goal is to seek out a QKDP that can be easy to implement with modern technological equipment and infrastructure, and it can also provide fairly sufficient security and transmission rate. 
+
+To satisfy all those anticipations, our goal in this project is to identify the best ways for a critical system to send confidential messages with a guarantee of integrity and non-repudiation in a world where quantum computers are prevalent and capable. These cryptographic mechanisms may include quantum key distribution, quantum digital signatures, and quantum-resistant encryption algorithms performed on a classical computer. As a result, we have proposed five questions below for us to seek out solutions in this paper:
+\begin{itemize}
+\item Research Question 1: What are the impacts of quantum computing on today's commonly used cryptographic protocols for hashing, symmetric, and asymmetric encryption? Which of these protocols or classes of protocols need to be replaced by quantum or post-quantum solutions?
+\item RQ2: What are the most promising techniques, either quantum or a hybrid of classical and quantum techniques, for maintaining the confidentiality of data at rest and in motion?
+\item RQ3: What are some reasonable transmission protocols that can be used for verifying the integrity of data received?
+\item RQ4: What is the best quantum cryptographic algorithm for validating credentials and ensuring the authenticity and non-repudiation of messages?
+\item RQ5: What standard process can be followed to translate a theoretical quantum algorithm into an implementation suitable for hands-on testing?
+\end{itemize} % Fix research 
+
+%2. Related Work
+%    1. (Basically recycling our literature review and chunking out into categories - port over, categorize, and refine)
+%    1. Impacts of quantum computing on classical cryptography - Answers RQ1
+%        1. Shor's algorithm impact on RSA and digital signatures
+%        2. Grover's impact on AES and symmetric algorithms
+%        3. Impact on hashing functions and authenticated encryption
+%    2. Foundational papers in the different areas of quantum cryptography (like the original BB84 paper etc)
+%    3. Attacks against quantum cryptography techniques
+%        1. Photon splitting attacks
+%        2. Denial of service
+%        3. Man in the middle
+%        4. Any others uncovered in final literature review
+%    4. Include research methodology background for similar studies comparing different cryptographic algorithms
+%        1. Found two different papers which fall into this category, can discuss here (Jorstad and Khan)
+%    5. Post-quantum cryptography
+%        1. NIST competition
+%        2. Promising algorithms must not fall into BQP class (Bounded-error Quantum Polynomial)
+\section{Related Work}
+\subsection{Contemporary Quantum Communication and Cryptography} % TODO: Move all this over to methodology
+After reviewing some academic journals and authorized publications, we do find that current analysis of quantum technology is really covering a wide range and has significant achievement. But not all those resources are critical, some of those might run in the opposite direction against our goal and are hard to accomplish based on contemporary technology. As a result, our team categorized several feasible resources, whose theories might be possible to be utilized in the real world, into 5 groups with respect to the project goal:
+\begin{itemize}
+\item Quantum Encryption
+    \begin{itemize}
+    \item Quantum secure direct communication (QSDC) can perform symmetric encryption without the use of a public channel, which provides confidentiality, authentication, integrity, and non-repudiation. The scheme also allows for key reuse and does not require quantum error correction. The scheme does require the pre-sharing of an encryption key, though this could be accomplished with other QKD methods (A. Amerimehr and M. H. Dehkordi).
+    \end{itemize}
+
+\item Quantum Key Distribution
+	\begin{itemize}
+	\item Shor’s algorithm poses a threat to current conventional cryptography and that QKD protocols have been proven to provide unconditional communication security. In some researcher analysis, they have compared results while some QKD protocols like BB84, B92, and BBM92 have been eavesdropped by a third party to check how many keys can be received and how many errors can occur during the transmission. Finally, they find if we can implement QKD in a proper way on a quantum computer, the unconditional quantum communications security can be proved (A. I. Nurhadi and N. R. Syambas).
+	\item The current rate of key generating QKDN is a low speed. As a result, some other studies have explored another conception, which is called Quantum Key Pool (QKP), to mitigate the inefficiency of key production by storing generated keys. But the security of QKD will decrease because the QKP needs to store keys for a while, and the basic performance of QKDN will be harmed (X. Liu et al.).
+	\item There still exists a gap between the current QKD system and ideal one, some scientists have conquered this problem by using Decoy-State QKD scheme (DSQKD) to improve the security and performance of QKD transmission. However, in the DSQKD scheme, the pre-request is the data exchanges between two nodes are infinite. With the limited data exchanges rate of the real world QKD system, it is hard to achieve (W. Yu, Y. Zhou).
+	\item In ideal TF-QKD, the secure key rate scale can be enlarged to almost twice, so it can be used for a long-distance transmission which is much longer than the traditional QKD. In this case, TF-QKD not only maintains the confidentiality of data, but also can be used on a relevantly longer distance communication. Nevertheless, constructing the mode matching systems to finish the first interference of two types of lasers is very difficult (C. H. Park, M. Ki Woo).
+	\end{itemize}
+
+\item Quantum Non-Repudiation
+	\begin{itemize}
+	\item Most quantum experts believe the digital signatures are an important aspect for verifying the integrity and authenticity of a message, so some researchers develop a scheme which uses a dynamic map based on quantum dots, a permutation and substitution scheme like AES, and DNA coding to create a quantum digital signature with a high degree of security as long as the signature is of sufficient length. In other words, by sending a dynamic quantum system's control parameter and critical points as well as some initial point in phase space, two parties could implement these digital signatures using a quantum computer, but without requiring a quantum channel for transmission (N. Hematpour).
+	\item Quantum signatures can be used for both classical and quantum messages. The ability to sign a message using only a single qubit and a trusted third party is valuable.  With Arbitrated Quantum Signatures (AQS), the key forgery is impossible, but perfect non-repudiation is not (M.-S. Kang, C.-H. Hong).
+	\item It may be possible that integrity, data origin authentication, and non-repudiation can be better achieved with quantum cryptographic methods. For example, someone think Quantum Message Authentication Codes (QMACs) offer an advantage over classical methods for message authentication. However, after certain studies, researchers figured the information-theoretically secure message authentication are performed better in classical cryptography, and some known QMAC schemes are inferior to their classical counterparts (Georgios M. Nikolopoulos).
+	\item Few researchers identify the binary classical messages can be authenticated by a set of QMAC protocols that, using a single qubit as the authentication key, allow for the successful authentication of messages with probability of forgery less than one. This QMAC protocol also provides the possibility of key reuse, though not with guaranteed security (M. Curty and D. J. Santos).
+	\end{itemize}
+
+\item Integrity and Post-Quantum Security %Why is this combined???
+	\begin{itemize}
+	\item By using an algorithm of amplitude amplification technique, quantum collision and multi-target preimage search, it can improve attacks against hash functions, key recovery in multi-user settings, and collision attacks on block cipher operation modes. This algorithm may also be used as building blocks for more complex cryptanalysis.  In addition, the presented algorithm improves the on the time complexity of existing algorithms while requiring less quantum memory. Comparisons between new and existing algorithms are made under several conditions concerning the availability of quantum memory, ultimately suggesting that this new algorithm is superior unless quantum memory becomes as cheap as classical memory and parallelization is hard (A. Chailloux).
+	\end{itemize}
+\end{itemize}
+
+
+
+\subsection{Impacts of quantum computing on classical cryptography}
+Quantum Computing offers an exponential growth to computational power. Quantum Computing’s computational power is directly proportional to the size of the system. This computational growth is called Computational parallelism and this growth is what makes Quantum Computing the potential next step in computing evolution. Quantum Computing by itself does not threaten encryption or communication, but when Quantum Computing is combined with Quantum Algorithms then there is potential for threat. To help mitigate the threat that Quantum Computing poses to Asymmetric Encryption Quantum Key Distribution was created to protect Asymmetrical Key Distribution. Quantum Computing could threaten current hashing standards and digital signatures, Quantum Non-Repudiation was developed to help protect digital signatures. As Quantum Computing grows it becomes a greater threat to standard encryption, then Quantum algorithms must be used to create mitigations to these threats.   
+
+\subsubsection{Shor's algorithm impact on RSA and digital signatures}
+Peter Shor created a Quantum algorithm, called Shor’s Algorithm. Shor’s Algorithm is a Quantum Algorithm that uses polynomial time for factoring integers. Shor’s Algorithm is too resource intensive to be run by a common computer, to get the full effect of Shor’s Algorithm it needs to be run on a Quantum Computer. Shor’s Algorithm needs a high amount of Quantum bits, Quantum bits or qubits are a unit of Quantum information. For Shor’s Algorithm to threaten current asymmetrical encryption the number of qubits needed are higher than can be currently created. That does not mean that Asymmetric encryption is safe.
+ 
+Asymmetric encryption is used to secure current communication systems and currently is a safe way to send data over the Internet. This can all change with Quantum Computing so to secure future communication Quantum Key Distribution (QKD) is being developed to help secure communication. Quantum Key Distribution is a One-Time-Pad encryption “As we all known, One-Time-Pad is the most secure way to build communication between two network nodes, so the Quantum Key Distribution (QKD) is taking advantage from it to build a much safer network environment called QKDN”(Liu, et al). 
+
+\subsubsection{Grover's impact on AES and symmetric algorithms}
+The quantum search algorithm proposed by Grover is a powerful algorithm of quantum computing, which is suitable for solving the following problem: to find a specific object from N unclassified objects. More specifically, the classical algorithm can only search one after another until it finds the object it wants. This algorithm has O(N) complexity on average, whereas Grover's quantum algorithm only has O(N/2) complexity on average (S. Jaques).
+
+For example, the Grover’s algorithm can reduce the time required for brute force attacks. For public key encryption algorithms such as AES and TDES, as long as you have a quantum computer, the security of a 256-bit key is equivalent to that of a 128-bit traditional computer. The algorithm proposed by Grover reduces the time of collision attack and reduces the security strength of hash function. With the quantum computer, the security strength of SHA256 was also reduced from 128-bits to 80-bits or less, and the security strength of SHA384 was reduced from 192-bits to 128-bits (M. Grassl).
+
+In 2019, Google used a 53-qubit quantum computer to prove that quantum computing systems have some special capabilities that can beat traditional computers (solving a problem that would take supercomputers 1,000 years to solve at 2.30 minutes), despite IBM's dissenting opinion that it would take only two days instead of 1,000 years. But it has essentially shown that quantum computers do outperform traditional supercomputers on specific problems that will take humanity to new horizons never explored before.
+
+\subsubsection{Impact on hashing functions and authenticated encryption}
+With the spread of the conception of decentralized systems, blockchain technology has gradually become another trend as a brand-new model of transactions. In terms of Bitcoin mining, it is well known that mining requires high-power equipment. Crypto asset miners use the computing power of computers to solve mathematical problems. Some of these people are running traditional computers, while others have purchased ASIC equipment for crypto mining. For the miners, a block reward is awarded to whoever solves a math problem first, meaning that the more powerful the computer, the greater the chance it will solve the problem and receive a reward paid in Bitcoin (BTC). So, what exactly is the math problem? This is called a block hash, and it takes miners some time to calculate the hash of each block. The total amount of computing power used by miners on the Bitcoin network is called the hash rate. Because competition in mining work is intensive and there is not a lot of difference between the devices that miners use, it is impossible for any individual to control the network or overwhelm others ‘hash generating speed.
+
+Based on the above illustration, we know having a better configured superior computer could bring huge benefits that allow one person or group to gain an advantage over, or even control, the network. Thus, the cryptocurrencies mining industry might be threatened by quantum computation power.
+
+Exactly, the computing power of a quantum computer is completely different from a traditional computer, so it will break the current balance in the Bitcoin network. For example, a quantum computer could easily gain 51\% of total Bitcoin's hash rate and launch what is known as a 51\% attack (also called Double Spending Attack). Such an attack would disrupt the normal operation of the network, would subvert transaction confirmation, and would even reverse confirmed transactions. In other words, the owners of quantum computers are able to completely control the Bitcoin world. Once this happens, it will be a chaos of the cryptocurrency market. 
+
+\subsection{Attacks against quantum cryptography techniques}
+\subsubsection{Photon Splitting Attack}
+In the ideal BB84 protocol, an important assumption is that Alice uses a single photon source. However, it is difficult to prepare a single photon source in the actual system, and a weakly coherent light source is usually used, which can be obtained by attenuating the laser light source. The photon number distribution of weakly coherent light source obeys the Poisson distribution, and there is a non-negligible multi-photon component in it. For multiphoton components, Eve can eavesdrop using photon-number splitting (PNS) attacks.
+
+The basic principle of PNS attack is as follows: Eve intercepts the weak coherent pulse sent by Alice to Bob and obtains the photon number information through quantum non-destructive measurement. For the part of the single-photon state, all interceptions are no longer sent to Bob; for the multi-photon part, Eve extracts one photon from it and stores it in its own quantum memory and sends the remaining photons to Bob through a low loss or even no loss channel (ideally). After Bob publishes his measurement basis vector, Eve measures the photons stored in his quantum memory under the same basis vector. Then, combining with the basis vector information published by Alice, Eve carries out the same data post-processing process as Bob, so that Eve can obtain the exact same key as Bob (G. Brassard, N. Lutkenhaus).
+
+\subsubsection{Denial of Service}
+According to the NSA's report in 2020, they declared “Quantum key distribution increases the risk of denial of service. The sensitivity to an eavesdropper as the theoretical basis for QKD security claims also shows that denial of service is a significant risk for QKD” (National Security Agency).
+
+Exactly, as the classical communication network, the quantum network is still vulnerable to Denial-of-Service attack. Briefly speaking, a DoS attack, or denial of service attack, refers to hackers trying to compromise the target machine or server to make it stop functioning, which is one of the common attack methods of hackers. To accomplish DoS attack, hackers generally send numerous malicious requests through the network to overuse the target resources until it has crashed, so other lawful users cannot correctly access these resources at the moment. In common, DoS can usually result in a huge financial loss regarding different areas like governments and enterprises (https://academy.binance.com/en/articles/what-is-a-dos-attack).
+
+\subsubsection{Man in the Middle Attack}
+% The security of QKD is weakened/impacted/harmed because it cannot prevent MITM attacks
+QKD generates the necessary keys for the encryption algorithm to ensure the privacy of the communication, but QKD itself cannot provide an authentication mechanism to the source of the transmission. This is hurt because QKD cannot prevent Man-In-the-Middle attack from its own technical perspective. The NSA report raises serious questions about this, which cannot be avoided and cannot be left undiscussed (National Security Agency).
+
+We could seek out this scenario from the quantum transmission layer. The sender randomly selects one of + and × for each qubit sent, and the receiver randomly selects one of + and × for each qubit received. The receiver then tells the sender its sending bases over an insecure channel, such as the Internet, and the sender indicates which parts of it are correct. In this case, the sender and receiver will ignore those qubits whose listeners are set incorrectly. The sender and receiver then compare half of the remaining qubits, and if there is an error indicating that there is an additional listener in addition to the receiver, whose presence interferes with the photon's vibrational direction. If there is no error, the bits are discarded and the remaining bits are used as the key.
+
+In the above case, if there is a listener, he will cause the last check operation to fail, because he will change the state of the original photon and cause the qubits to turn out to be the wrong answer half the time.
+
+Now, we could consider the man-in-the-middle attacks scenario. The initiator of a man-in-the-middle attack is a more powerful actor than the listener, who not only has access to the entire Internet communication packets between the two parties but can also modify those packets as whatever he wants. Thus, he can present himself as the receiver to the sender and present himself as the sender with respect to the receiver side. % appear as?
+
+% 
+Once the attack is started, the middleman randomly selects one of the + and × bases at the beginning of the communication, tampers with the message so that the sender receives the receiver’s bases that is exactly same with middleman’s bases, and tampers the message so that the receiver receives the correct pattern that is the qubits for which the middleman and the receiver have the same bases. In the final verification process, it is obvious that the sender and the middleman retain the same bits, and the middleman also knows the bits that the receiver retains (Y.-Y. Fei, X.-D. Meng).
+
+
+\subsection{Research methodology of quantum cryptography algorithm}
+% What the fuck dude
+As a result, since those attacks can compromise families of quantum cryptography, some security issues have been put on the table.  To avoid too many vulnerabilities being exposed to those malicious users, it is significant to make a basic metric of quantum cryptography and also evaluate the security level of QKD protocols. Fortunately, there are two groups of researchers who have performed related studies. For example, Jorstad and Smith would like to figure out a question like "Can a standard objective framework for the measurement and specification of cryptographic algorithm strength be created?" To answer it, their methodology relied heavily on known characteristics of existing algorithms and the ways in which they might be compared, 
+%This is real fucking long and chonky
+and they focused on civilian encryption algorithms meant for use in commercial products and operating in Electronic Code Book (ECB) mode which covers symmetric and asymmetric algorithms. However, their work is somewhat dated due to the selection of algorithms, only including those that existed in 1997, but their proposed classification scheme is useful (Jorstad).
+
+% What does security depth mean?
+With respect to the security level of QKD protocols, most contemporary QKD protocols have not been compared in the security depth; however, especially with regards to simulation and implementation, it is necessary to verify the deviation between the theoretical aspects and real-world usage. In this situation, Khan and his team members provide a simple quantitative comparison of 11 different QKD schemes across six different factors, as well as a simulated analysis of the BB84 and 2-dimensional KBM09 protocols (Khan). Based on their result, even though their experimental comparison is limited to only evaluating the Quantum Bit Error Rate (QBER) reliability of two protocols, it still shows useful guidance on the ways protocols can be compared both theoretically and experimentally and serves as a basic approach for the classification of the quantum cryptography schemes.
+
+\subsection{Post-quantum cryptography}
+The National Institute of Standards and Technology (NIST) is leading a project called Post Quantum Standardization (PQS), which aims to define new algorithms that can address Quantum computer threats. The PQS project is now in its final stage and is expected to be completed within two years.
+
+In order to realize the transition to quantum secure computing, SSH, VPN, IPSec, SSL/TLS and other security protocols also need to be upgraded. These protocols need to be combined with existing protocols, but also need to introduce an additional layer to establish secure communication to protect against quantum attacks.
+
+This change will have an impact on asymmetric encryption and key generation algorithms, and it is necessary to increase the key size of symmetric cryptography algorithms. There is also an impact on performance and bandwidth. Hardware vendors will also need to upgrade their hardware to align and transition with these new algorithms.
+
+Additionally, we need to promise those new algorithms must not fall into BQP class. The BQP can be traced back to 1993, at that time, computer scientists Ethan Bernstein and Umesh Vazirani defined a new class of complexity they called BQP for "bounded error quantum polynomial time". They define this category as all the decision problems that a quantum computer can effectively solve -- problems where the answer is yes or no. In other words, for a BQP problem, there is an algorithm using a quantum computer (the quantum algorithm) that takes polynomial time to run and has a high probability of getting the right answer. For any given situation, the chance of getting the wrong answer should be less than one over three (1/3). BQP can also be regarded as the quantum computer version of BPP, which stands for Bounded-error, Probabilistic, and Polynomial time (A. Younes). 
+
+
+
+%3. Methodology
+%    1. Overview of methodology as described in technical plan
+%        1. How algorithms were selected
+%        2. How algorithms were classified
+%            1. Different classification scheme was used for each intended function
+%            2. Algorithms may appear in multiple categories if they provide multiple attributes e.g. both confidentiality and integrity
+%            3. Explanation of criteria and why each was selected - TODO for team: Fill these in
+%                1. QKD criteria - https://github.com/Vidmaster/cybr8950-quantum/blob/main/QKD%20Protocols.md
+%                2. Confidentiality criteria
+%                    1. Application
+%                    2. Target data
+%                    3. Key agility
+%                    4. Resource requirements/limitations
+%                4. Integrity criteria
+%                    1. Verifiable
+%                    2. Reliable
+%                    3. One transmission or multiple
+%                    4. Security principle (Hashing, Encryption, Digital Signature, etc.)
+%                    5. Target (classical or quantum data)
+%                5. Non-Repudiation criteria
+%                    1. Blind or arbitrated
+%                    2. Reusable
+%                    3. One transmission or multiple
+%                    4. Security principle (rotation, hashing, etc.)
+%                    5. Target (classical or quantum data)
+%                    6. Signature length vs. message length
+%        3. How algorithms were evaluated as implementation candidates
+%            1. Level of overall complexity
+%            2. Practical applicability to research questions
+%    2. Selection of algorithms
+%        1. QKD - https://github.com/Vidmaster/cybr8950-quantum/blob/main/QKD%20Protocols.md
+%        2. Confidentiality
+%        3. Integrity - NO
+%        4. Non-Repudiation
+%            1. Curty 2001
+%            2. Kang 2015
+%            3. Nikolopoulos 2020
+%            4. Hematpour 2020
+%    3. Classification
+%        1. Envisioning this section as basically just being several tables accompanied by discussion
+%    4. Evaluation
+%        1. Implementation
+%        2. Applicability to hypothetical use case
+%        3. Ways to evaluate against possible attacks (if we get that far)
+%    5. Revisit research questions and relevance to the methodology. If RQs overlap, can keep this structure, otherwise consider having a top level for each RQ and then go from there. Which part of our methodology addresses each question?
+\section{Methodology}
+In this paper we have talked about the Research Questions about quantum computing and classical computing security and how they can directly affect one another.  The questions are, what are the impacts of quantum computing on classical computing as it pertains to confidentiality availability and integrity? What are the best techniques for securing data at rest and in motion? How can we verify the integrity of data sent or received? How can we ensure the authenticity and non-repudiation of the data? These questions pertain to both quantum computing and how quantum computing affects classical computing.  In the course of setting up for our experiments, we found that using IBM’s gate-based quantum computers with Qiskit was the best way to create an environment that could be recreated and answer the Research Questions. Qiskit uses Python language and libraries to interact with quantum computers.
+
+\subsection{Algorithms Selected}
+In deciding what algorithms to use we first had to ask what algorithms would be used to break classical computing’s security. There were some questions that helped us narrow down our requirements. Such as why does Quantum Computing consider the future of computing?  Current computers figure out how to do something by trying every possible combination and picking the correct one. Quantum Computers can try every combination at once, because of superposition a Quantum computer can be the right path and all the wrong paths at the same time. Quantum computing uses uncertainty in its State, it both is and isn’t the right path. Using entanglement you can measure the answer without collapsing the Quantum state. Entanglement is two particles that are linked but physically separate. Using one set of the particles you can measure the state without collapsing the wave function. Using Shor’s Algorithm which is a polynomial-time factorization problem that, with sufficient Qubits, can compromise the security of RSA, Elliptic Curve Diffie-Hellman and most other current Asymmetrical Encryption. To secure classical computing against the future potential of quantum computing, Shor’s Algorithm researchers have created lattice and ring based encryption. Lattice and ring based encryption are based on mathematical algorithms that have been studied since the 1980 and no known attack has worked on them. Quantum computing can use Quantum Key Distribution to secure its data in motion. Quantum Key Distribution using BB84, Bennett and Brassard proposed this in 1984. BB84 can use multiplexing and is good out to 200km, without multiplexing it can go 240 km. Tools are not fully developed yet. Protocol E91 can use multiplexing and can transmit out to 200 km, 240 km without multiplexing. Protocol E91 Developed in 1991 by Arthur Ekert, using Protocol E91 the attackers can’t guess results. Protocol E91 is too resource intensive. MDI-QKD has the best range of 404 km, but it needs specialized configuration on the transmission channel. Grover’s algorithm has shown some promise against Symmetric algorithms but has not shown the ability to compromise AES at 256-bit key or above. Quantum computing’s nature makes its data at rest hard to tamper with and to completely insure that the data isn’t tampered with Zero Knowledge can be used. Zero Knowledge is based on the PCP theorem and uses a S=(P,V) proof and argument system. The PCP theorem is a decision problem checker based on the NP complexity class that uses probabilistically checkable proofs. Probabilistically checkable proofs are proofs used to check randomized algorithms. Each algorithm was chosen based on long standing research and proven methodologies.
+
+\subsection{Algorithms Classified}
+Each algorithm was chosen by how well it complements the Confidentiality, Integrity, and Availability (CIA) triad and if it was feasible to employ, with current quantum limitations versus future quantum computing threats. The other issues were what type of quantum computer do we choose, do we use Circuit model or Adiabatic. Adiabatic Quantum Algorithms are used to optimize the Hamiltonians, a function that represents all energy in a system. The Hamiltonian uses an operator to correspond to the energy of a system. The Hamiltonian corresponded to the total energy in both kinetic and potential energy. Quantum Adiabatic Algorithm (QAA) was designed to solve the optimization issues in Quantum Computing. QAA in a dedicated device will optimize the combinatorial optimization problem. The combinatorial optimization problem is solved by evolving adiabatically, only energy is transferred, when in the ground state. Adiabatic Quantum Computing can be as powerful as a non-stoquastic Hamiltonians in the circuit model. This means that the eigenvalue gap is at its minimum complicated many-body Hamiltonian. Adiabatic Quantum Algorithms allow for quantum speedup and can overcome some of the issues in qubit Quantum Computing, such as needing less qubits to crack asymmetric encryption. The issue with Adiabatic Quantum Computing is that it is inherently unstable as the qubits get higher, this creates a greater limitation to its future use. Adiabatic Quantum Algorithms are great for solving satisfiability problems and combinatorial search. Circuit model of Quantum Computing, also called Gate. Circuit model Quantum Computing is the most common form of Quantum Computing currently. Circuit model Quantum Computing uses Hilbert space, vector space that allows defining lengths and angles, and has a series of unitary quantum logic gates to generate its qubits. Multiple quantum logic gates are connected together to generate more qubits. A big difference between classical logic gates and quantum logic gates are that quantum logic gates are able to go backward and forwards, where classical logic gates can only move forwards. This reversibility of quantum logic gates allows for the Toffoli gate and can use all Boolean functions. The most common quantum logic gates used are Hadamard gate, Pauli-X gate, Pauli-Y gate, Pauli-Z gate, Phase shift gates, Controlled phase shift, Swap gate, Toffoli gate, Fredkin gate, Ising coupling gate and Deutsch gate. We used IBM’s Circuit model quantum computer. Companies like IBM have put out free to use Quantum Labs. Quantum Computer systems are too costly to get for students, so using IBM’s open-source SDK Qiskit was the best option available to us to do Quantum Computing research. IBM’s open-source SDK Qiskit has a Python interface that allows for a more familiar user interface.
+
+\subsection{Criteria of Algorithms in the CIA Triad}
+Confidentiality of quantum computing has a lot of overlap with Integrity and Availability. Confidentiality is the protection of data while being processed, stored and transported. In quantum computing Confidentiality is achieved in processing by Symmetrical encryption such as AES when 256 bit or higher. When data is in motion Confidentiality can be achieved by Quantum Key Distribution, QKD can keep data encrypted while in motion. When data is stored AES 256 bit or higher is a good encryption to protect data. Confidentiality shares some of the same security needs as Integrity and they overlap in the projection of data in motion. Confidentiality also shares some of the same security types as Availability, such as data at rest needs to be encrypted. Controversially quantum computing has an attribute called noise, the noise in the environment around the quantum computer can change and interfere with the data. To reduce the effects of noise the quantum computing process is repeated many times in parallel with different noise and then the consistent data can be removed from the noise. This process allows for data integrity, keeping the data from being altered or damaged.
+
+Integrity in quantum computing deals with making sure that the data is real, accurate and secure. Making sure that the data is real and accurate can be an issue with quantum computing due to the inherent nature of quantum. Quantum computing uses superposition of two states and measures the quantum entanglement of the partials to retrieve the answer without collapsing the wave function. “Unlike classical bits, a quantum bit can be put in a superposition state that encodes both 0 and 1. There is no good classical explanation of superpositions: a quantum bit representing 0 and 1 can neither be viewed as “between” 0 and 1 nor can it be viewed as a hidden unknown state that represents either 0 or 1 with a certain probability.”(Introduction to Quantum Computing, Rieffel, Polak). It’s hard to insure integrity when the answer is neither right nor wrong until measured and analyzed. “This process is known as quantum parallelism. However, measuring the output states will randomly yield only one of the values in the superposition, and at the same time destroy all of the other results of the computation. .”(Introduction to Quantum Computing, Rieffel, Polak). The nature of quantum also lends to data integrity because of the wave function, if the data is tampered with it will change the superposition and collapse the wave function. The data will be safe from outside interference until it is quantum entanglement is measured.” Einstein, Podolsky, and Rosen proposed that each particle has some internal state that completely determines what the result of any given measurement will be.”(An Introduction to Quantum Computing for Non-Phsicists, Rieffel, Polak). Integrity of data already retrieved from the quantum computer can be ensured. Data at rest can be encrypted with AES 256 bit or higher and data in motion can be secured with QKD. Integrity in classical computing can be hardened against the threat that quantum poises. To secure classical computing data at rest AES 256 bit or higher can be used and to secure data and to secure data in motion lattice and ring based encryption can be used. NTRUEncrypt is a lattice-based public-key Asymmetric encryption that is still being developed and worked on. NTRUEncrypt was first introduced in 1996 and is one of the most researched lattice-based encryptions designed to protect against quantum computing. “We choose implementations offering 128-bit security (except RSA-1024 offering 80-bit security) for comparison. Our AvrNTRU outperforms the RSA implementation, achieving 82.8 times faster decryption, even though RSA-1024 cannot match the same security level.”(A Lightweight Implementation of NTRUEncrypt for 8-bit AVR Microcontrollers, Cheng, Großschädl, Rønne, Ryan). Currently quantum computing cannot produce enough qubits to threaten current encryption. van Oorschot-Wiener’s classical computing parallel collision searching algorithms is more of a threat to integrity then quantum computing currently.
+
+Availability in quantum computing is a little bit tricky, quantum computers are currently not available to most people. Quantum computers are very expensive and because of that most people will not have access. Availability of the data quantum computers create is also limited, because of limited access. Access to quantum computers can be gained through some corporations like IBM, Microsoft, Google and other corporations. This access is limited and the most qubits you can access is about 3. The nature of quantum computing decreases the availability of data as the data may be in a superposition of two states but if tampered with the state collapses and all data is lost. This may be great for security but data will always have different phases until the data can be measured and stored which lowers availability.
+
+Non-Repudiation in quantum computing is much the same as classical computing in that providing proof that the delivery of the data and the data itself has not been tampered with is the needed result. The issue is that a quantum state is not signable with quantum systems. The quantum state cannot be modified without collapsing the wave function, in non-repudiation you want to be able to reverse the process, the nature of quantum doesn’t allow this.  This raises the question, can a quantum state be encrypted with a public key and sent to another quantum computer, the answer is yes and QKD does this. The issue is can you guarantee non-repudiation with QKD, yes and no. We can say that the public key and the encrypted message along with the nature of the quantum state says that it can’t be tampered with, but it can still be intercepted in transit. QKD is still susceptible to Man-In-The-Middle Attack (MITM). To fix this the authentication step has been implemented using an initial secret key and this is called quantum authenticated encryption. A shared key is needed to mitigate a MITM attack which means symmetric encryption is needed to insure asymmetric encryption and this raises the issue of whether you will need a different shared key for every user that receives this transmission. Quantum signcryption exists and you can sign a quantum state by layering a classical signature in the quantum state as part of the quantum state generation. When this quantum state is sent it will have a reversible classical signature layer in it. This can help with integrity but not with non-repudiation. There is a possibility that a malicious receiver could intercept and unwrap the quantum state then get the classical signature and imbed it into their own quantum state message. Now for the contradiction, there is a quantum digital signature method that uses the dynamics of quantum dots to digitally sign a quantum state. This method uses the mapping of quantum dots, quantum dots are semiconducting particles which are created in the tiny divots in the silicon of the gate electrode. Quantum computers create these quantum dots as they create a quantum state and each one is unique to the quantum gate. Using the quantum dots with DNA alphabet and chaotic S-box creates a digital signature with a symmetric encryption. This quantum signature method looks secure but is far more complicated to produce than using quantum authenticated encryption and not proven to be more secure. To ensure non-repudiation in classical computing digital signing with NTRUEncrypt has been proven to be resistant to quantum computing and is less computationally intensive then, the quantum computing vulnerable, RSA\cite{cheng_h._lightweight_2021}.
+
+\subsection{CLASSIFICATION}
+
+The Computer Security Resource Center (CSRC) and the National Institute of Standards and Technology (NIST) have been financing research into hardening systems against the future threat of quantum computing. The picture shown in fig 1 has all classical encryption candidates that have made it to the second round of CSRC and NIST testing. In fig 2 you can see that some of these didn’t make it to round 3. Using their guidelines of is it too slow to complete encryption given a reasonable time, is the key size two big and is there a known attack that works against it. Quantum computing is still in the beginning research stage and most algorithms for protecting data are being developed as quantum computing grows. To give the algorithms chosen proper consideration we will compare the quantum computing algorithms to the standards set by the CSRC and NIST. In Chart 1 is a list of quantum computing security measures and classical computing’s security measures. Based off of Chart 1 we will justify our choices in which security algorithms were chosen.
+
+<Chart and figures omitted as they likely won't make the final paper>
+
+As shown NTRUprime, NTRUprime is an upgraded version of NTRU with a different design and security model but built on the same principles, has made it as a finalist and will get further testing. Also shown in chart 1 AES 256 bit or higher is very computationally intensive but it finishes computation in a reasonable time. The key size for AES is manageable so it gets medium size. There are currently no known compromises to AES 256 bit or higher which allows for high non-repudiation. QKD has a good score but is susceptible to MITM attack, if implemented with quantum authenticated encryption then MITM is mitigated. Quantum Signcryption key size is too large and it is susceptible to MITM. Dynamics of quantum dots is very computationally intensive and the key size is too large also. Using NIST guidelines we would recommend AES 256 bit or higher for classical computers. NTRUprime is still in the final testing phase but it is the oldest lattice based encryption that is secure against quantum computers, we would recommend it. Earlier in the paper we talked about NTRU’s ability to digitally sign for classical computing, the top contender for the NIST is Dilithium and Falcon for hashing.
+
+Recommendations encryptions for quantum computing. QKD when paired with quantum authenticated encryption is a very strong method for ensuring non-repudiation with data in motion. AES 256 bit or higher to secure data at rest. Zero knowledge is a good protocol for ensuring data at rest and as proof of non-repudiation. Not recommended is Quantum Signcryption and Dynamics of quantum dots. Quantum Signcryption is susceptible to MITM attack and Dynamics of quantum dots key size is too large, for these two reasons they are not recommended.
+
+\subsubsection{Confidentiality} % Casey
+To date, few quantum algorithms have been designed that are focused on ensuring confidentiality during the transmission of quantum or classical data. However, despite the lack of work regarding such quantum cryptosystems, a few proposed systems stand out as candidates for proof-of-concept implementation or to serve as a base for further research. One is that proposed by Amerimehr and Dehkordi which - in addition to providing integrity, authenticity, and non-repudiation - ensures confidentiality during the transmission of classical data without the use of a public channel\cite{amerimehr_quantum_2018}. Another scheme, proposed by Pleşa, achieves confidentiality by way of a multi-channeled, hybrid system\cite{plesa_hybrid_2017}. This system uses a quantum teleportation circuit for key exchange and a classical channel for data transmission and demonstrates the feasibility of near-term implementation of quantum cryptosystems that integrate with existing classical infrastructure.
+
+%%%% The good stuff
+\section{Analysis \& Results}
+\subsection{Implementation of a Quantum Cryptosystem}
+%    1. Sample implementation of a selected algorithm
+%        1. Challenges encountered during implementation
+%        2. Limitations of our implementation
+%        3. How this implementation could be used in practice
+As a primary goal of this research was to identify quantum cryptographic algorithms with practical applications, we felt it necessary to take a theoretical algorithm described in a research paper and implement it using a quantum programming framework. Qiskit was selected as our implementation tool of choice due to team member familiarity, its overall ease of use, quality of documentation, and simplicity of running against IBM's cloud-connected quantum hardware. The algorithm we identified as the most promising candidate for implementation was that proposed by Amerimehr and Dehkordi in their 2018 paper "Quantum Symmetric Cryptosystem Based on Algebraic Codes"\cite{amerimehr_quantum_2018}, as the proposed system is simple and provides confidentiality, integrity, and non-repudiation. For simplicity we shall follow the naming convention used by BB84, B92, and others, and refer to this cryptosystem as AD18.
+
+% In AD18, Alice ... instead? This description may need to go somewhere else too
+The algorithm itself resembles BB84 in that the transmitting party, whom we shall refer to as Alice, selects random bases for the transmission of her message. While the recipient, Bob, measures the received qubits in a random basis in BB84, in AD18 Bob measures all of the received message values at a $22.5^{\circ}$ angle and encounters an approximately 15\% error rate in his measurements. The actual message sent by Alice includes an algebraic error correcting code of sufficient quality to correct the errors Bob encounters, thus allowing for a successful transmission without the public announcement of bases. Interspersed with the message qubits is a keyed hash value, and a pre-shared key is used in conjunction with some functions $f(k)$ and $g(k)$ to determine the locations and bases used in the transmission of the hash qubits. 
+
+The AD18 cryptosystem can be thought of in terms of quantum and classical pieces. The quantum piece simply involves preparing, transmitting, and measuring qubits. The classical piece of the algorithm involves encryption, keyed hashing, and error correction. For the quantum piece of the algorithm, we were able to leverage the BB84 code example provided in the Qiskit documentation\cite{qiskit_bb84} to demonstrate the preparation and measurement of qubits in different bases by applying a combination of X and H gates during preparation, and H gates during measurement. In AD18 as Bob is measuring in a $22.5^{\circ}$ basis, we applied an RZ gate with $\theta = -\pi/8$.
+
+The classical portions of the algorithm involving encryption and hashing did not appear to be as important to the overall concept as qubit measurement and error correction. For ease of implementation, we selected a Salsa20 stream cipher with a 128-bit key for the encryption and decryption of the message, and an HMAC-MD5 keyed hash due to its short length. These protocols could easily be replaced with alternatives without materially impacting the functionality of the algorithm. For our $f(k)$ function, we used a trivial implementation in which the message and hash are simply concatenated together, though this would need to be modified for a usable implementation in order to keep the security of the system. The $g(k)$ function used to determine the transmission bases of the keyed hash was also kept simple, with Alice transmitting hash bit $H_i$ in $B_Z$ if $k_{i \mod len(k)} = 0$ and in $B_X$ otherwise.
+
+The primary difficulty in successfully implementing this algorithm arose in the identification of an algebraic error correcting code that was capable of handling the observed error rates for non-trivial messages. In the paper describing AD18, the authors transmit a two bit message which is expanded to five bits by their $[5,2,3]$ linear error correcting code. As we wished to transmit the significantly longer message "hello world", we selected the Python library \texttt{commpy} and used its convolutional coding functions. A transmission success rate of $>90\%$ on a three character message was achieved by using a memory size of 3 and a G-Matrix initialized with the value \texttt{array([[1, 3, 5, 7, 9, 11, 1, 3, 5, 7, 9, 11]])}. Simpler convolutional code trellises resulted in dramatically worse performance of the cryptosystem, with transmission success rates $<25\%$ per byte for a value \texttt{array([[5,7]])} with the same three character message. Additionally, the G-Matrix used in our implementation would likely not be practical in a real implementation as it adds 100 bits of error correction per byte transmitted, which is simply unfeasible.
+
+A larger concern that is not specific to our implementation is that the algorithm does not provide a high level of consistency for the transmission of longer messages. An analysis of the algorithm's performance over 1000 executions for string lengths ranging from 1 to 8 using the above parameters shows a success rate of approximately $0.96$ per character transmitted, so for an 8 character message we expect and observe a rate of $0.96^8 = 0.72$. While it may be possible to tune the error correction algorithms further to increase performance, the probabilistic nature of the quantum measurements combined with a hash check against the whole message means that the failure to correctly decode even a single bit of data using ECC will result in a significantly different hash value and thus a failure to authenticate the message.
+
+While the authors are not experts in the field of error correcting codes and may have used a suboptimal mechanism in our implementation, we still find the proposed system to be impractical for non-trivial examples. When Bob makes his measurements in this cryptosystem, every bit measured has a $15\%$ chance to be measured incorrectly. As a result, there is always a non-zero probability of a decoding error regardless of the ECC used, and the overall error rate rapidly approaches a prohibitive level. For a trivial example with a two bit message and three bits of error correction as presented in the paper, the chance of Bob correctly measuring 4 or more bits as required for error correction is $0.85^5 + 5*(0.15\cdot 0.85^4) = 0.84 = 84\%$. If we use the same error correction mechanism and expand to 8 message bits with 12 bits of ECC, then the chance of correctly measuring a sufficient number of bits to decode the message falls to $50\%$, and is cut in half for each subsequent 20-bit block of error corrected data we append.
+
+% What's the maximum number of bits that can be feasibly sent at a reasonable error rate vs introduced overhead?
+
+\subsection{General Approach to Quantum Cryptographic Algorithm Implementation}
+%    2. General formula for implementation of quantum algorithms - Answers RQ5
+%        1. How to identify an algorithm and turn it into a prototype implementation using Qiskit or similar
+%        2. Limitations of this approach - what it works for, what it doesn't work for
+%        3. Here’s a workflow that someone could follow to take a mathematical implementation from a research paper and turn it into an implementation using Qiskit or another framework.
+%        4. Here’s an example we did following these steps, here are the challenges we encountered, insight into how to translate other frameworks besides Qiskit
+As the act of implementing a proposed quantum algorithm can prove invaluable in uncovering its weaknesses, we believe that sharing and generalizing the methodology used in our implementation can benefit other researchers seeking to answer similar questions regarding other quantum cryptographic protocols. Our implementation was done in Qiskit, but this approach is language agnostic within the circuit-based quantum computing paradigm and is expected to apply to Cirq, Q\#, AWS Braket, and other quantum programming languages. The approach presented here has the additional limitation of not representing the transmission of quantum data, though this is largely a limitation of the current state of quantum programming.
+
+The quantum cryptographic algorithms we reviewed are generally made up of the following four stages and their corresponding activities:
+\begin{enumerate}
+\item Preparation: Pre-shared secrets established, channel selection, values initialized as qubits.
+\item Sender Processing: Cryptographic operations performed on message qubits
+\item Transmission: Transmission over selected channel, announcement of public values
+\item Recipient Processing: Cryptographic operations performed on message qubits, validation, eavesdropper detection
+\end{enumerate}
+Steps may be repeated or reordered, and roles may change, as may be observed in multi-party signature schemes where data is passed back and forth between sender, recipient, and a trusted third party, with various operations being applied along the way.
+
+\subsubsection{Preparation}
+In this stage of a cryptographic protocol, the sender and receiver establish a message channel, establish which pre-shared secret values to use, and prepare any necessary data. Should any classical cryptography, such as encryption or hashing, be required in the protocol, we recommend applying it at this stage whenever possible. Data preparation involving classical data can be done by converting into binary, then applying an $X$ gate to qubits which are meant to represent 1s in the binary data. As classical data can be large, it can quickly push simulators to their limits when trying to perform even simple operations on a 32-bit or larger classical value. To avoid this pitfall, consider that it is typically not necessary to construct a complicated circuit in which all values are processed in parallel unless all of the qubits interact in some manner. Instead, consider representing the interaction as an array of simple circuits. For quantum data, in this stage the sender would apply appropriate operations in order to set the qubits into the appropriate state, such as executing Grover's algorithm up to the final measurement stage prior to hypothetically signing and transmitting the results of this algorithm. We also recommend looking for places where initial preparation can be simplified without materially impacting the functionality of the protocol under study.
+
+\subsubsection{Sender Processing}
+This stage is the least specific as it will vary the most widely from protocol to protocol. The most common operations we observed in this stage were simple rotations, which are typically applied either as the Hadamard ($H$) gate or $R_{x,y,z}$ gates of arbitrary value. As the names of gates in quantum frameworks are generally well documented and only differ mildly amongst the various languages, referring to API documentation at this stage will resolve many challenges. Protocols which require custom unitary gate operations are also supported by many frameworks, such as Qiskit's \texttt{UnitaryGate} class.
+
+\subsubsection{Transmission}
+The quantum computing frameworks we have used do not provide the capability to easily represent the transmission of quantum data from one party to another. If noise or an eavesdropper are to be present, they must be represented with additional gates and measurements at this stage. In a typical eavesdropper scenario, Eve makes measurements using any available public information, then would retransmit the data to Bob. In some cases Eve may apply her own set of gates before retransmitting the data.
+
+\subsubsection{Recipient Processing}
+This stage can be quite protocol dependent as well, though it will frequently involve the application of one or more gates prior to taking a final measurement of the received qubits. After measurement, additional public sharing or comparison of values may take place. This public sharing of values limited by the same lack of capability described in the transmission stage, but is usually easily represented by passing parameters into a function. For signature schemes, this is where a final validation of the signature will occur, either by computing a classical keyed hash or by performing additional quantum operations involving a third-party arbitrator.
+%Weird stuff - Some algorithms may have custom gates, which can be implemented in most frameworks.
+%Review other papers to see what weird shit crops up in those and address how they could be implemented
+
+Workflow - put this together, should be easy
+
+Example using this approach - Need to finish this still for an example like one of the simpler signature papers
+
+
+%    3. Tie back to research questions - what's our answer, and how did we get there?
+%        1. RQ2 - Confidentiality
+%            1. Have found a limited number of quantum algorithms which provide confidentiality. Quantum data can be "encrypted" using a one-time pad approach by applying a pre-shared set of random rotations to qubits before transmission, and removing them after. Quantum encryption with a classical key is also possible through quantum teleportation, as entangled qubits can be shared and then an arbitrary state teleported by transmitting two classical bits.
+%            2. Quantum encryption of data at rest is not a relevant concern. Due to the no-cloning theorem and the destructive nature of quantum measurements, as well as the current short-lived nature of quantum data, qubits can be treated as always being "in motion", and separate encryption schemes are not necessary.
+%            3. Post-quantum cryptography will be useful in the future, as these algorithms can be applied today with classical computers to protect data.
+%        2. RQ3 - Integrity
+%            1. Zero-Knowledge quantum integrity may be most promising
+%        3. RQ4 - Non-Repudiation
+%            1. Challenging due to the impossibility of verification without a third party
+%            2. Signatures are frequently not reusable
+%            3. Can provide value in some cases, but most promising approach is to use post-quantum signature techniques
+
+
+\section{Conclusion}
+%5. Conclusion - include "Sociopolitical" in here somewhere
+%    1. General conclusions
+%        1. Revisit research questions and goals
+%            1. RQ1 - replace vs. strengthen vs. quantum solution
+%            2. RQ2-4 - most promising protocols if applicable
+%            3. RQ5 - framework for implementing quantum algorithms
+%        1. Recommendations for today
+%            1. Gain an awareness of quantum computing, what it can and can't be used for, and how it threatens current systems
+%            2. Be prepared to implement post-quantum encryption once it has been approved by NIST
+%            3. Data transmitted today with insecure encryption could be intercepted and stored until quantum computers are viable, and then decrypted by an adversary.
+%        2. Recommendations for 10+ years
+%            1. Expect to see quantum computing become much more widespread, and start to be applied for simple cases like entropy generation, key distribution, and optimization problems
+%            2. Be prepared to react to new algorithms being discovered which threaten previously-secure cryptosystems.
+%    2. Future research
+%        1. Encryption of quantum data has not been well explored
+%        2. Other gaps we uncover during final preparation
+
+\subsection{Future Research}
+Generalize process for implementing algorithms to include non-circuit paradigms 
+Extra work on error correcting codes to improve those
+
+
+\bibliography{citations}{}
+\bibliographystyle{ACM-Reference-Format}
+
+\end{document}  
