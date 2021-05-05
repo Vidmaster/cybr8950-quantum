@@ -210,3 +210,6 @@ Install Jupyter Lab by running the command `pip install jupyterlab`, then verify
 ![Empty Jupyter Lab](image/emptylab.png)
 
 Additional installation and setup instructions can be found [here](https://jupyter.org/install) if needed.
+
+### Other Dependencies
+Two additional dependencies that are used in our Jupyter Notebooks are `scikit-commpy` and `pycryptodome`. These can be installed with the commands `pip install scikit-commpy` and `pip install pycryptodome`.
