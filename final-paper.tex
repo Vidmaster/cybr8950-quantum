@@ -145,7 +145,7 @@ There still exists a gap between the current QKD system and ideal one, some scie
 In ideal TF-QKD, the secure key rate scale can be enlarged to almost twice, so it can be used for a long-distance transmission which is much longer than the traditional QKD. In this case, TF-QKD not only maintains the confidentiality of data, but also can be used on a relevantly longer distance communication. Nevertheless, constructing the mode matching systems to finish the first interference of two types of lasers is very difficult\cite{park_research_2020}.
 
 \subsubsection{Quantum Non-Repudiation}
-Most quantum experts believe the digital signatures are an important aspect for verifying the integrity and authenticity of a message, so some researchers develop a scheme which uses a dynamic map based on quantum dots, a permutation and substitution scheme like AES, and DNA coding to create a quantum digital signature with a high degree of security as long as the signature is of sufficient length. In other words, by sending a dynamic quantum system's control parameter and critical points as well as some initial point in phase space, two parties could implement these digital signatures using a quantum computer, but without requiring a quantum channel for transmission\cite{hematpour_presence_2020}.
+Digital signatures are an important aspect for verifying the integrity and authenticity of a message, so some researchers develop a scheme which uses a dynamic map based on quantum dots, a permutation and substitution scheme like AES, and DNA coding to create a quantum digital signature with a high degree of security as long as the signature is of sufficient length. In other words, by sending a dynamic quantum system's control parameter and critical points as well as some initial point in phase space, two parties could implement these digital signatures using a quantum computer, but without requiring a quantum channel for transmission\cite{hematpour_presence_2020}.
 
 Quantum signatures can be used for both classical and quantum messages. The ability to sign a message using only a single qubit and a trusted third party is valuable. With Arbitrated Quantum Signatures (AQS), the key forgery is impossible, but perfect non-repudiation is not\cite{kang_quantum_2015}.
 
@@ -259,8 +259,9 @@ The circuit model of quantum computing is the most common form of Quantum Comput
 %        3. Ways to evaluate against possible attacks (if we get that far)
 %    5. Revisit research questions and relevance to the methodology. If RQs overlap, can keep this structure, otherwise consider having a top level for each RQ and then go from there. Which part of our methodology addresses each question?
 \section{Methodology}
-% TODO: Talk about methodology briefly
-Our research methodology involved first performing a comparative analysis of quantum cryptography protocols, in which we 
+Our research methodology closely resembles that used by Khan, Meraj, and Khan in their 2020 comparison of QKD protocols\cite{khan_security_2020}. This research primarily involved performing a comparative analysis of quantum cryptography protocols. A number of algorithms representative of different aspects of cryptography, including key distribution, confidentiality, integrity, and non-repudiation, were selected from the literature. We examined these protocols and identified important characteristics which we felt could best be used to differentiate them from one another.
+
+Algorithms were classified using unique criteria based on their intended function, as categorizing an encryption algorithm based on its verifiability would not make sense. Some algorithms which provided multiple functions, such as confidentiality and non-repudiation in the case of \cite{amerimehr_quantum_2018}, appear in multiple categories. This examination was conducted with the goal of answering our research questions and selecting algorithm candidates for implementation in a quantum simulator.
 
 \subsection{Quantum Key Distribution}
 The QKD stands for the Quantum Key Distribution, which is defined as transferring a secure key between two users by using quantum related technology\cite{khan_security_2020}. Our original goal for this project is to seek out a proper and efficient Quantum Key Distribution protocol to satisfy both performance and security during the key transmission between two network nodes or even more users. Since the real implementation of QKD is different from the theoretical way, we would like to do some research with respect to make QKD practical. In the below list, we have provided a general view of those different QKD protocols that either are under analyzing by other researchers or have been experimented using real quantum related devices.
@@ -320,25 +321,19 @@ Pleşa 2017 & classical & single-qubit & multi-channel; shared, entangled qubits
 
 Technical challenges regarding the ability to store qubits have limited the research and development of algorithms for encrypting quantum data at rest. Advancements in this field appear to be few and far between; even in perfect conditions, the longest period of time that qubits can be stored before decoherence is between three and six hours \cite{saeedi_room-temperature_2013, zhong_optically_2015}.
 
+\subsection{Integrity}
+Integrity in classical computing deals with making sure that the data is real, accurate and secure. Making sure that the data is real and accurate can be an issue with quantum computing due to the inherent nature of quantum. For integrity of Classical computing against the future threat of quantum computing, AES for data at rest. When data is in motion lattice based encryption, NIST is still doing testing, has shown the best resistance to quantum computing. NIST is still testing different hashing algorithms. For integrity of quantum computing Zero knowledge will tell you if data has been tampered with. The nature of quantum can increase integrity, when in superposition data can't be tampered with or the wave function collapse. For data in motion QKD paired with quantum authentication encryption using a pre-shared secret key will maintain quantum computing integrity. These choices have been vetted by multiple outside research.   
+
+It is hard to ensure integrity when the answer is neither right nor wrong until measured and analyzed. "This process is known as quantum parallelism. However, measuring the output states will randomly yield only one of the values in the superposition, and at the same time destroy all of the other results of the computation."\cite{rieffel_introduction_1998} The nature of quantum can also increase data integrity through the wave function, if the data is tampered with it will change the superposition and collapse the wave function. The data will be safe from outside interference until its quantum entanglement is measured. "Einstein, Podolsky, and Rosen proposed that each particle has some internal state that completely determines what the result of any given measurement will be."\cite{rieffel_introduction_1998} Integrity of data already retrieved from the quantum computer can be ensured. Data at rest can be tested with Zero Knowledge and data in motion can be secured with QKD paired with quantum authenticated encryption. 
+
+NTRUEncrypt is a lattice-based public-key Asymmetric encryption. NTRUEncrypt was first introduced in 1996 and is one of the most researched lattice-based encryptions designed to protect against quantum computing. "We choose implementations offering 128-bit security (except RSA-1024 offering 80-bit security) for comparison. Our AvrNTRU outperforms the RSA implementation, achieving 82.8 times faster decryption, even though RSA-1024 cannot match the same security level."\cite{cheng_h._lightweight_2021}. NTRUEncrypt is the precursor to NTRUPrime. NTRUPrime is a faster updated version of NTRUEncrypt, and is currently in trials with the U.S. Government for possible U.S. Government endorsement for hardening classical computing system against quantum computing. While quantum computing cannot produce enough qubits to threaten today's encryptionschemes, van Oorschot-Wiener's classical computing parallel collision searching algorithms is more of a threat to integrity than quantum computing currently\cite{mavroeidis_impact_2018}.
+
 \subsection{Non-Repudiation}
-% TODO fix this garbage fire
-Three goals of signature schemes - unforgeability, non-repudiation, transferability\cite{amiri_unconditionally_2015}
-Amiri Andersson do a good review of schemes in 2015
-%  1. Blind or arbitrated
-%  2. Reusable
-%  3. One transmission or multiple
-%  4. Security principle (rotation, hashing, etc.)
-%  5. Target (classical or quantum data)
-%  6. Signature length vs. message length
+Amiri and Andersson\cite{amiri_unconditionally_2015} conducted an in-depth review of unconditionally secure quantum signatures in 2015, on which we heavily relied in setting the direction of our research into quantum non-repudiation. In their work, Amiri and Andersson describe signature schemes, whether for classical or quantum data, as having three goals: unforgeability, non-repudiation, and transferability. It should be impossible for an adversary to send a signed message impersonating a legitimate party, and impossible for a legitimate sender to deny a signed message. Furthermore, when one party verifies or rejects a signature they should be confident that any other party would verify or reject in the same way.
 
-Other stuff to talk about in here:
-practical implementations \cite{an_practical_2019} and \cite{ding_280-km_2020}
-Single qubit/trapdoor functions \cite{kang_quantum_2015}
-DNA dots stuff \cite{hematpour_presence_2020}
-Amiri survey \cite{amiri_unconditionally_2015}
-one time pad private key \cite{chen_public-key_2018}
-authentication of quantum \cite{barnum_authentication_2002} vs classical \cite{curty_quantum_2001}
+We chose to categorize the quantum signature algorithms we examined first according to whether they target classical or quantum data, as this is indicative of a major difference in their usage. Next, we examined whether the signature produced was reusable, i.e. could be verified by more than one party without destroying the data. We also categorized the algorithms on the underlying security principle behind the quantum signature, as well as the role of a third party arbitrator in the protocol, if one was present at all.
 
+Our selection of algorithms ranges from the original quantum signature scheme as proposed by Gottesman and Chuang in 2001\cite{gottesman_quantum_2001} to recent research conducted by Hematpour, Ahadpour, and Behnia involving the dynamics of quantum dots\cite{hematpour_presence_2020}, and covers a variety approaches to quantum non-repudiation. A summary of our reviewed protocols can be seen in Table \ref{tab:nonrep}.
 
 \begin{table*}[ht]
 \caption{Classification of Quantum Non-Repudiation Algorithms}
@@ -347,27 +342,26 @@ authentication of quantum \cite{barnum_authentication_2002} vs classical \cite{c
 \hline
 \textbf{Algorithm} & \textbf{Target Data} & \textbf{Reusable?} & \textbf{Security Principle} & \textbf{Third Party} \\ 
 \hline
+Gottesman and Chuang 2001 & Classical & Maybe & Quantum trapdoor function & None \\
+\hline
 Curty and Santos 2001 & Classical & No & Entanglement & None \\
 \hline
 Barnum et al. 2002 & Quantum & No & Purity testing codes & None \\
 \hline
+Kang et al. 2015 & Quantum & No & Quantum trapdoor function & Provides non-repudiation \\
+\hline
+Amiri et al. 2016 & Classical & Yes & Quantum key distribution & Provides non-repudiation \\
+\hline
 Chen et al. 2017 & Quantum & No & One-Time pad & Arbitrator generates private keys \\
 \hline
-Amerimehr and Dehkordi 2018 & Classical & Yes & Classical MAC & None \\
+Amerimehr and Dehkordi 2018 & Classical & Yes & Classical encryption and HMAC & None \\
 \hline
 Hematpour et al. 2020 & Classical & No & Unique system state and critical points & Provides non-repudiation \\
-\hline
-Kang et al. 2014 & Quantum & No & Quantum trapdoor function & Provides non-repudiation \\
 \hline
 \end{tabular}
 \end{table*}
 
-\subsection{Integrity}
-Integrity in classical computing deals with making sure that the data is real, accurate and secure. Making sure that the data is real and accurate can be an issue with quantum computing due to the inherent nature of quantum. For integrity of Classical computing against the future threat of quantum computing, AES for data at rest. When data is in motion lattice based encryption, NIST is still doing testing, has shown the best resistance to quantum computing. NIST is still testing different hashing algorithms. For integrity of quantum computing Zero knowledge will tell you if data has been tampered with. The nature of quantum can increase integrity, when in superposition data can't be tampered with or the wave function collapse. For data in motion QKD paired with quantum authentication encryption using a pre-shared secret key will maintain quantum computing integrity. These choices have been vetted by multiple outside research.   
-
-It is hard to ensure integrity when the answer is neither right nor wrong until measured and analyzed. "This process is known as quantum parallelism. However, measuring the output states will randomly yield only one of the values in the superposition, and at the same time destroy all of the other results of the computation."\cite{rieffel_introduction_1998} The nature of quantum can also increase data integrity through the wave function, if the data is tampered with it will change the superposition and collapse the wave function. The data will be safe from outside interference until its quantum entanglement is measured. "Einstein, Podolsky, and Rosen proposed that each particle has some internal state that completely determines what the result of any given measurement will be."\cite{rieffel_introduction_1998} Integrity of data already retrieved from the quantum computer can be ensured. Data at rest can be tested with Zero Knowledge and data in motion can be secured with QKD paired with quantum authenticated encryption. 
-
-NTRUEncrypt is a lattice-based public-key Asymmetric encryption. NTRUEncrypt was first introduced in 1996 and is one of the most researched lattice-based encryptions designed to protect against quantum computing. "We choose implementations offering 128-bit security (except RSA-1024 offering 80-bit security) for comparison. Our AvrNTRU outperforms the RSA implementation, achieving 82.8 times faster decryption, even though RSA-1024 cannot match the same security level."\cite{cheng_h._lightweight_2021}. NTRUEncrypt is the precursor to NTRUPrime. NTRUPrime is a faster updated version of NTRUEncrypt, and is currently in trials with the U.S. Government for possible U.S. Government endorsement for hardening classical computing system against quantum computing. While quantum computing cannot produce enough qubits to threaten today's encryptionschemes, van Oorschot-Wiener's classical computing parallel collision searching algorithms is more of a threat to integrity than quantum computing currently\cite{mavroeidis_impact_2018}.
+Common to most early schemes for quantum signatures\cite{barnum_authentication_2002, gottesman_quantum_2001, curty_quantum_2001} is the lack of a trusted third party, without which it is impossible to produce unconditionally secure signatures of quantum messages\cite{kang_quantum_2015}. In more recently developed quantum signature schemes, a trusted third party either generates private keys\cite{chen_public-key_2018} or provides non-repudiation\cite{kang_quantum_2015, hematpour_presence_2020}. The only recent protocol we found which provides non-repudiation without the use of a trusted third party was proposed by Amerimehr and Dehkordi, and also provides confidentiality and integrity through the use of classical encryption and keyed hashing in combination with transmission over a quantum channel\cite{amerimehr_quantum_2018}, though this protocol is not capable of signing quantum data.
 
 
 \section{Analysis \& Results}
@@ -511,7 +505,14 @@ The scheme proposed by Amerimehr and Dehkordi ensures confidentiality by using a
 
 Despite their additional computational overhead, hybrid quantum cryptosystems like the one proposed by Pleşa are somewhat less reliant on the advancement of quantum computers because they transmit encrypted messages over classical channels. As a result, these systems have a greater likelihood of real-world implementation in the near future. Pleşa's system achieves confidentiality by use of a quantum circuit that guarantees perfect randomization\cite{plesa_hybrid_2017}. While its ability to ensure confidentiality can be proven through experimentation, its real-world application is hindered by the requirement for each communicating party to share a pair of entangled qubits. The challenges introduced in maintaining and transporting entangled qubits are not unique to this scheme but are notable obstacles that are likely to delay the real-world implementation of this system.
 
-TODO: Discuss QKD, integrity, non-repudiation, tie back in to research questions directly
+% TODO: Discussion on integrity
+
+\subsection{Non-Repudiation}
+Quantum non-repudiation is challenging due to the the impossibility of unconditionally secure signatures for quantum data without a trusted third party, as well as the destructive nature of measurements for both signatures and data. Quantum signatures are frequently not reusable, which makes their transferability questionable. Quantum signatures of classical data are unlikely to be very important in the near future as classical signatures are still viable, and NIST is actively researching post-quantum signature protocols for classical data. 
+
+Quantum signatures of quantum data will become more important in the future when quantum computers become more prevalent. Just like current certificates use trusted root authorities, quantum signatures will need trusted quantum arbitrators, and this concept has not been well explored to date. Several promising quantum signature schemes have been experimentally realized in recent years, including an implementation by An et al.\cite{an_practical_2019} in 2019, and another by Ding et al.\cite{ding_280-km_2020} in 2020. Both of these practical implementations are based off of a proposal by Amiri et al.\cite{amiri_secure_2016} in 2016 for a secure quantum signature scheme which functions over insecure channels. 
+
+In the signature protocol proposed by Amiri et al.\cite{amiri_secure_2016}, the sender, Alice, communicates with two receiving parties, Bob and Charlie. Alice generates correlated bit strings separately with Bob and Charlie using a key generation protocol such as BB84. Bob and Charlie exchange half of their generated bit strings with one another over a secure classical channel. Alice signs and transmits a message over a classical channel to her desired recipient, say Bob, who then checks the signature against his own key and the key received from Charlie. If the number of mismatches between the signature and secret key is below some limit, then Bob can accept the message. Bob is also able to transmit the message and signature to Charlie for verification in the same manner. As quantum channels are only required during the key generation stage of this protocol, it is well suited for implementation as BB84 or other QKD protocols can be used.
 
 %    3. Tie back to research questions - what's our answer, and how did we get there?
 %        1. RQ2 - Confidentiality
@@ -527,7 +528,7 @@ TODO: Discuss QKD, integrity, non-repudiation, tie back in to research questions
 
 
 \section{Conclusion}
-In this paper we have explored the impacts of quantum computing on classical cryptography, examined the current state of the art of quantum cryptography, implemented and analyzed Amerimehr and Dehkordi's 2018 symmetric quantum encryption algorithm\cite{amerimehr_quantum_2018}, and presented a generalized process for the implementation of quantum cryptographic algorithms. The impacts of quantum computing on today's cryptographic systems are well understood, and efforts are being made by NIST to select suitable replacements for vulnerable public-key encryption, key-establishment, and signature algorithms\cite{moody_nist_2020, csd_postquantum_2017}. We identified promising quantum algorithms for important aspects of cryptography, including twin-field QKD for key distribution, zero knowledge proofs for integrity, AD18 for encryption, and quantum trapdoor functions for non-repudiation. While some of these algorithms, such as AD18, appear to need additional research and refinement to be practical for many applications, they can serve as a basis from which to build for future research.
+In this paper we have explored the impacts of quantum computing on classical cryptography, examined the current state of the art of quantum cryptography, implemented and analyzed Amerimehr and Dehkordi's 2018 symmetric quantum encryption algorithm\cite{amerimehr_quantum_2018}, and presented a generalized process for the implementation of quantum cryptographic algorithms. The impacts of quantum computing on today's cryptographic systems are well understood, and efforts are being made by NIST to select suitable replacements for vulnerable public-key encryption, key-establishment, and signature algorithms\cite{moody_nist_2020, csd_postquantum_2017}. We identified promising quantum algorithms for important aspects of cryptography, including twin-field QKD for key distribution, zero knowledge proofs for integrity, AD18 for encryption, and Amiri et al.\cite{amiri_secure_2016} for non-repudiation. While some of these algorithms, such as AD18, appear to need additional research and refinement to be practical for many applications, they can serve as a basis from which to build for future research.
 
 To aid in future evaluations of quantum cryptographic protocols, we examined implementations of BB84, AD18, and Kak's Three-Stage Protocol, and proposed a standard process by which other researchers can approach the challenge of implementing quantum cryptographic algorithms. As the field of quantum cryptography is still in its infancy, our hope is that these final two contributions will be of particular value. Finally, we will provide recommended actions organizations can take today and in the near future to prepare themselves for advances in quantum computing and cryptography.
 
