@@ -219,7 +219,7 @@ The circuit model of quantum computing is the most common form of Quantum Comput
 %        2. How algorithms were classified
 %            1. Different classification scheme was used for each intended function
 %            2. Algorithms may appear in multiple categories if they provide multiple attributes e.g. both confidentiality and integrity
-%            3. Explanation of criteria and why each was selected - TODO for team: Fill these in
+%            3. Explanation of criteria and why each was selected
 %                1. QKD criteria - https://github.com/Vidmaster/cybr8950-quantum/blob/main/QKD%20Protocols.md
 %                2. Confidentiality criteria
 %                    1. Application
@@ -260,6 +260,7 @@ The circuit model of quantum computing is the most common form of Quantum Comput
 %    5. Revisit research questions and relevance to the methodology. If RQs overlap, can keep this structure, otherwise consider having a top level for each RQ and then go from there. Which part of our methodology addresses each question?
 \section{Methodology}
 % TODO: Talk about methodology briefly
+Our research methodology involved first performing a comparative analysis of quantum cryptography protocols, in which we 
 
 \subsection{Quantum Key Distribution}
 The QKD stands for the Quantum Key Distribution, which is defined as transferring a secure key between two users by using quantum related technology\cite{khan_security_2020}. Our original goal for this project is to seek out a proper and efficient Quantum Key Distribution protocol to satisfy both performance and security during the key transmission between two network nodes or even more users. Since the real implementation of QKD is different from the theoretical way, we would like to do some research with respect to make QKD practical. In the below list, we have provided a general view of those different QKD protocols that either are under analyzing by other researchers or have been experimented using real quantum related devices.
@@ -321,7 +322,7 @@ Technical challenges regarding the ability to store qubits have limited the rese
 
 \subsection{Non-Repudiation}
 % TODO fix this garbage fire
-Three goals of signature schemes - unforgeability, non-repudiation, transferability\cite{amiri_todo}
+Three goals of signature schemes - unforgeability, non-repudiation, transferability\cite{amiri_unconditionally_2015}
 Amiri Andersson do a good review of schemes in 2015
 %  1. Blind or arbitrated
 %  2. Reusable
@@ -329,6 +330,15 @@ Amiri Andersson do a good review of schemes in 2015
 %  4. Security principle (rotation, hashing, etc.)
 %  5. Target (classical or quantum data)
 %  6. Signature length vs. message length
+
+Other stuff to talk about in here:
+practical implementations \cite{an_practical_2019} and \cite{ding_280-km_2020}
+Single qubit/trapdoor functions \cite{kang_quantum_2015}
+DNA dots stuff \cite{hematpour_presence_2020}
+Amiri survey \cite{amiri_unconditionally_2015}
+one time pad private key \cite{chen_public-key_2018}
+authentication of quantum \cite{barnum_authentication_2002} vs classical \cite{curty_quantum_2001}
+
 
 \begin{table*}[ht]
 \caption{Classification of Quantum Non-Repudiation Algorithms}
@@ -357,7 +367,7 @@ Integrity in classical computing deals with making sure that the data is real, a
 
 It is hard to ensure integrity when the answer is neither right nor wrong until measured and analyzed. "This process is known as quantum parallelism. However, measuring the output states will randomly yield only one of the values in the superposition, and at the same time destroy all of the other results of the computation."\cite{rieffel_introduction_1998} The nature of quantum can also increase data integrity through the wave function, if the data is tampered with it will change the superposition and collapse the wave function. The data will be safe from outside interference until its quantum entanglement is measured. "Einstein, Podolsky, and Rosen proposed that each particle has some internal state that completely determines what the result of any given measurement will be."\cite{rieffel_introduction_1998} Integrity of data already retrieved from the quantum computer can be ensured. Data at rest can be tested with Zero Knowledge and data in motion can be secured with QKD paired with quantum authenticated encryption. 
 
-NTRUEncrypt is a lattice-based public-key Asymmetric encryption. NTRUEncrypt was first introduced in 1996 and is one of the most researched lattice-based encryptions designed to protect against quantum computing. "We choose implementations offering 128-bit security (except RSA-1024 offering 80-bit security) for comparison. Our AvrNTRU outperforms the RSA implementation, achieving 82.8 times faster decryption, even though RSA-1024 cannot match the same security level."\cite{cheng_h._lightweight_2021}. NTRUEncrypt is the precursor to NTRUPrime. NTRUPrime is a faster updated version of NTRUEncrypt, and is currently in trials with the U.S. Government for possible U.S. Government endorsement for hardening classical computing system against quantum computing. While quantum computing cannot produce enough qubits to threaten today's encryptionschemes, van Oorschot-Wiener's classical computing parallel collision searching algorithms is more of a threat to integrity than quantum computing currently\cite{marvoeidis_todo}.
+NTRUEncrypt is a lattice-based public-key Asymmetric encryption. NTRUEncrypt was first introduced in 1996 and is one of the most researched lattice-based encryptions designed to protect against quantum computing. "We choose implementations offering 128-bit security (except RSA-1024 offering 80-bit security) for comparison. Our AvrNTRU outperforms the RSA implementation, achieving 82.8 times faster decryption, even though RSA-1024 cannot match the same security level."\cite{cheng_h._lightweight_2021}. NTRUEncrypt is the precursor to NTRUPrime. NTRUPrime is a faster updated version of NTRUEncrypt, and is currently in trials with the U.S. Government for possible U.S. Government endorsement for hardening classical computing system against quantum computing. While quantum computing cannot produce enough qubits to threaten today's encryptionschemes, van Oorschot-Wiener's classical computing parallel collision searching algorithms is more of a threat to integrity than quantum computing currently\cite{mavroeidis_impact_2018}.
 
 
 \section{Analysis \& Results}
@@ -503,8 +513,6 @@ Despite their additional computational overhead, hybrid quantum cryptosystems li
 
 TODO: Discuss QKD, integrity, non-repudiation, tie back in to research questions directly
 
-
-
 %    3. Tie back to research questions - what's our answer, and how did we get there?
 %        1. RQ2 - Confidentiality
 %            1. Have found a limited number of quantum algorithms which provide confidentiality. Quantum data can be "encrypted" using a one-time pad approach by applying a pre-shared set of random rotations to qubits before transmission, and removing them after. Quantum encryption with a classical key is also possible through quantum teleportation, as entangled qubits can be shared and then an arbitrary state teleported by transmitting two classical bits.
@@ -519,7 +527,7 @@ TODO: Discuss QKD, integrity, non-repudiation, tie back in to research questions
 
 
 \section{Conclusion}
-In this paper we have explored the impacts of quantum computing on classical cryptography, examined the current state of the art of quantum cryptography, implemented and analyzed Amerimehr and Dehkordi's 2018 symmetric quantum encryption algorithm\cite{amerimehr_quantum_2018}, and presented a generalized process for the implementation of quantum cryptographic algorithms. The impacts of quantum computing on today's cryptographic systems are well understood, and efforts are being made by NIST to select suitable replacements for vulnerable public-key encryption, key-establishment, and signature algorithms\cite{moody_nist_2020, csd_postquantum_2017}. We identified promising quantum algorithms for important aspects of cryptography, including as TODO for key distribution, TODO for integrity, AD18 for encryption, and TODO for non-repudiation. While some of these algorithms, such as AD18, appear to need additional research and refinement to be practical for many applications, they can serve as a basis from which to build for future research.
+In this paper we have explored the impacts of quantum computing on classical cryptography, examined the current state of the art of quantum cryptography, implemented and analyzed Amerimehr and Dehkordi's 2018 symmetric quantum encryption algorithm\cite{amerimehr_quantum_2018}, and presented a generalized process for the implementation of quantum cryptographic algorithms. The impacts of quantum computing on today's cryptographic systems are well understood, and efforts are being made by NIST to select suitable replacements for vulnerable public-key encryption, key-establishment, and signature algorithms\cite{moody_nist_2020, csd_postquantum_2017}. We identified promising quantum algorithms for important aspects of cryptography, including twin-field QKD for key distribution, zero knowledge proofs for integrity, AD18 for encryption, and quantum trapdoor functions for non-repudiation. While some of these algorithms, such as AD18, appear to need additional research and refinement to be practical for many applications, they can serve as a basis from which to build for future research.
 
 To aid in future evaluations of quantum cryptographic protocols, we examined implementations of BB84, AD18, and Kak's Three-Stage Protocol, and proposed a standard process by which other researchers can approach the challenge of implementing quantum cryptographic algorithms. As the field of quantum cryptography is still in its infancy, our hope is that these final two contributions will be of particular value. Finally, we will provide recommended actions organizations can take today and in the near future to prepare themselves for advances in quantum computing and cryptography.
 
