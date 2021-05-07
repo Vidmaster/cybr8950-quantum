@@ -95,16 +95,16 @@ As quantum computers become ubiquitous and capable, we predict that large number
 During the course of this research, we produced implementations of BB84, Amerimehr and Dehkordi's 2018 symmetric quantum cryptosystem, and Kak's Three-Stage Protocol. These protocols were implemented in Jupyter Notebooks using Python, Qiskit, and several other supporting libraries.
 
 ### Requirements
-No special hardware is required to run the jupyter notebooks we created, and they should function on any modern operating system. The simplest way to obtain all of the software required is by installing [Anaconda](https://docs.anaconda.com/anaconda/install/) and following the steps in the [Environment Setup Guide](EnvironmentSetup.md) to configure an environment with the appropriate dependencies. If installing manually, Python 3, Pip, `jupyterlab`, `qiskit`, `scikit-commpy`, `pycryptodome`, and `scipy` will all need to be configured.
+No special hardware is required to run the Jupyter Notebooks we created, and they should function on any modern operating system. The simplest way to obtain all of the software required is by installing [Anaconda](https://docs.anaconda.com/anaconda/install/) and following the steps in the [Environment Setup Guide](EnvironmentSetup.md) to configure an environment with the appropriate dependencies. If installing manually, Python 3, Pip, `jupyterlab`, `qiskit`, `scikit-commpy`, `pycryptodome`, and `scipy` will all need to be configured.
 
 ### Installation Instructions
-To install the code samples we produced, we recommend first following the instructions in our [Environment Setup Guide](EnvironmentSetup.md) using the [environment.yml](Resources/environment.yml) file provided. This will install the appropriate version of Python and other dependencies, as well as Jupyter Lab. The setup guide also provides additional troubleshooting steps and manual installation instructions in more detail.
+To install the code samples we produced, we recommend first following the instructions in our [Environment Setup Guide](EnvironmentSetup.md) using the [environment.yml](Resources/environment.yml) file provided. This will install the appropriate version of Python and other dependencies, as well as JupyterLab. The setup guide also provides additional troubleshooting steps and manual installation instructions in more detail.
 
 The protocols we implemented are contained in the following three notebooks, which should be downloaded and saved to the same directory:
 * [BB84 implementation](Resources/BB84-demo.ipynb)
-  * This implementation was taken from the Qiskit textbook, but was modified slightly here and also appears in a refined version in the below notebook.
+  * This implementation was taken from the Qiskit textbook, but was modified slightly here and also appears in a refined version in the notebook below.
 * [Amerimehr and Dehkordi's 2018 quantum cryptosystem](Resources/AD2018-demo.ipynb)
 * [Kak's Three-Stage Protocol](Resources/Kak-Three-Stage-demo.ipynb)
 
 ### Getting started
-To run the Jupyter Notebooks above, simply run the command `jupyter-lab` from the command prompt or terminal in the directory where the files were downloaded. Using the Jupyter interface, select the downloaded notebooks from the sidebar, then execute or modify the code appearing in each as desired.
+To run the Jupyter Notebooks above, simply run the command `jupyter-lab` from the command prompt or terminal in the directory where the files were downloaded. Using the Jupyter interface, select the downloaded notebooks from the sidebar, then execute or modify the code appearing in each as desired. Refer to the JupyterLab [documentation](https://jupyterlab.readthedocs.io/en/stable/) for detailed information about its more advanced capabilities.
